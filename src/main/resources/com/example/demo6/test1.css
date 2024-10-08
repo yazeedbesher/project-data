@@ -1,8 +1,8 @@
-.button{-fx-background-color: #717fc6; -fx-font-size:15;
-
-
+.button{-fx-background-color: #426475; -fx-font-size:15;
 }
+.button:hover{-fx-background-color:yellow}
 
-.button:hover{-fx-background-color: black}
-#b2{-fx-background-color: red}
+#b2{-fx-background-color:#426475}
 #b2.button:hover{-fx-background-color: yellow}
+
+
