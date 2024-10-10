@@ -1,8 +1,47 @@
-.button{-fx-background-color: #426475; -fx-font-size:15;
+#LoginButton{-fx-background-color: #4d8b9c;
+    -fx-font-size:15;
+    -fx-border-radius: 8px;
 }
-.button:hover{-fx-background-color:yellow}
+#LoginButton:hover{-fx-background-color: #9c9898
+}
 
-#b2{-fx-background-color:#426475}
-#b2.button:hover{-fx-background-color: yellow}
+#SignUpButton{-fx-background-color:#4d8b9c;
+    -fx-border-radius: 8px;
+}
+#SignUpButton.button:hover{-fx-background-color: #9c9898}
 
+
+#HomeButton {
+    -fx-background-color: #65929e;
+    -fx-border-radius: 8px;
+}
+#HomeButton.button:hover{-fx-background-color: #8ac4d3}
+
+#menuButton1 {
+    -fx-background-color:  #65929e;
+    -fx-border-radius: 8px;
+            }
+#menuButton1.menu-button:hover{-fx-background-color: #8ac4d3}
+
+
+#menuButton2 {
+    -fx-background-color: #65929e;
+    -fx-border-radius: 8px;
+}
+#menuButton2.menu-button:hover{-fx-background-color: #8ac4d3}
+
+
+#menuButton3 {
+    -fx-background-color: #65929e;
+    -fx-border-radius: 8px;
+}
+#menuButton3.menu-button:hover{-fx-background-color: #8ac4d3}
+
+.menu-item{
+    -fx-background-color:  #65929e;
+    -fx-border-radius: 12px;
+    -fx-font-size: 20px;
+
+}
+.menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
 
