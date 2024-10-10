@@ -47,7 +47,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </MenuButton>
-                  <MenuButton fx:id="menuButton3" alignment="CENTER" layoutX="593.0" layoutY="3.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="121.0" stylesheets="@test1.css" text="SUPPORT" textAlignment="CENTER">
+                  <MenuButton fx:id="menuButton3" alignment="CENTER" layoutX="593.0" layoutY="3.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="131.0" stylesheets="@test1.css" text="SUPPORT" textAlignment="CENTER">
                     <items>
                       <MenuItem mnemonicParsing="false" text="Complaints" />
                       <MenuItem mnemonicParsing="false" text="Suggestions" />
