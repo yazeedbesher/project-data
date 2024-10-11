@@ -4,7 +4,6 @@
 }
 #LoginButton:hover{-fx-background-color: #9c9898
 }
-
 #SignUpButton{-fx-background-color:#4d8b9c;
     -fx-border-radius: 8px;
 }
@@ -44,4 +43,6 @@
 
 }
 .menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
+
+
 

@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
+import javax.swing.*;
 import javax.swing.text.html.ImageView;
 
 public class HelloController {
@@ -40,17 +41,14 @@ public class HelloController {
     private MenuButton menuButton3;
 
     @FXML
+    private Icon usericon;
+    @FXML
     public void check(){
-        if(t1.getText().equals("111")){
             login.setVisible(true);
-            System.out.println("awdawda");
         }
-    }
     @FXML
     public void CLOSEpainLOGIN(){
         login.setVisible(false);
-
-        System.out.println("awdawda");
     }
 
 

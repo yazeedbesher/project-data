@@ -5,8 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -28,7 +28,6 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Button>
-                  <TextField fx:id="t1" layoutX="792.0" layoutY="32.0" />
                   <Button fx:id="HomeButton" alignment="CENTER" layoutX="121.0" layoutY="1.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="125.0" stylesheets="@test1.css" text="HOME" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -82,21 +81,35 @@
                   </MenuButton>
                </children>
             </Pane>
-            <Pane fx:id="login" layoutX="282.0" layoutY="110.0" prefHeight="555.0" prefWidth="620.0" style="-fx-background-color: #65929e;" visible="false">
+            <Pane fx:id="login" layoutX="291.0" layoutY="104.0" prefHeight="555.0" prefWidth="620.0" style="-fx-background-color: #65929e;">
                <children>
-                  <TextField layoutX="405.0" layoutY="106.0" />
-                  <TextField layoutX="405.0" layoutY="186.0" />
-                  <Label layoutX="245.0" layoutY="123.0" text="USreName" />
-                  <Label layoutX="247.0" layoutY="203.0" text="Password" />
-                  <Button layoutX="53.0" layoutY="491.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" text="Exit" />
+                  <Button fx:id="exit" layoutX="124.0" layoutY="481.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="39.0" prefWidth="80.0" stylesheets="@test1.css" text="Exit" />
+                  <Button fx:id="ok" layoutX="421.0" layoutY="482.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="89.0" stylesheets="@test1.css" text="OK" />
+                  <PasswordField fx:id="username" layoutX="338.0" layoutY="90.0" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" />
+                  <PasswordField fx:id="password" layoutX="338.0" layoutY="170.0" prefHeight="26.0" prefWidth="120.0" style="-fx-background-color: white;" />
+                  <Label layoutX="223.0" layoutY="84.0" text="Username">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="223.0" layoutY="167.0" text="Password">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="150.0" fitWidth="265.0" layoutX="184.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/Logo.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
-            <ImageView fitHeight="620.0" fitWidth="1320.0" layoutY="726.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="654.0" fitWidth="1306.0" layoutY="726.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../image/why.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="620.0" fitWidth="542.0" layoutX="72.0" layoutY="1387.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="497.0" fitWidth="479.0" layoutX="414.0" layoutY="1465.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../image/car%20dep.jpg" />
                </image>
@@ -124,41 +137,6 @@
                   <Image url="@../../../image/property.jpg" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="614.0" layoutY="1387.0" prefHeight="38.0" prefWidth="688.0" text="Vehicle insurance" textFill="#086b60">
-               <font>
-                  <Font name="Cambria Bold" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="614.0" layoutY="1425.0" prefHeight="42.0" prefWidth="652.0" text="Bodily Injury Coverage" textFill="#086b60">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="614.0" layoutY="1467.0" prefHeight="262.0" prefWidth="651.0" text="The company is committed, under this insurance coverage, to pay compensation for&#10;bodily injuries and/or deaths resulting from road accidents that occur to individuals&#10;inside the insured vehicle or while they are outside of it, as well as to pedestrians on&#10;the roads, regardless of legal liability. This insurance coverage includes the following:&#10;&#10;1- Medical Expenses: Coverage for the treatment costs of the injured.&#10;2- Loss of Income Compensation: Compensation for loss of income due to the injury.&#10;3- Psychological Impact Compensation: Providing compensation for psychological&#10;     damages resulting from the accident." textFill="#086b60">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="613.0" layoutY="1729.0" prefHeight="48.0" prefWidth="652.0" text="Third-Party Property Damage Coverage" textFill="#086b60">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="613.0" layoutY="1777.0" prefHeight="152.0" prefWidth="651.0" text="The company is committed, under this insurance coverage, to compensate third&#10;parties for property damages or losses incurred as a result of an accident caused&#10;by the legal liability of the insured vehicle. The company also provides insurance&#10;solutions for third-party property damages through specified obligations towards&#10;them." textFill="#086b60">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="613.0" layoutY="1929.0" prefHeight="48.0" prefWidth="654.0" text="Supplementary Property Damage Insurance Document" textFill="#086b60">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="613.0" layoutY="1977.0" prefHeight="204.0" prefWidth="549.0" text="The company undertakes, under this insurance coverage, to compensate &#10;for damages or losses that may occur to the insured vehicle or any of its&#10;parts as a result of exposure to the following risks:&#10;&#10;1- Accidental Collision or Vehicle Roll-Over.&#10;2- Fire or External Explosion, or self-ignition, or due to lightning.&#10;3- Theft or Attempted Theft." textFill="#086b60">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
          </children></AnchorPane>
    </content>
 </ScrollPane>
