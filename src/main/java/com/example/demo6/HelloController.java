@@ -21,7 +21,7 @@ public class HelloController {
     @FXML
     private AnchorPane sccrolpane;
     @FXML
-    private Pane login;
+    private Pane signinpanel;
 
     @FXML
     private Button HomeButton;
@@ -44,11 +44,11 @@ public class HelloController {
     private Icon usericon;
     @FXML
     public void check(){
-            login.setVisible(true);
+        signinpanel.setVisible(true);
         }
     @FXML
     public void CLOSEpainLOGIN(){
-        login.setVisible(false);
+        signinpanel.setVisible(false);
     }
 
 
