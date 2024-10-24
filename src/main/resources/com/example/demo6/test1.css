@@ -16,33 +16,20 @@
 }
 #HomeButton.button:hover{-fx-background-color: #8ac4d3}
 
-#menuButton1 {
-    -fx-background-color:  #65929e;
+#VButton{-fx-background-color: #65929e;
+    -fx-border-radius: 8px;}
+#VButton.menu-button:hover{-fx-background-color: #8ac4d3}
+
+#ACC_INV_Button{-fx-background-color: #65929e;
+    -fx-border-radius: 8px;}
+#ACC_INV_Button.menu-button:hover{-fx-background-color: #8ac4d3}
+
+#SUP_Button{-fx-background-color: #65929e;
+    -fx-border-radius: 8px;}
+#SUP_Button.menu-button:hover{-fx-background-color: #8ac4d3}
+
+.menu-item{-fx-background-color:#4d8b9c;
     -fx-border-radius: 8px;
-            }
-#menuButton1.menu-button:hover{-fx-background-color: #8ac4d3}
-
-
-#menuButton2 {
-    -fx-background-color: #65929e;
-    -fx-border-radius: 8px;
-}
-#menuButton2.menu-button:hover{-fx-background-color: #8ac4d3}
-
-
-#menuButton3 {
-    -fx-background-color: #65929e;
-    -fx-border-radius: 8px;
-}
-#menuButton3.menu-button:hover{-fx-background-color: #8ac4d3}
-
-.menu-item{
-    -fx-background-color:  #65929e;
-    -fx-border-radius: 12px;
     -fx-font-size: 20px;
-
 }
-.menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
-
-
-
+menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
