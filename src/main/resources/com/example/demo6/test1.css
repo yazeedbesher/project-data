@@ -1,35 +1,59 @@
 #LoginButton{-fx-background-color: #4d8b9c;
-    -fx-font-size:15;
-    -fx-border-radius: 8px;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
 }
 #LoginButton:hover{-fx-background-color: #9c9898
 }
 #SignUpButton{-fx-background-color:#4d8b9c;
-    -fx-border-radius: 8px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
 }
 #SignUpButton.button:hover{-fx-background-color: #9c9898}
 
 
 #HomeButton {
     -fx-background-color: #65929e;
-    -fx-border-radius: 8px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
 }
 #HomeButton.button:hover{-fx-background-color: #8ac4d3}
 
 #VButton{-fx-background-color: #65929e;
-    -fx-border-radius: 8px;}
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
 #VButton.menu-button:hover{-fx-background-color: #8ac4d3}
 
 #ACC_INV_Button{-fx-background-color: #65929e;
-    -fx-border-radius: 8px;}
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
 #ACC_INV_Button.menu-button:hover{-fx-background-color: #8ac4d3}
 
 #SUP_Button{-fx-background-color: #65929e;
-    -fx-border-radius: 8px;}
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
 #SUP_Button.menu-button:hover{-fx-background-color: #8ac4d3}
 
 .menu-item{-fx-background-color:#4d8b9c;
-    -fx-border-radius: 8px;
     -fx-font-size: 20px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
 }
+.menu-item:hover{-fx-background-color: #8ac4d3}
+.context-menu {
+    -fx-background-color: #4d8b9c;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+}
+
+
+
 menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
+
+#V_Subs_Button{
+    -fx-background-color: #1f515e;
+    /*-fx-border-radius: 15px;*/
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+#V_Subs_Button.button:hover{-fx-background-color: #65929e}
