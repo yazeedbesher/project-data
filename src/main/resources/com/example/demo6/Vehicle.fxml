@@ -27,12 +27,12 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="566.0" layoutY="83.0" prefHeight="108.0" prefWidth="720.0" text="Under this insurance coverage, the company is committed to providing compensation &#10;for bodily injuries and/or fatalities resulting from a road accident, whether the &#10;insured person is inside or outside the insured vehicle, or even pedestrians on &#10;the road, regardless of legal liability.The insurance coverage includes:" textAlignment="CENTER" textFill="#496d76">
+            <Label alignment="CENTER" layoutX="566.0" layoutY="83.0" prefHeight="108.0" prefWidth="720.0" text="Under this insurance coverage, the company is committed to providing compensation &#10;for bodily injuries and/or fatalities resulting from a road accident, whether the &#10;insured person is inside or outside the insured vehicle, or even pedestrians on &#10;the road, regardless of legal liability.The insurance coverage includes:" textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="566.0" layoutY="191.0" prefHeight="80.0" prefWidth="720.0" text="- Medical expenses for the injured party.&#10;- Compensation for income loss due to injury.&#10;- Compensation for psychological impact." textFill="#496d76">
+            <Label layoutX="566.0" layoutY="191.0" prefHeight="80.0" prefWidth="720.0" text="   - Medical expenses for the injured party.&#10;   - Compensation for income loss due to injury.&#10;   - Compensation for psychological impact." textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="566.0" layoutY="301.0" prefHeight="108.0" prefWidth="720.0" text="The company is also committed to compensating third parties for any property damage &#10;or losses resulting from an accident caused by the insured vehicle under the legal &#10;liability covered by our company. The company offers third-party property damage &#10;insurance solutions through specific liability commitments toward third parties." textAlignment="CENTER" textFill="#496d76">
+            <Label alignment="CENTER" layoutX="566.0" layoutY="301.0" prefHeight="108.0" prefWidth="720.0" text="The company is also committed to compensating third parties for any property damage &#10;or losses resulting from an accident caused by the insured vehicle under the legal &#10;liability covered by our company. The company offers third-party property damage &#10;insurance solutions through specific liability commitments toward third parties." textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>
@@ -52,12 +52,12 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="566.0" layoutY="439.0" prefHeight="62.0" prefWidth="720.0" text="Under this insurance coverage, the company is committed to compensating for damage &#10;or loss to the insured vehicle or any part of it resulting from the following risks:" textAlignment="CENTER" textFill="#496d76">
+            <Label alignment="CENTER" layoutX="566.0" layoutY="439.0" prefHeight="62.0" prefWidth="720.0" text="Under this insurance coverage, the company is committed to compensating for damage &#10;or loss to the insured vehicle or any part of it resulting from the following risks:" textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="566.0" layoutY="501.0" prefHeight="80.0" prefWidth="720.0" text="- Accidental collision or vehicle overturning.&#10;- Fire, external explosion, self-ignition, or lightning strike.&#10;- Theft or attempted theft." textFill="#496d76">
+            <Label layoutX="566.0" layoutY="501.0" prefHeight="80.0" prefWidth="720.0" text="  - Accidental collision or vehicle overturning.&#10;  - Fire, external explosion, self-ignition, or lightning strike.&#10;  - Theft or attempted theft." textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>

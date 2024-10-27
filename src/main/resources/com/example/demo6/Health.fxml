@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo6.HealthCont"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="670.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.HealthCont">
+   <children>
+      <Pane prefHeight="670.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;">
+         <children>
+            <ImageView fitHeight="437.0" fitWidth="446.0" layoutX="70.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/health.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="25.0" layoutY="14.0" prefHeight="53.0" prefWidth="1241.0" text="Health insurance" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="507.0" layoutY="67.0" prefHeight="30.0" prefWidth="759.0" text="Health Insurance Benefits" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="507.0" layoutY="97.0" prefHeight="437.0" prefWidth="759.0" text="- Provides extensive coverage for various services, including medical exams, consultations, &#10;   medications, and physical therapy, ensuring comprehensive healthcare.&#10;- Ensures access to high-quality medical treatment through a trusted network of hospitals &#10;   and specialized clinics with professional supervision.&#10;- Offers full coverage for emergencies and accidents, granting immediate access to hospital &#10;   care when needed.&#10;- Extends coverage to family members, ensuring that everyone receives necessary healthcare.&#10;- Reduces medical costs through partnerships with an approved network of healthcare &#10;   facilities.&#10;- Includes preventive care plans with regular check-ups and vaccinations to help maintain &#10;  ongoing health for you and your family.&#10;&#10;Whether you’re looking for personal coverage or insurance for the entire family, health &#10;insurance ensures that you receive comprehensive support through a professional and &#10;integrated medical network, allowing you to handle any routine or emergency medical &#10;needs with confidence and ease." textFill="#496d76">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="H_Subs_Button" layoutX="211.0" layoutY="534.0" mnemonicParsing="false" stylesheets="@test1.css" text="Subscribe now" textFill="#000000e5">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

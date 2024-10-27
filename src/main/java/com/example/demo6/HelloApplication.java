@@ -14,6 +14,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1280, 760);
         
         stage.setScene(scene);
+        stage.setTitle("Insurtech");
         stage.show();
     }
 

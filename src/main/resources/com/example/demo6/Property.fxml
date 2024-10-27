@@ -8,36 +8,44 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.PropertyCont">
+<AnchorPane prefHeight="670.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.PropertyCont">
    <children>
-      <Pane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;">
+      <Pane prefHeight="670.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;">
          <children>
             <Label alignment="CENTER" prefHeight="53.0" prefWidth="1280.0" text="Property insurance" textFill="#1f515e">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="454.0" fitWidth="483.0" layoutX="734.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="454.0" fitWidth="483.0" layoutX="720.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image/proparty.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="209.0" prefHeight="22.0" prefWidth="720.0" text="Features of Property Insurance" textFill="#1f515e">
+            <Label alignment="CENTER" layoutY="195.0" prefHeight="22.0" prefWidth="720.0" text="Features of Property Insurance" textFill="#1f515e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="67.0" prefHeight="142.0" prefWidth="720.0" text="With our property insurance, you’ll receive extensive coverage against common &#10;incidents, such as fire, theft, and damages caused by natural disasters like &#10;earthquakes and storms. Whether you want to insure your home, office, or any &#10;other commercial property, we offer flexible plans designed to suit your &#10;requirements effectively." textAlignment="CENTER" textFill="#496d76">
+            <Label alignment="CENTER" layoutY="53.0" prefHeight="142.0" prefWidth="720.0" text="With our property insurance, you’ll receive extensive coverage against common &#10;incidents, such as fire, theft, and damages caused by natural disasters like &#10;earthquakes and storms. Whether you want to insure your home, office, or any &#10;other commercial property, we offer flexible plans designed to suit your &#10;requirements effectively." textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="240.0" prefHeight="207.0" prefWidth="720.0" text="- Comprehensive Risk Coverage: We provide full protection against fire, theft, &#10;   natural disasters, and more.&#10;- Customized Coverage for Residential and Commercial Properties: Ensuring the &#10;   right level of protection for you and your business.&#10;- Quick and Direct Compensation: Our commitment to swift processes helps you &#10;   return to normal life quickly in the event of an incident." textFill="#496d76">
+            <Label alignment="CENTER" layoutY="225.0" prefHeight="204.0" prefWidth="720.0" text="- We provide full protection against fire, theft, natural disasters, and more.&#10;- Ensuring the right level of protection for you and your business.&#10;- Our commitment to swift processes helps you return to normal life quickly in &#10;  the event of an incident.&#10;- 24/7 Support, Our team is ready to answer your inquiries and provide &#10;  assistance whenever needed." textFill="#496d76">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="P_Subs_Button" layoutX="883.0" layoutY="572.0" mnemonicParsing="false" stylesheets="@test1.css" text="Subscribe now" />
+            <Button fx:id="P_Subs_Button" layoutX="869.0" layoutY="548.0" mnemonicParsing="false" stylesheets="@test1.css" text="Subscribe now" textFill="#000000e5">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Button>
+            <Label alignment="CENTER" layoutY="429.0" prefHeight="119.0" prefWidth="720.0" text="Get property insurance today and rest assured that your assets are always &#10;protected, allowing you to focus on what matters most in your life and business." textFill="#496d76">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children></Pane>
    </children>
 </AnchorPane>
