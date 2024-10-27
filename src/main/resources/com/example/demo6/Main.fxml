@@ -16,7 +16,7 @@
          <children>
             <ScrollPane prefHeight="3000.0" prefWidth="1280.0">
                <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3400.0" prefWidth="1280.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3400.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;">
                      <children>
                         <ImageView fitHeight="700.0" fitWidth="699.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -48,8 +48,8 @@
             <MenuButton fx:id="VButton" alignment="CENTER" layoutX="266.0" layoutY="2.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="222.0" stylesheets="@test1.css" text="INSURANCE TYPE">
               <items>
                 <MenuItem fx:id="Vmenuitem" mnemonicParsing="false" onAction="#Vehiclepage" text="Vehicle insurance" />
-                <MenuItem mnemonicParsing="false" text="Property insurance" />
-                  <MenuItem mnemonicParsing="false" text="Health insurance" />
+                <MenuItem mnemonicParsing="false" onAction="#Propartypage" text="Proparty insurance" />
+                  <MenuItem mnemonicParsing="false" onAction="#Healthpage" text="Health insurance" />
               </items>
                <font>
                   <Font name="System Bold" size="15.0" />

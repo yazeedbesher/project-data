@@ -52,8 +52,16 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
 
 #V_Subs_Button{
     -fx-background-color: #1f515e;
-    /*-fx-border-radius: 15px;*/
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
+    -fx-font-size: 20px;
 }
 #V_Subs_Button.button:hover{-fx-background-color: #65929e}
+
+#P_Subs_Button{
+    -fx-background-color: #1f515e;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 20px;
+}
+#P_Subs_Button.button:hover{-fx-background-color: #65929e}

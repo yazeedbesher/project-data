@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -43,10 +42,19 @@ public class MainCont {
     }
 
     @FXML
-    public void Mainpage() throws IOException {
+    public void Mainpage() throws IOException {     ////////just for home button
         Parent root= FXMLLoader.load(getClass().getResource("Main.fxml"));
         Homepage.getChildren().setAll(root);
 
     }
-
+    @FXML
+    public void Propartypage() throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Property.fxml"));
+        mainpage.getChildren().setAll(root);
+    }
+    @FXML
+    public void Healthpage() throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Health.fxml"));
+        mainpage.getChildren().setAll(root);
+    }
 }

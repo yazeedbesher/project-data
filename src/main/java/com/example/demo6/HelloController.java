@@ -63,13 +63,13 @@ public class HelloController {
 //    }
 
 
-    @FXML
-    public void Vehicle_insurance(javafx.event.ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Vehicle-insurance-registration.fxml"));
-        stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+//    @FXML
+//    public void Vehicle_insurance(javafx.event.ActionEvent event) throws IOException {
+//        root = FXMLLoader.load(getClass().getResource("Vehicle-insurance-registration.fxml"));
+//        stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+//    }
 //Parent root=
 }
