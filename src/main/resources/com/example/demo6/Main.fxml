@@ -65,7 +65,7 @@
                               </Text>
                            </children>
                         </Pane>
-                        <Pane fx:id="signuppane" layoutX="270.0" layoutY="8.0" prefHeight="738.0" prefWidth="878.0" style="-fx-background-color: gray;">
+                        <Pane fx:id="signuppane" layoutX="270.0" layoutY="8.0" prefHeight="738.0" prefWidth="878.0" style="-fx-background-color: gray;" visible="false">
                            <children>
                               <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
                                  <font>
