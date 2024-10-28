@@ -5,7 +5,23 @@
 }
 #LoginButton:hover{-fx-background-color: #9c9898
 }
-#SignUpButton{-fx-background-color:#4d8b9c;
+#exitlogin{-fx-background-color: #7989cf;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
+}
+#exitlogin:hover{-fx-background-color: #red
+}
+#confirmsignin{-fx-background-color: #7989cf;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
+}
+#confirmsignin:hover{-fx-background-color: #green
+}
+#SignUpButton {
+    -fx-background-color: #4d8b9c;
+
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;;
 }

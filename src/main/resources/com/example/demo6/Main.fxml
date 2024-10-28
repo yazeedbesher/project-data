@@ -8,7 +8,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="Homepage" prefHeight="4018.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.MainCont">
@@ -17,7 +16,7 @@
          <children>
             <ScrollPane prefHeight="699.0" prefWidth="1280.0">
                <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="3918.0" prefWidth="1284.0" style="-fx-background-color: #d3d3d3;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" onDragDetected="#check" prefHeight="3918.0" prefWidth="1284.0" style="-fx-background-color: #d3d3d3;">
                      <children>
                         <ImageView fitHeight="700.0" fitWidth="699.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -33,7 +32,12 @@
                               <Image url="@image/why.jpg" />
                            </image>
                         </ImageView>
-                        <Polygon fill="DODGERBLUE" layoutX="635.0" layoutY="1347.0" points="-362.1999816894531, 182.199951171875, 50.0, 40.0, 0.0, -60.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Pane fx:id="signinpanel" layoutX="779.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf;">
+                           <children>
+                              <Button fx:id="exitlogin" layoutX="70.0" layoutY="485.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Exit" />
+                              <Button fx:id="confirmsignin" alignment="CENTER" layoutX="269.0" layoutY="485.0" mnemonicParsing="false" onAction="#confirmpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In" />
+                           </children>
+                        </Pane>
                      </children>
                   </AnchorPane>
                </content>
@@ -85,7 +89,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </MenuButton>
-            <Button fx:id="LoginButton" layoutX="1068.0" layoutY="24.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In">
+            <Button fx:id="LoginButton" layoutX="1068.0" layoutY="24.0" mnemonicParsing="false" onAction="#check" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

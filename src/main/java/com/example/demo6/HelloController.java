@@ -54,16 +54,6 @@ public class HelloController {
 
 
 //    @FXML
-//    public void check(){
-//        signinpanel.setVisible(true);
-//        }
-//    @FXML
-//    public void CLOSEpainLOGIN(){
-//        signinpanel.setVisible(false);
-//    }
-
-
-//    @FXML
 //    public void Vehicle_insurance(javafx.event.ActionEvent event) throws IOException {
 //        root = FXMLLoader.load(getClass().getResource("Vehicle-insurance-registration.fxml"));
 //        stage =(Stage)((Node)event.getSource()).getScene().getWindow();
