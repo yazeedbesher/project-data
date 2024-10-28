@@ -3,8 +3,7 @@ package com.example.demo6;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
@@ -60,21 +59,102 @@ public class MainCont {
     }
     @FXML
     private Pane signinpanel;
+
     public void check() {
         signinpanel.setVisible(true);
     }
     @FXML
+    private PasswordField passlogin;
+    @FXML
+    private TextArea SSNLogIn;
+    @FXML
     private Button exitlogin;
+    @FXML
+    private Button confirmsignin;
     @FXML
     public void CLOSEpainLOGIN(){
         signinpanel.setVisible(false);
+        SSNLogIn.setText("");
+        passlogin.setText("");
     }
-    @FXML
-    private Button confirmsignin;
     public void confirmpainLOGIN(){
         signinpanel.setVisible(false);
+        SSNLogIn.setText("");
+        passlogin.setText("");
     }
 
-    ////Ahmad is the booooooooooooooossssssssssssssss
+    @FXML
+    private Pane signuppane;
+
+    @FXML
+    private Button exitsignup;
+    @FXML
+    private Button confirmsignup;
+    @FXML
+    private TextArea AdressSignUp;
+
+    @FXML
+    private TextArea AgeSignUp;
+
+    @FXML
+    private DatePicker BDateSignUp;
+
+    @FXML
+    private PasswordField ConfirmPassSignUp;
+
+    @FXML
+    private TextArea EmailSignUp;
+
+    @FXML
+    private TextArea FnameSignUp;
+    @FXML
+    private TextArea LnameSignUp;
+    @FXML
+    private TextArea MNameSignUp;
+
+    @FXML
+    private PasswordField PasswordSignUp;
+
+    @FXML
+    private TextArea PhoneSignUp;
+    @FXML
+    private TextArea ssnSignup;
+
+
+    public void checksignup() {
+        signuppane.setVisible(true);
+    }
+    @FXML
+    public void CLOSEpainSIGNUP(){
+        signuppane.setVisible(false);
+
+        PasswordSignUp.setText("");
+       ssnSignup.setText("");
+       PhoneSignUp.setText("");
+       AdressSignUp.setText("");
+       EmailSignUp.setText("");
+       AgeSignUp.setText("");
+       ConfirmPassSignUp.setText("");
+       FnameSignUp.setText("");
+       LnameSignUp.setText("");
+       MNameSignUp.setText("");
+        BDateSignUp.setValue(null);
+    }
+    public void confirmpainSIGNUP(){
+        signuppane.setVisible(false);
+
+        PasswordSignUp.setText("");
+        ssnSignup.setText("");
+        PhoneSignUp.setText("");
+        AdressSignUp.setText("");
+        EmailSignUp.setText("");
+        AgeSignUp.setText("");
+        ConfirmPassSignUp.setText("");
+        FnameSignUp.setText("");
+        LnameSignUp.setText("");
+        MNameSignUp.setText("");
+        BDateSignUp.setValue(null);
+    }
+
 
 }

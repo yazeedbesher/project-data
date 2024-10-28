@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="Homepage" prefHeight="4018.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.MainCont">
    <children>
       <AnchorPane fx:id="mainpage" layoutY="90.0" prefHeight="3553.0" prefWidth="1280.0">
          <children>
-            <ScrollPane prefHeight="699.0" prefWidth="1280.0">
+            <ScrollPane prefHeight="799.0" prefWidth="1280.0">
                <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" onDragDetected="#check" prefHeight="3918.0" prefWidth="1284.0" style="-fx-background-color: #d3d3d3;">
                      <children>
@@ -32,10 +38,121 @@
                               <Image url="@image/why.jpg" />
                            </image>
                         </ImageView>
-                        <Pane fx:id="signinpanel" layoutX="779.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf;">
+                        <Pane fx:id="signinpanel" layoutX="475.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf; -fx-background-color: gray;" visible="false">
                            <children>
-                              <Button fx:id="exitlogin" layoutX="70.0" layoutY="485.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Exit" />
-                              <Button fx:id="confirmsignin" alignment="CENTER" layoutX="269.0" layoutY="485.0" mnemonicParsing="false" onAction="#confirmpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In" />
+                              <Button fx:id="exitlogin" layoutX="381.0" layoutY="14.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="32.0" prefWidth="33.0" stylesheets="@test1.css">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="CLOSE" />
+                                 </graphic></Button>
+                              <Button fx:id="confirmsignin" alignment="CENTER" layoutX="172.0" layoutY="435.0" mnemonicParsing="false" onAction="#confirmpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In" />
+                              <TextArea fx:id="SSNLogIn" cache="true" cacheHint="SCALE" layoutX="119.0" layoutY="226.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="200.0" promptText="SSN" style="-fx-border-color: #7989cf; -fx-border-width: 0px 0px 2px 0px;">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </TextArea>
+                              <PasswordField fx:id="passlogin" layoutX="119.0" layoutY="298.0" prefHeight="35.0" prefWidth="202.0" promptText="Password" style="-fx-border-color: #7989cf; -fx-border-width: 0px 0px 2px 0px;">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </PasswordField>
+                              <FontAwesomeIconView fill="#65929e" glyphName="USERS" layoutX="182.0" layoutY="105.0" size="60" text="" />
+                              <FontAwesomeIconView fill="#65929e" glyphName="KEY" layoutX="82.0" layoutY="324.0" size="25" />
+                              <FontAwesomeIconView fill="#65929e" glyphName="USER" layoutX="86.0" layoutY="254.0" size="25" />
+                              <Text fill="#65929e" layoutX="154.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="signuppane" layoutX="270.0" layoutY="8.0" prefHeight="738.0" prefWidth="878.0" style="-fx-background-color: gray;">
+                           <children>
+                              <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+                                 <font>
+                                    <Font size="49.0" />
+                                 </font>
+                              </Text>
+                              <FontAwesomeIconView fill="#3c717f" glyphName="USER_PLUS" layoutX="405.0" layoutY="78.0" size="60" text="" />
+                              <TextArea fx:id="ssnSignup" layoutX="34.0" layoutY="222.0" prefHeight="44.0" prefWidth="150.0" />
+                              <TextArea fx:id="FnameSignUp" layoutX="256.0" layoutY="223.0" prefHeight="44.0" prefWidth="150.0" />
+                              <TextArea fx:id="MNameSignUp" layoutX="34.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" />
+                              <TextArea fx:id="LnameSignUp" layoutX="256.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" />
+                              <TextArea fx:id="AgeSignUp" layoutX="34.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" />
+                              <TextArea fx:id="EmailSignUp" layoutX="521.0" layoutY="224.0" prefHeight="44.0" prefWidth="300.0" />
+                              <Label layoutX="42.0" layoutY="182.0" text="SSN" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="261.0" layoutY="181.0" text="First Name" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="35.0" layoutY="303.0" text="Mid Name" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="260.0" layoutY="303.0" text="Last Name" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="561.0" layoutY="303.0" text="Address" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="32.0" layoutY="419.0" text="Age" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="561.0" layoutY="183.0" text="Email" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" />
+                              <TextArea fx:id="AdressSignUp" layoutX="521.0" layoutY="345.0" prefHeight="44.0" prefWidth="300.0" />
+                              <Label layoutX="256.0" layoutY="419.0" text="Birth Date" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="PhoneSignUp" layoutX="521.0" layoutY="459.0" prefHeight="44.0" prefWidth="300.0" />
+                              <Label layoutX="565.0" layoutY="418.0" text="Phone Number" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="PasswordSignUp" layoutX="121.0" layoutY="568.0" prefHeight="44.0" prefWidth="220.0" />
+                              <PasswordField fx:id="ConfirmPassSignUp" layoutX="535.0" layoutY="567.0" prefHeight="44.0" prefWidth="220.0" />
+                              <Label layoutX="123.0" layoutY="534.0" text="Password" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="539.0" layoutY="534.0" text="Confirm Password" textFill="#3c717f">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="confirmsignup" layoutX="393.0" layoutY="620.0" mnemonicParsing="false" onAction="#confirmpainSIGNUP" prefHeight="55.0" prefWidth="104.0" stylesheets="@test1.css" text="Sign Up" />
+                              <Button fx:id="exitsignup" layoutX="795.0" layoutY="15.0" mnemonicParsing="false" onAction="#CLOSEpainSIGNUP" prefHeight="51.0" prefWidth="68.0" stylesheets="@test1.css">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="CLOSE" />
+                                 </graphic>
+                              </Button>
+                              <FontAwesomeIconView glyphName="KEY" layoutX="94.0" layoutY="206.0" size="20" text="" />
+                              <FontAwesomeIconView glyphName="ANDROID" layoutX="532.0" layoutY="442.0" size="20" text="" />
+                              <FontAwesomeIconView glyphName="KEY" layoutX="231.0" layoutY="557.0" size="20" />
+                              <FontAwesomeIconView glyphName="GOOGLE" layoutX="531.0" layoutY="207.0" size="20" text="" />
+                              <FontAwesomeIconView glyphName="CALENDAR" layoutX="375.0" layoutY="442.0" size="20" />
+                              <FontAwesomeIconView glyphName="HOME" layoutX="529.0" layoutY="324.0" size="20" text="" />
+                              <FontAwesomeIconView glyphName="INFO" layoutX="381.0" layoutY="201.0" size="20" />
+                              <FontAwesomeIconView glyphName="BOOK" layoutX="85.0" layoutY="443.0" size="20" text="" />
                            </children>
                         </Pane>
                      </children>
@@ -94,7 +211,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Button>
-            <Button fx:id="SignUpButton" layoutX="1175.0" layoutY="24.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" stylesheets="@test1.css" text="Sign Up">
+            <Button fx:id="SignUpButton" layoutX="1175.0" layoutY="24.0" mnemonicParsing="false" onAction="#checksignup" prefHeight="44.0" prefWidth="91.0" stylesheets="@test1.css" text="Sign Up">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
