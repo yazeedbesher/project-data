@@ -40,7 +40,7 @@
                         </ImageView>
                         <ImageView fitHeight="187.0" fitWidth="275.0" layoutX="957.0" layoutY="193.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/secondmainlogo.png" />
+                              <Image url="@image/secondmainpic.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="776.0" layoutY="43.0" prefHeight="44.0" prefWidth="393.0" text="Create Your Account Now !" textFill="#724b86">
@@ -231,17 +231,17 @@
                            </children></Pane>
                         <ImageView fitHeight="458.0" fitWidth="491.0" layoutX="158.0" layoutY="1445.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/burnedhouse.png" />
+                              <Image url="@image/burnedhouse.jpg.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="432.0" fitWidth="885.0" layoutX="440.0" layoutY="2159.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/caraccident.png" />
+                              <Image url="@image/caraccsedent.jpg.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="500.0" fitWidth="744.0" layoutX="662.0" layoutY="2838.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="500.0" fitWidth="744.0" layoutX="660.0" layoutY="2843.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/hospitalmain.png" />
+                              <Image url="@image/hospital.jpg.png" />
                            </image>
                         </ImageView>
                      </children>
