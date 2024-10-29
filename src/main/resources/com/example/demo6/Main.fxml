@@ -218,16 +218,6 @@
                                     <Font name="System Bold" size="30.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="560.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/socialmedia.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="249.0" fitWidth="280.0" layoutX="931.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/offersmain.jpeg" />
-                                 </image>
-                              </ImageView>
                            </children></Pane>
                         <ImageView fitHeight="458.0" fitWidth="491.0" layoutX="158.0" layoutY="1445.0" pickOnBounds="true" preserveRatio="true">
                            <image>
