@@ -10,14 +10,14 @@
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;;
 }
-#exitlogin:hover{-fx-background-color: #red
+#exitlogin:hover{-fx-background-color: #e65746
 }
 #confirmsignin{-fx-background-color:  #65929e;
 
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;;
 }
-#confirmsignin:hover{-fx-background-color: #green
+#confirmsignin:hover{-fx-background-color: #a8ea9f
 }
 #SignUpButton {
     -fx-background-color: #4d8b9c;
@@ -25,22 +25,24 @@
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;;
 }
-#SignUpButton.button:hover{-fx-background-color: #9c9898}
-#exitsignup{-fx-background-color:  #65929e;
 
+#SignUpButton.button:hover{-fx-background-color: #9c9898}
+#exitsignup{
+    -fx-background-color:  #65929e;
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;;
 }
-#exitsignup:hover{-fx-background-color: #red
+#exitsignup:hover{-fx-background-color: #ed4f3d
 }
+
 #confirmsignup{-fx-background-color:  #65929e;
 
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;;
 }
-#confirmsignup:hover {
-    -fx-background-color: #green
+#confirmsignup:hover{-fx-background-color: #b0e8a9
 }
+
 #HomeButton {
     -fx-background-color: #65929e;
     -fx-border-radius: 12px;
@@ -102,3 +104,82 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
     -fx-font-size: 20px;
 }
 #H_Subs_Button.button:hover{-fx-background-color: #65929e}
+
+#ssnSignup {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#ssnSignup.text-area :hover{-fx-background-color: #8f9ca1
+}
+
+#FnameSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#FnameSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#EmailSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#EmailSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#MNameSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#MNameSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#LnameSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#LnameSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#AdressSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#AdressSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#AgeSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#AgeSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#BDateSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#BDateSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#PhoneSignUp {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#PhoneSignUp.text-area :hover{-fx-background-color: #8f9ca1
+}
+#ssnSignup {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#ssnSignup.text-area :hover{-fx-background-color: #8f9ca1
+}
+#SSNLogIn {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+#SSNLogIn.text-area :hover{-fx-background-color: #8f9ca1
+}
