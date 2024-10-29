@@ -18,11 +18,11 @@
 
 <AnchorPane fx:id="Homepage" prefHeight="4018.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.MainCont">
    <children>
-      <AnchorPane fx:id="mainpage" layoutY="90.0" prefHeight="3553.0" prefWidth="1280.0">
+      <AnchorPane fx:id="mainpage" layoutY="90.0" prefHeight="3930.0" prefWidth="1280.0">
          <children>
-            <ScrollPane prefHeight="799.0" prefWidth="1280.0">
+            <ScrollPane prefHeight="3930.0" prefWidth="1280.0">
                <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" onDragDetected="#check" prefHeight="3918.0" prefWidth="1284.0" style="-fx-background-color: #d3d3d3;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" onDragDetected="#check" prefHeight="3918.0" prefWidth="1284.0" style="-fx-background-color: white;">
                      <children>
                         <ImageView fitHeight="700.0" fitWidth="699.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -32,12 +32,35 @@
                         <Pane layoutY="699.0" prefHeight="7.0" prefWidth="1280.0" style="-fx-background-color: #65929e;" />
                         <Pane layoutY="2749.0" prefHeight="7.0" prefWidth="1280.0" style="-fx-background-color: #65929e;" />
                         <Pane layoutY="1309.0" prefHeight="7.0" prefWidth="1280.0" style="-fx-background-color: #65929e;" />
-                        <Pane layoutY="1909.0" prefHeight="7.0" prefWidth="1280.0" style="-fx-background-color: #65929e;" />
+                        <Pane layoutX="2.0" layoutY="2032.0" prefHeight="7.0" prefWidth="1280.0" style="-fx-background-color: #65929e;" />
                         <ImageView fitHeight="694.0" fitWidth="1270.0" layoutY="706.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/why.jpg" />
                            </image>
                         </ImageView>
+                        <ImageView fitHeight="187.0" fitWidth="275.0" layoutX="957.0" layoutY="193.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/secondmainlogo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="776.0" layoutY="43.0" prefHeight="44.0" prefWidth="393.0" text="Create Your Account Now !" textFill="#724b86">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#575656" glyphName="CHECK" layoutX="1109.0" layoutY="80.0" size="50" />
+                        <Label layoutX="795.0" layoutY="259.0" text="Join US" textFill="#724b86">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#5b5a5a" glyphName="BOOKMARK" layoutX="754.0" layoutY="296.0" size="30" />
+                        <Label layoutX="841.0" layoutY="452.0" text="Be one of our Family" textFill="#724b86">
+                           <font>
+                              <Font size="34.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#5b5a5a" glyphName="HEART" layoutX="1169.0" layoutY="489.0" size="30" text="" />
                         <Pane fx:id="signinpanel" layoutX="475.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf; -fx-background-color: gray;" visible="false">
                            <children>
                               <Button fx:id="exitlogin" layoutX="381.0" layoutY="14.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="32.0" prefWidth="33.0" stylesheets="@test1.css">
@@ -65,7 +88,7 @@
                               </Text>
                            </children>
                         </Pane>
-                        <Pane fx:id="signuppane" layoutX="270.0" layoutY="8.0" prefHeight="738.0" prefWidth="878.0" style="-fx-background-color: gray;">
+                        <Pane fx:id="signuppane" layoutX="270.0" layoutY="8.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;" visible="false">
                            <children>
                               <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
                                  <font>
@@ -73,12 +96,16 @@
                                  </font>
                               </Text>
                               <FontAwesomeIconView fill="#3c717f" glyphName="USER_PLUS" layoutX="405.0" layoutY="78.0" size="60" text="" />
-                              <TextArea fx:id="ssnSignup" layoutX="34.0" layoutY="222.0" prefHeight="44.0" prefWidth="150.0" />
-                              <TextArea fx:id="FnameSignUp" layoutX="256.0" layoutY="223.0" prefHeight="44.0" prefWidth="150.0" />
-                              <TextArea fx:id="MNameSignUp" layoutX="34.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" />
-                              <TextArea fx:id="LnameSignUp" layoutX="256.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" />
-                              <TextArea fx:id="AgeSignUp" layoutX="34.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" />
-                              <TextArea fx:id="EmailSignUp" layoutX="521.0" layoutY="224.0" prefHeight="44.0" prefWidth="300.0" />
+                              <TextArea fx:id="ssnSignup" layoutX="34.0" layoutY="222.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+                              <TextArea fx:id="FnameSignUp" layoutX="256.0" layoutY="223.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+                              <TextArea fx:id="MNameSignUp" layoutX="34.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+                              <TextArea fx:id="LnameSignUp" layoutX="256.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+                              <TextArea fx:id="AgeSignUp" layoutX="34.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+                              <TextArea fx:id="EmailSignUp" layoutX="521.0" layoutY="224.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font>
+                              </TextArea>
                               <Label layoutX="42.0" layoutY="182.0" text="SSN" textFill="#3c717f">
                                  <font>
                                     <Font size="22.0" />
@@ -114,21 +141,21 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" />
-                              <TextArea fx:id="AdressSignUp" layoutX="521.0" layoutY="345.0" prefHeight="44.0" prefWidth="300.0" />
+                              <DatePicker fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+                              <TextArea fx:id="AdressSignUp" layoutX="521.0" layoutY="345.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
                               <Label layoutX="256.0" layoutY="419.0" text="Birth Date" textFill="#3c717f">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextArea fx:id="PhoneSignUp" layoutX="521.0" layoutY="459.0" prefHeight="44.0" prefWidth="300.0" />
+                              <TextArea fx:id="PhoneSignUp" layoutX="521.0" layoutY="459.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
                               <Label layoutX="565.0" layoutY="418.0" text="Phone Number" textFill="#3c717f">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
                               </Label>
                               <PasswordField fx:id="PasswordSignUp" layoutX="121.0" layoutY="568.0" prefHeight="44.0" prefWidth="220.0" />
-                              <PasswordField fx:id="ConfirmPassSignUp" layoutX="535.0" layoutY="567.0" prefHeight="44.0" prefWidth="220.0" />
+                              <PasswordField fx:id="ConfirmPassSignUp" layoutX="535.0" layoutY="567.0" prefHeight="44.0" prefWidth="220.0" stylesheets="@test1.css" />
                               <Label layoutX="123.0" layoutY="534.0" text="Password" textFill="#3c717f">
                                  <font>
                                     <Font size="22.0" />
@@ -139,7 +166,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="confirmsignup" layoutX="393.0" layoutY="620.0" mnemonicParsing="false" onAction="#confirmpainSIGNUP" prefHeight="55.0" prefWidth="104.0" stylesheets="@test1.css" text="Sign Up" />
+                              <Button fx:id="confirmsignup" layoutX="360.0" layoutY="616.0" mnemonicParsing="false" onAction="#confirmpainSIGNUP" prefHeight="59.0" prefWidth="137.0" stylesheets="@test1.css" text="Sign Up" />
                               <Button fx:id="exitsignup" layoutX="795.0" layoutY="15.0" mnemonicParsing="false" onAction="#CLOSEpainSIGNUP" prefHeight="51.0" prefWidth="68.0" stylesheets="@test1.css">
                                  <graphic>
                                     <FontAwesomeIconView glyphName="CLOSE" />
@@ -155,6 +182,17 @@
                               <FontAwesomeIconView glyphName="BOOK" layoutX="85.0" layoutY="443.0" size="20" text="" />
                            </children>
                         </Pane>
+                        <Pane layoutX="2.0" layoutY="3431.0" prefHeight="495.0" prefWidth="1270.0" style="-fx-background-color: #65929e;" />
+                        <ImageView fitHeight="458.0" fitWidth="491.0" layoutX="158.0" layoutY="1445.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/burnedhouse.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="432.0" fitWidth="885.0" layoutX="440.0" layoutY="2159.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/caraccident.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
