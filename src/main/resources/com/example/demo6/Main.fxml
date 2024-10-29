@@ -193,6 +193,11 @@
                               <Image url="@image/caraccident.png" />
                            </image>
                         </ImageView>
+                        <ImageView fitHeight="500.0" fitWidth="744.0" layoutX="662.0" layoutY="2838.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/hospitalmain.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </content>
