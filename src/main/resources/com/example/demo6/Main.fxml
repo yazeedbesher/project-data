@@ -61,7 +61,7 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fill="#5b5a5a" glyphName="HEART" layoutX="1169.0" layoutY="489.0" size="30" text="" />
-                        <Pane fx:id="signinpanel" layoutX="475.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf; -fx-background-color: gray;">
+                        <Pane fx:id="signinpanel" layoutX="475.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf; -fx-background-color: gray;" visible="false">
                            <children>
                               <Button fx:id="exitlogin" layoutX="381.0" layoutY="14.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="32.0" prefWidth="33.0" stylesheets="@test1.css">
                                  <graphic>

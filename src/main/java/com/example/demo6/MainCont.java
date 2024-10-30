@@ -83,36 +83,7 @@ public class MainCont {
         passlogin.setText("");
     }
     public void confirmpainLOGIN() {
-        try {
-            String ssn = this.SSNLogIn.getText();
-            String pass = this.passlogin.getText();
 
-            DriverManager.registerDriver(new org.postgresql.Driver());
-            String custr = "jdbc:postgresql://localhost:5432/postgres";
-            String un = "postgres";
-            String up = "1221";
-
-            Connection conn = DriverManager.getConnection(custr, un, up);
-            conn.setAutoCommit(false);
-
-            // Corrected SQL statement with PreparedStatement
-            String strStmt = "INSERT INTO workin VALUES (?, ?)";
-            PreparedStatement pstmt = conn.prepareStatement(strStmt);
-
-            // Convert the input to integers before inserting
-            pstmt.setInt(1, Integer.parseInt(ssn));
-            pstmt.setInt(2, Integer.parseInt(pass));
-
-            pstmt.executeUpdate();
-
-            System.out.println(ssn);
-            System.out.println(pass);
-            conn.commit();
-            conn.close();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.toString());
-        }
     }
 
 
