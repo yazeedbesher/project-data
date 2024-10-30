@@ -183,3 +183,23 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
 }
 #SSNLogIn.text-area :hover{-fx-background-color: #8f9ca1
 }
+#Vtype{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+#Vtype.menu-button:hover{-fx-background-color: #8ac4d3}
+#intype{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+#intype.menu-button:hover{-fx-background-color: #8ac4d3}
+#Htype{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+#Htype.menu-button:hover{-fx-background-color: #8ac4d3}
+#inT{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+#inT.menu-button:hover{-fx-background-color: #8ac4d3}
+#pinT{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+#pinT.menu-button:hover{-fx-background-color: #8ac4d3}

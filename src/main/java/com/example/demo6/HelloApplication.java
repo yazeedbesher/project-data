@@ -16,10 +16,10 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         stage.setTitle("Insurtech");
         stage.show();
-        System.out.print("dwadawdawda");
+
     }
 
     public static void main(String[] args) {
         launch();
     }//ahmad
-}//awdawdawdawdwaawadawdawdawdaacwdawdwadawdawdadsadawdadaaw
+}

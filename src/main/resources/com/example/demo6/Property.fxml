@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="670.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.PropertyCont">
    <children>
-      <Pane prefHeight="670.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;">
+      <Pane fx:id="propertypain" prefHeight="670.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;">
          <children>
             <Label alignment="CENTER" prefHeight="53.0" prefWidth="1280.0" text="Property insurance" textFill="#1f515e">
                <font>
@@ -37,7 +37,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="P_Subs_Button" layoutX="869.0" layoutY="548.0" mnemonicParsing="false" stylesheets="@test1.css" text="Subscribe now" textFill="#000000e5">
+            <Button fx:id="P_Subs_Button" layoutX="869.0" layoutY="548.0" mnemonicParsing="false" onAction="#subproprtypage" stylesheets="@test1.css" text="Subscribe now" textFill="#000000e5">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Button>

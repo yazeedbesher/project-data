@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo6.SubscribeCont"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane onDragDetected="#typemonths" prefHeight="650.0" prefWidth="1249.0" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.SubscribeCont">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bfd6eb" height="525.0" layoutX="274.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="363.0" />
+      <Label layoutX="317.0" layoutY="85.0" text="Your Car Id :" textFill="#1f515e">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="289.0" layoutY="271.0" text="Insurance Type :" textFill="#1f515e">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label layoutX="317.0" layoutY="143.0" text="Your Name :" textFill="#1f515e">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="317.0" layoutY="195.0" text="Car Type :" textFill="#1f515e">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="332.0" layoutY="353.0" text="Price : " textFill="#1f515e">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <TextField layoutX="452.0" layoutY="87.0" />
+      <TextField layoutX="452.0" layoutY="145.0" prefHeight="25.0" prefWidth="149.0" />
+      <MenuButton fx:id="Vtype" layoutX="452.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" stylesheets="@test1.css" text="Choose The Type">
+        <items>
+          <MenuItem fx:id="cartype" mnemonicParsing="false" onAction="#typeCAR" text="Car" />
+          <MenuItem fx:id="trucktype" mnemonicParsing="false" onAction="#typeTRUCK" text="Truck" />
+            <MenuItem fx:id="suvtype" mnemonicParsing="false" onAction="#typeSUV" text="SUV" />
+        </items>
+      </MenuButton>
+      <TextField fx:id="pricetype" layoutX="452.0" layoutY="354.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <FontAwesomeIconView glyphName="KEY" layoutX="290.0" layoutY="103.0" size="15" />
+      <FontAwesomeIconView glyphName="USER" layoutX="293.0" layoutY="162.0" size="15" text="" />
+      <FontAwesomeIconView glyphName="CAR" layoutX="292.0" layoutY="215.0" size="15" />
+      <FontAwesomeIconView glyphName="MONEY" layoutX="301.0" layoutY="373.0" size="15" text="" />
+      <MenuButton fx:id="intype" layoutX="452.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" stylesheets="@test1.css" text="Shoose the Period">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#typemonths" text="6 Months" />
+          <MenuItem mnemonicParsing="false" onAction="#typeyear" text="1 Year" />
+            <MenuItem mnemonicParsing="false" onAction="#typeyears" text="3 Years" />
+        </items>
+      </MenuButton>
+      <Pane layoutX="727.0" layoutY="64.0" prefHeight="525.0" prefWidth="390.0" style="-fx-background-color: blue;" />
+   </children>
 </AnchorPane>

@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo6.SubscribeCont"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="721.0" prefWidth="1184.0" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.SubscribeCont">
+   <children>
+      <Pane layoutX="329.0" layoutY="23.0" prefHeight="614.0" prefWidth="415.0" style="-fx-background-color: #b0c3ae; -fx-border-color: black;">
+         <children>
+            <Label layoutX="55.0" layoutY="110.0" text="Your Name :" textFill="#496b72">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="53.0" text="SSN :" textFill="#496b72">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="191.0" text="Guarantor Party :" textFill="#496b72">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField layoutX="209.0" layoutY="49.0" />
+            <TextField layoutX="209.0" layoutY="112.0" />
+            <MenuButton fx:id="Htype" layoutX="209.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" stylesheets="@test1.css" text="Select Entity">
+              <items>
+                <MenuItem fx:id="arabiH" mnemonicParsing="false" onAction="#arabi" text="Al Arabi Hospital" />
+                <MenuItem fx:id="palestineH" mnemonicParsing="false" onAction="#pal" text="Palestine Hospital" />
+                  <MenuItem fx:id="NajahH" mnemonicParsing="false" onAction="#naj" text="Al Najah Hospital" />
+                  <MenuItem fx:id="JerCi" mnemonicParsing="false" onAction="#jer" text="Jerusalem Clinic" />
+                  <MenuItem fx:id="Ramci" mnemonicParsing="false" onAction="#ram" text="Ramallah Clinic" />
+                  <MenuItem fx:id="RaziH" mnemonicParsing="false" onAction="#razi" text="Al Razi Hospital" />
+              </items>
+            </MenuButton>
+            <Label layoutX="41.0" layoutY="318.0" text="Insurance Type :" textFill="#496b72">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <MenuButton fx:id="inT" layoutX="212.0" layoutY="320.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" stylesheets="@test1.css" text="Choose the Type">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#hmonth" text="6 months" />
+                <MenuItem mnemonicParsing="false" onAction="#hyear" text="1 Year" />
+                  <MenuItem mnemonicParsing="false" onAction="#hyears" text="3 Years" />
+              </items>
+            </MenuButton>
+            <Label layoutX="55.0" layoutY="436.0" text="Your Price :" textFill="#496b72">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Hprice" layoutX="208.0" layoutY="437.0" prefHeight="25.0" prefWidth="149.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <FontAwesomeIconView glyphName="KEY" layoutX="27.0" layoutY="71.0" size="15" />
+            <FontAwesomeIconView glyphName="USER" layoutX="27.0" layoutY="129.0" size="15" />
+            <FontAwesomeIconView glyphName="MONEY" layoutX="27.0" layoutY="454.0" size="15" />
+         </children>
+      </Pane>
+      <Pane layoutX="878.0" layoutY="29.0" prefHeight="575.0" prefWidth="200.0" style="-fx-background-color: red;" />
+   </children>
 </AnchorPane>
