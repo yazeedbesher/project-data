@@ -191,15 +191,18 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;}
 #intype.menu-button:hover{-fx-background-color: #8ac4d3}
-#Htype{-fx-background-color: #65929e;
+#Htype{-fx-background-color: #f4f4f4;
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;}
-#Htype.menu-button:hover{-fx-background-color: #8ac4d3}
-#inT{-fx-background-color: #65929e;
+#Htype.menu-button:hover{-fx-background-color: #ffffff
+}
+#inT{-fx-background-color: #ffffff;
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;}
-#inT.menu-button:hover{-fx-background-color: #8ac4d3}
-#pinT{-fx-background-color: #65929e;
+#inT.menu-button:hover{-fx-background-color: #ffffff
+}
+#pinT{-fx-background-color: #fbfbfb;
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;}
-#pinT.menu-button:hover{-fx-background-color: #8ac4d3}
+#pinT.menu-button:hover{-fx-background-color: #ffffff
+}

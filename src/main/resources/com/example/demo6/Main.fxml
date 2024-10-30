@@ -9,6 +9,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -244,6 +245,28 @@
                               <Image url="@image/hospital.jpg.png" />
                            </image>
                         </ImageView>
+                        <Label layoutX="103.0" layoutY="2881.0" text="-Inclusive of all surgical operations-" textFill="#4a6385">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="335.0" layoutY="3006.0" text="Travel abroad" textFill="#4a6385">
+                           <font>
+                              <Font name="System Bold" size="40.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="#4a6385" glyphName="HEART" layoutX="79.0" layoutY="2909.0" size="15" text="" />
+                        <FontAwesomeIconView fill="#4a6385" glyphName="MEDKIT" layoutX="601.0" layoutY="2909.0" size="15" />
+                        <FontAwesomeIconView fill="#4a6385" glyphName="PLANE" layoutX="294.0" layoutY="3047.0" size="30" text="" />
+                        <Label layoutX="103.0" layoutY="3170.0" prefWidth="505.0" text="An ambulance that reaches you in all countries" textFill="#4a6385">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Label>
+                        <FontAwesomeIconView fill="#4a6385" glyphName="AMBULANCE" layoutX="63.0" layoutY="3199.0" size="30" text="" />
                      </children>
                   </AnchorPane>
                </content>
@@ -274,12 +297,9 @@
             </Button>
             <MenuButton fx:id="ACC_INV_Button" alignment="CENTER" layoutX="488.0" layoutY="2.0" mnemonicParsing="false" prefHeight="86.0" stylesheets="@test1.css" text="ACCIDENT INVESTIGATORS">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Nablus" />
-                  <MenuItem mnemonicParsing="false" text="Ramallah" />
-                  <MenuItem mnemonicParsing="false" text="Jenin" />
-                  <MenuItem mnemonicParsing="false" text="Hebron" />
-                  <MenuItem mnemonicParsing="false" text="Tulkarm" />
-                  <MenuItem mnemonicParsing="false" text="Bethlehem" />
+                  <MenuItem mnemonicParsing="false" text="Accident Investigators" />
+                  <MenuItem mnemonicParsing="false" text="Health Care" />
+                  <MenuItem mnemonicParsing="false" text="Property" />
                </items>
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -288,8 +308,8 @@
             <MenuButton fx:id="SUP_Button" alignment="CENTER" layoutX="724.0" layoutY="2.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="124.0" stylesheets="@test1.css" text="SUPPORT">
                <items>
                   <MenuItem mnemonicParsing="false" text="Complaints" />
-                  <MenuItem mnemonicParsing="false" text="Suggestions" />
-                  <MenuItem mnemonicParsing="false" text="FeedBack" />
+                  <MenuItem mnemonicParsing="false" text="Investment &amp; Accession" />
+                  <MenuItem mnemonicParsing="false" text="Offers" />
                </items>
                <font>
                   <Font name="System Bold" size="15.0" />
