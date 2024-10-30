@@ -7,7 +7,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
+import javax.swing.*;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class MainCont {
 
@@ -78,6 +81,17 @@ public class MainCont {
         passlogin.setText("");
     }
     public void confirmpainLOGIN(){
+        try {
+            DriverManager.registerDriver(new org.postgresql.Driver());
+            String custr="jdbc:postgresql://localhost:5432/postgress";
+            String un="postgres";
+            String up="12218356";
+            Connection conn=DriverManager.getConnection(custr,un,up);
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null,toString());
+
+        }
         signinpanel.setVisible(false);
         SSNLogIn.setText("");
         passlogin.setText("");
