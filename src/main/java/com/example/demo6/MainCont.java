@@ -11,6 +11,8 @@ import javax.swing.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 public class MainCont {
 
@@ -80,22 +82,40 @@ public class MainCont {
         SSNLogIn.setText("");
         passlogin.setText("");
     }
-    public void confirmpainLOGIN(){
+    public void confirmpainLOGIN() {
         try {
-            DriverManager.registerDriver(new org.postgresql.Driver());
-            String custr="jdbc:postgresql://localhost:5432/postgress";
-            String un="postgres";
-            String up="12218356";
-            Connection conn=DriverManager.getConnection(custr,un,up);
-        }
-        catch (Exception e) {
-            JOptionPane.showMessageDialog(null,toString());
+            String ssn = this.SSNLogIn.getText();
+            String pass = this.passlogin.getText();
 
+            DriverManager.registerDriver(new org.postgresql.Driver());
+            String custr = "jdbc:postgresql://localhost:5432/postgres";
+            String un = "postgres";
+            String up = "1221";
+
+            Connection conn = DriverManager.getConnection(custr, un, up);
+            conn.setAutoCommit(false);
+
+            // Corrected SQL statement with PreparedStatement
+            String strStmt = "INSERT INTO workin VALUES (?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(strStmt);
+
+            // Convert the input to integers before inserting
+            pstmt.setInt(1, Integer.parseInt(ssn));
+            pstmt.setInt(2, Integer.parseInt(pass));
+
+            pstmt.executeUpdate();
+
+            System.out.println(ssn);
+            System.out.println(pass);
+            conn.commit();
+            conn.close();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
         }
-        signinpanel.setVisible(false);
-        SSNLogIn.setText("");
-        passlogin.setText("");
     }
+
+
 
     @FXML
     private Pane signuppane;
