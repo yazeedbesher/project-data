@@ -267,6 +267,18 @@ public class MainCont {
         sup_offers_pane.setVisible(false);
     }
 
+    public void opencarinv() throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("V_invest_Employee.fxml"));
+        mainpage.getChildren().setAll(root);
+    }
 
+    public void openpropartyemp() throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("Property_Employee.fxml"));
+        mainpage.getChildren().setAll(root);
+    }
+    public void openHemp() throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("H_care_Employee.fxml"));
+        mainpage.getChildren().setAll(root);
+    }
 
 }
