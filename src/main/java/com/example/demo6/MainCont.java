@@ -81,14 +81,14 @@ public class MainCont {
         SSNLogIn.setText("");
         passlogin.setText("");
     }
-    public void confirmpainLOGIN() {
-        signinpanel.setVisible(false);
-        SSNLogIn.setText("");
-        passlogin.setText("");
-
-        //هان كود الداتا بيس
-    }
-
+    public void confirmpainLOGIN()throws IOException {
+        String text = SSNLogIn.getText();
+        if (text.startsWith("9")) {
+            signinpanel.setVisible(false);
+            Parent root= FXMLLoader.load(getClass().getResource("manager.fxml"));
+            mainpage.getChildren().setAll(root);
+        }
+}
 
 
     @FXML
