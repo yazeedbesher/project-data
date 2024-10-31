@@ -9,10 +9,9 @@ import javafx.scene.layout.Pane;
 
 import javax.swing.*;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class MainCont {
 
@@ -83,7 +82,11 @@ public class MainCont {
         passlogin.setText("");
     }
     public void confirmpainLOGIN() {
+        signinpanel.setVisible(false);
+        SSNLogIn.setText("");
+        passlogin.setText("");
 
+        //هان كود الداتا بيس
     }
 
 
@@ -161,5 +164,80 @@ public class MainCont {
         BDateSignUp.setValue(null);
     }
 
+
+    /*_______________________
+       comunication
+    __________________________ */
+
+    @FXML
+    int recordid1=0;
+    @FXML
+    String SUPPORT_Type;
+    @FXML
+    String status ;
+    //for date
+    @FXML
+    LocalDateTime currentDateTime;
+    @FXML
+    DateTimeFormatter formatter ;
+    @FXML
+    String current_datetime;
+    @FXML
+    String res_req;
+    @FXML
+    int ManagerNO=5;
+//    ____________________________
+//            Complaints pane
+//    ____________________________
+    @FXML
+    public Pane Complaints_pane;
+    @FXML
+    public Button sup_comp_button;
+    @FXML
+    public TextField sup_comp_textfield;
+    @FXML
+    public TextArea sup_comp_textarea;
+    @FXML
+    public Label sup_comp_disc;
+    @FXML
+    public Label sup_comp_title;
+    @FXML
+    public Label sup_comp_thanks;
+
+
+
+    @FXML
+    public void sup_comp_click(){
+    String comp_title,comp_disc;
+
+
+        comp_title = sup_comp_textfield.getText();
+        comp_disc = sup_comp_textarea.getText();
+        recordid1++;
+        SUPPORT_Type ="Complaints";
+        status ="Pending";
+        //date and time
+        currentDateTime = LocalDateTime.now();
+        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        current_datetime = currentDateTime.format(formatter);//date and time is in current_datetime
+        ManagerNO=5;
+        res_req ="yes";
+
+
+        sup_comp_textarea.clear();
+        sup_comp_textfield.clear();
+        sup_comp_textarea.setVisible(false);
+        sup_comp_textfield.setVisible(false);
+        sup_comp_disc.setVisible(false);
+        sup_comp_title.setVisible(false);
+        sup_comp_thanks.setVisible(true);
+        sup_comp_button.setVisible(false);
+
+    }
+    public void sup_comp_close(){
+        sup_comp_textarea.clear();
+        sup_comp_textfield.clear();
+        Complaints_pane.setVisible(false);
+    }
 
 }

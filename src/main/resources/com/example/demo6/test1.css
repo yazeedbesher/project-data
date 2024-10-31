@@ -206,3 +206,27 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
     -fx-background-radius: 12px;}
 #pinT.menu-button:hover{-fx-background-color: #ffffff
 }
+
+#sup_comp_button{-fx-background-color: #4d8b9c;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
+}
+#sup_comp_button:hover{-fx-background-color: #9c9898}
+
+.text-area {
+    -fx-border-radius: 12px;
+    -fx-background-radius: 14px;
+   -fx-padding: 8px;
+    -fx-font-size: 14px;
+
+}
+.text-area:hover{-fx-background-color: #8f9ca1}
+
+
+.text-field {
+    -fx-background-radius: 10px;   /* background rounded corners */
+    -fx-padding: 10px;             /* internal padding */
+    -fx-font-size: 14px;           /* font size */
+}
+.text-field :hover{-fx-background-color: #8f9ca1}

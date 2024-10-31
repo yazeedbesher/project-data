@@ -9,6 +9,7 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -62,127 +63,6 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fill="#5b5a5a" glyphName="HEART" layoutX="1169.0" layoutY="489.0" size="30" text="" />
-                        <Pane fx:id="signinpanel" layoutX="475.0" layoutY="63.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf; -fx-background-color: gray;" visible="false">
-                           <children>
-                              <Button fx:id="exitlogin" layoutX="381.0" layoutY="14.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="32.0" prefWidth="33.0" stylesheets="@test1.css">
-                                 <graphic>
-                                    <FontAwesomeIconView glyphName="CLOSE" />
-                                 </graphic></Button>
-                              <Button fx:id="confirmsignin" alignment="CENTER" layoutX="172.0" layoutY="435.0" mnemonicParsing="false" onAction="#confirmpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In" />
-                              <TextArea fx:id="SSNLogIn" cache="true" cacheHint="SCALE" layoutX="119.0" layoutY="226.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="200.0" promptText="SSN" style="-fx-border-color: #7989cf; -fx-border-width: 0px 0px 2px 0px;">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </TextArea>
-                              <PasswordField fx:id="passlogin" layoutX="119.0" layoutY="298.0" prefHeight="35.0" prefWidth="202.0" promptText="Password" style="-fx-border-color: #7989cf; -fx-border-width: 0px 0px 2px 0px;">
-                                 <font>
-                                    <Font name="System Bold" size="12.0" />
-                                 </font>
-                              </PasswordField>
-                              <FontAwesomeIconView fill="#65929e" glyphName="USERS" layoutX="182.0" layoutY="105.0" size="60" text="" />
-                              <FontAwesomeIconView fill="#65929e" glyphName="KEY" layoutX="82.0" layoutY="324.0" size="25" />
-                              <FontAwesomeIconView fill="#65929e" glyphName="USER" layoutX="86.0" layoutY="254.0" size="25" />
-                              <Text fill="#65929e" layoutX="154.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Text>
-                           </children>
-                        </Pane>
-                        <Pane fx:id="signuppane" layoutX="270.0" layoutY="8.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;" visible="false">
-                           <children>
-                              <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
-                                 <font>
-                                    <Font size="49.0" />
-                                 </font>
-                              </Text>
-                              <FontAwesomeIconView fill="#3c717f" glyphName="USER_PLUS" layoutX="405.0" layoutY="78.0" size="60" text="" />
-                              <TextArea fx:id="ssnSignup" layoutX="34.0" layoutY="222.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
-                              <TextArea fx:id="FnameSignUp" layoutX="256.0" layoutY="223.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
-                              <TextArea fx:id="MNameSignUp" layoutX="34.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
-                              <TextArea fx:id="LnameSignUp" layoutX="256.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
-                              <TextArea fx:id="AgeSignUp" layoutX="34.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
-                              <TextArea fx:id="EmailSignUp" layoutX="521.0" layoutY="224.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css">
-                                 <font>
-                                    <Font name="Arial" size="12.0" />
-                                 </font>
-                              </TextArea>
-                              <Label layoutX="42.0" layoutY="182.0" text="SSN" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="261.0" layoutY="181.0" text="First Name" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="35.0" layoutY="303.0" text="Mid Name" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="260.0" layoutY="303.0" text="Last Name" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="561.0" layoutY="303.0" text="Address" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="32.0" layoutY="419.0" text="Age" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="561.0" layoutY="183.0" text="Email" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <DatePicker fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
-                              <TextArea fx:id="AdressSignUp" layoutX="521.0" layoutY="345.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
-                              <Label layoutX="256.0" layoutY="419.0" text="Birth Date" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextArea fx:id="PhoneSignUp" layoutX="521.0" layoutY="459.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
-                              <Label layoutX="565.0" layoutY="418.0" text="Phone Number" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <PasswordField fx:id="PasswordSignUp" layoutX="121.0" layoutY="568.0" prefHeight="44.0" prefWidth="220.0" />
-                              <PasswordField fx:id="ConfirmPassSignUp" layoutX="535.0" layoutY="567.0" prefHeight="44.0" prefWidth="220.0" stylesheets="@test1.css" />
-                              <Label layoutX="123.0" layoutY="534.0" text="Password" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="539.0" layoutY="534.0" text="Confirm Password" textFill="#3c717f">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="confirmsignup" layoutX="360.0" layoutY="616.0" mnemonicParsing="false" onAction="#confirmpainSIGNUP" prefHeight="59.0" prefWidth="137.0" stylesheets="@test1.css" text="Sign Up" />
-                              <Button fx:id="exitsignup" layoutX="795.0" layoutY="15.0" mnemonicParsing="false" onAction="#CLOSEpainSIGNUP" prefHeight="51.0" prefWidth="68.0" stylesheets="@test1.css">
-                                 <graphic>
-                                    <FontAwesomeIconView glyphName="CLOSE" />
-                                 </graphic>
-                              </Button>
-                              <FontAwesomeIconView glyphName="KEY" layoutX="94.0" layoutY="206.0" size="20" text="" />
-                              <FontAwesomeIconView glyphName="ANDROID" layoutX="532.0" layoutY="442.0" size="20" text="" />
-                              <FontAwesomeIconView glyphName="KEY" layoutX="231.0" layoutY="557.0" size="20" />
-                              <FontAwesomeIconView glyphName="GOOGLE" layoutX="531.0" layoutY="207.0" size="20" text="" />
-                              <FontAwesomeIconView glyphName="CALENDAR" layoutX="375.0" layoutY="442.0" size="20" />
-                              <FontAwesomeIconView glyphName="HOME" layoutX="529.0" layoutY="324.0" size="20" text="" />
-                              <FontAwesomeIconView glyphName="INFO" layoutX="381.0" layoutY="201.0" size="20" />
-                              <FontAwesomeIconView glyphName="BOOK" layoutX="85.0" layoutY="443.0" size="20" text="" />
-                           </children>
-                        </Pane>
                         <Pane layoutX="2.0" layoutY="3431.0" prefHeight="378.0" prefWidth="1270.0" style="-fx-background-color: #65929e;">
                            <children>
                               <ImageView fitHeight="138.0" fitWidth="308.0" layoutX="31.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
@@ -219,16 +99,6 @@
                                     <Font name="System Bold" size="30.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="560.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/socialmedia.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="249.0" fitWidth="280.0" layoutX="931.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@image/offersmain.jpeg" />
-                                 </image>
-                              </ImageView>
                            </children></Pane>
                         <ImageView fitHeight="458.0" fitWidth="491.0" layoutX="158.0" layoutY="1445.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -326,5 +196,163 @@
                </font>
             </Button>
          </children></Pane>
+      <Pane fx:id="signinpanel" layoutX="426.0" layoutY="90.0" prefHeight="557.0" prefWidth="428.0" style="-fx-border-color: #7989cf; -fx-background-color: gray;" visible="false">
+         <children>
+            <Button fx:id="exitlogin" layoutX="381.0" layoutY="14.0" mnemonicParsing="false" onAction="#CLOSEpainLOGIN" prefHeight="32.0" prefWidth="33.0" stylesheets="@test1.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CLOSE" />
+               </graphic>
+            </Button>
+            <Button fx:id="confirmsignin" alignment="CENTER" layoutX="172.0" layoutY="435.0" mnemonicParsing="false" onAction="#confirmpainLOGIN" prefHeight="44.0" prefWidth="97.0" stylesheets="@test1.css" text="Sign In" />
+            <TextArea fx:id="SSNLogIn" cache="true" cacheHint="SCALE" layoutX="119.0" layoutY="226.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="200.0" promptText="SSN" style="-fx-border-color: #7989cf; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextArea>
+            <PasswordField fx:id="passlogin" layoutX="119.0" layoutY="298.0" prefHeight="35.0" prefWidth="202.0" promptText="Password" style="-fx-border-color: #7989cf; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </PasswordField>
+            <FontAwesomeIconView fill="#65929e" glyphName="USERS" layoutX="182.0" layoutY="105.0" size="60" text="" />
+            <FontAwesomeIconView fill="#65929e" glyphName="KEY" layoutX="82.0" layoutY="324.0" size="25" />
+            <FontAwesomeIconView fill="#65929e" glyphName="USER" layoutX="86.0" layoutY="254.0" size="25" />
+            <Text fill="#65929e" layoutX="154.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="signuppane" layoutX="200.0" layoutY="45.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;" visible="false">
+         <children>
+            <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <FontAwesomeIconView fill="#3c717f" glyphName="USER_PLUS" layoutX="405.0" layoutY="78.0" size="60" text="" />
+            <TextArea fx:id="ssnSignup" layoutX="34.0" layoutY="222.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+            <TextArea fx:id="FnameSignUp" layoutX="256.0" layoutY="223.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+            <TextArea fx:id="MNameSignUp" layoutX="34.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+            <TextArea fx:id="LnameSignUp" layoutX="256.0" layoutY="345.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+            <TextArea fx:id="AgeSignUp" layoutX="34.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+            <TextArea fx:id="EmailSignUp" layoutX="521.0" layoutY="224.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="42.0" layoutY="182.0" text="SSN" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="261.0" layoutY="181.0" text="First Name" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="303.0" text="Mid Name" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="260.0" layoutY="303.0" text="Last Name" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="561.0" layoutY="303.0" text="Address" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="419.0" text="Age" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="561.0" layoutY="183.0" text="Email" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
+            <TextArea fx:id="AdressSignUp" layoutX="521.0" layoutY="345.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
+            <Label layoutX="256.0" layoutY="419.0" text="Birth Date" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="PhoneSignUp" layoutX="521.0" layoutY="459.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
+            <Label layoutX="565.0" layoutY="418.0" text="Phone Number" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="PasswordSignUp" layoutX="121.0" layoutY="568.0" prefHeight="44.0" prefWidth="220.0" />
+            <PasswordField fx:id="ConfirmPassSignUp" layoutX="535.0" layoutY="567.0" prefHeight="44.0" prefWidth="220.0" stylesheets="@test1.css" />
+            <Label layoutX="123.0" layoutY="534.0" text="Password" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="539.0" layoutY="534.0" text="Confirm Password" textFill="#3c717f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="confirmsignup" layoutX="360.0" layoutY="616.0" mnemonicParsing="false" onAction="#confirmpainSIGNUP" prefHeight="59.0" prefWidth="137.0" stylesheets="@test1.css" text="Sign Up" />
+            <Button fx:id="exitsignup" layoutX="795.0" layoutY="15.0" mnemonicParsing="false" onAction="#CLOSEpainSIGNUP" prefHeight="51.0" prefWidth="68.0" stylesheets="@test1.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CLOSE" />
+               </graphic>
+            </Button>
+            <FontAwesomeIconView glyphName="KEY" layoutX="94.0" layoutY="206.0" size="20" text="" />
+            <FontAwesomeIconView glyphName="ANDROID" layoutX="532.0" layoutY="442.0" size="20" text="" />
+            <FontAwesomeIconView glyphName="KEY" layoutX="231.0" layoutY="557.0" size="20" />
+            <FontAwesomeIconView glyphName="GOOGLE" layoutX="531.0" layoutY="207.0" size="20" text="" />
+            <FontAwesomeIconView glyphName="CALENDAR" layoutX="375.0" layoutY="442.0" size="20" />
+            <FontAwesomeIconView glyphName="HOME" layoutX="529.0" layoutY="324.0" size="20" text="" />
+            <FontAwesomeIconView glyphName="INFO" layoutX="381.0" layoutY="201.0" size="20" />
+            <FontAwesomeIconView glyphName="BOOK" layoutX="85.0" layoutY="443.0" size="20" text="" />
+         </children>
+      </Pane>
+      <Pane fx:id="Complaints_pane" layoutX="329.0" layoutY="185.0" prefHeight="457.0" prefWidth="622.0" style="-fx-background-color: #d3d3d3;" visible="false">
+         <children>
+            <TextField fx:id="sup_comp_textfield" layoutX="295.0" layoutY="90.0" prefHeight="25.0" prefWidth="200.0" stylesheets="@test1.css" />
+            <TextArea fx:id="sup_comp_textarea" layoutX="295.0" layoutY="149.0" prefHeight="202.0" prefWidth="300.0" stylesheets="@test1.css" />
+            <Button fx:id="sup_comp_button" layoutX="210.0" layoutY="370.0" mnemonicParsing="false" onAction="#sup_comp_click" prefHeight="44.0" prefWidth="202.0" stylesheets="@test1.css" text="Submit Complaint" textFill="#000000e6">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="sup_comp_title" alignment="CENTER" layoutX="14.0" layoutY="88.0" prefHeight="30.0" prefWidth="220.0" text="Complaints Title" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="176.0" layoutY="14.0" prefHeight="54.0" prefWidth="271.0" text="Complaints" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="sup_comp_disc" alignment="CENTER" layoutX="14.0" layoutY="149.0" prefHeight="30.0" prefWidth="220.0" text="Complaint Description" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="sup_comp_thanks" alignment="CENTER" layoutX="87.0" layoutY="220.0" prefHeight="17.0" prefWidth="408.0" text="Thank you for your cooperation" visible="false">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="537.0" layoutY="29.0" mnemonicParsing="false" onAction="#sup_comp_close">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CLOSE" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
