@@ -221,7 +221,8 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
     -fx-font-size: 14px;
 
 }
-.text-area:hover{-fx-background-color: #8f9ca1}
+.text-area:hover{-fx-background-color: #ffffff
+}
 
 
 .text-field {
@@ -229,4 +230,11 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
     -fx-padding: 10px;             /* internal padding */
     -fx-font-size: 14px;           /* font size */
 }
-.text-field :hover{-fx-background-color: #8f9ca1}
+.text-field :hover{-fx-background-color: #ffffff}
+.button{-fx-background-color:  #65929e;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
+}
+.button:hover{-fx-background-color: #8ac4d3
+}

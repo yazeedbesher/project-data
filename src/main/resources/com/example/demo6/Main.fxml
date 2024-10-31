@@ -177,9 +177,9 @@
             </MenuButton>
             <MenuButton fx:id="SUP_Button" alignment="CENTER" layoutX="724.0" layoutY="2.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="124.0" stylesheets="@test1.css" text="SUPPORT">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Complaints" />
+                  <MenuItem mnemonicParsing="false" onAction="#Comppage" text="Complaints" />
                   <MenuItem mnemonicParsing="false" text="Investment &amp; Accession" />
-                  <MenuItem mnemonicParsing="false" text="Offers" />
+                  <MenuItem mnemonicParsing="false" onAction="#Sup_Offer_click" text="Offers" />
                </items>
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -224,36 +224,98 @@
             </Text>
          </children>
       </Pane>
-      <Pane fx:id="Complaints_pane" layoutX="329.0" layoutY="185.0" prefHeight="457.0" prefWidth="622.0" style="-fx-background-color: #d3d3d3;" visible="false">
+      <Pane fx:id="Complaints_pane" layoutX="133.0" layoutY="192.0" prefHeight="494.0" prefWidth="946.0" style="-fx-background-color: #d3d3d3;" visible="false">
          <children>
-            <TextField fx:id="sup_comp_textfield" layoutX="295.0" layoutY="90.0" prefHeight="25.0" prefWidth="200.0" stylesheets="@test1.css" />
-            <TextArea fx:id="sup_comp_textarea" layoutX="295.0" layoutY="149.0" prefHeight="202.0" prefWidth="300.0" stylesheets="@test1.css" />
-            <Button fx:id="sup_comp_button" layoutX="210.0" layoutY="370.0" mnemonicParsing="false" onAction="#sup_comp_click" prefHeight="44.0" prefWidth="202.0" stylesheets="@test1.css" text="Submit Complaint" textFill="#000000e6">
+            <TextField fx:id="sup_comp_title" layoutX="622.0" layoutY="121.0" prefHeight="25.0" prefWidth="200.0" stylesheets="@test1.css" />
+            <TextArea fx:id="sup_comp_textarea" layoutX="622.0" layoutY="205.0" prefHeight="119.0" prefWidth="300.0" stylesheets="@test1.css" />
+            <Button fx:id="sup_comp_button" layoutX="373.0" layoutY="418.0" mnemonicParsing="false" onAction="#sup_comp_click" prefHeight="44.0" prefWidth="202.0" stylesheets="@test1.css" text="Submit Complaint" textFill="#000000e6">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Label fx:id="sup_comp_title" alignment="CENTER" layoutX="14.0" layoutY="88.0" prefHeight="30.0" prefWidth="220.0" text="Complaints Title" textFill="#1f515e">
+            <Label alignment="CENTER" layoutX="386.0" layoutY="125.0" prefHeight="30.0" prefWidth="236.0" text="Complaints Title" textFill="#1f515e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="176.0" layoutY="14.0" prefHeight="54.0" prefWidth="271.0" text="Complaints" textFill="#1f515e">
+            <Label alignment="CENTER" layoutX="338.0" layoutY="15.0" prefHeight="54.0" prefWidth="271.0" text="Complaints" textFill="#1f515e">
                <font>
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label fx:id="sup_comp_disc" alignment="CENTER" layoutX="14.0" layoutY="149.0" prefHeight="30.0" prefWidth="220.0" text="Complaint Description" textFill="#1f515e">
+            <Label alignment="CENTER" layoutX="394.0" layoutY="212.0" prefHeight="30.0" prefWidth="236.0" text="Complaint Description" textFill="#1f515e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="sup_comp_thanks" alignment="CENTER" layoutX="87.0" layoutY="220.0" prefHeight="17.0" prefWidth="408.0" text="Thank you for your cooperation" visible="false">
+            <Button layoutX="861.0" layoutY="21.0" mnemonicParsing="false" onAction="#sup_comp_close" prefHeight="41.0" prefWidth="52.0" stylesheets="@test1.css">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CLOSE" />
+               </graphic>
+            </Button>
+            <TextField fx:id="sup_comp_name" layoutX="208.0" layoutY="121.0" stylesheets="@test1.css" />
+            <TextField fx:id="sup_comp_SSN" layoutX="208.0" layoutY="186.0" stylesheets="@test1.css" />
+            <TextField fx:id="sup_comp_email" layoutX="208.0" layoutY="248.0" stylesheets="@test1.css" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="125.0" prefHeight="30.0" prefWidth="194.0" text="Name" textFill="#1f515e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button layoutX="537.0" layoutY="29.0" mnemonicParsing="false" onAction="#sup_comp_close">
+            <Label alignment="CENTER" layoutX="14.0" layoutY="190.0" prefHeight="30.0" prefWidth="194.0" text="SSN" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="252.0" prefHeight="30.0" prefWidth="194.0" text="Email" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="sup_offers_pane" layoutY="90.0" prefHeight="699.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="460.0" layoutY="14.0" prefHeight="53.0" prefWidth="361.0" text="Offers" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="91.0" prefHeight="30.0" prefWidth="361.0" text="Entering a Prize Draw" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="375.0" layoutY="91.0" prefHeight="135.0" prefWidth="720.0" text="- When you purchase car insurance, enter our monthly draw for a chance to win a new car!&#10;&#10;- Buy family health insurance and enter a draw for a free trip to the Maldives!" textFill="#496d76">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="226.0" prefHeight="30.0" prefWidth="361.0" text="Cashback Offer" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="375.0" layoutY="226.0" prefHeight="135.0" prefWidth="720.0" text="- Get 5% cashback when you purchase international travel insurance for the first time.&#10;&#10;- Renew your health insurance policy and receive $50 cashback." textFill="#496d76">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="361.0" prefHeight="30.0" prefWidth="361.0" text="Loyalty Points Program" textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="375.0" layoutY="361.0" prefHeight="185.0" prefWidth="720.0" text="- Earn one loyalty point for every dollar spent on insurance. Collect points and redeem &#10;  them for discounts on future policies.&#10;&#10;- Earn points for referrals! Share your experience with friends, and when any of your &#10;  friends signs up through your referral, you will earn additional points. These points &#10;  can be redeemed for discounts on documents." textFill="#496d76">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="266.0" layoutY="579.0" prefHeight="30.0" prefWidth="749.0" text="To benefit from the offers, visit us in the company's support section." textFill="#1f515e">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="1172.0" layoutY="18.0" mnemonicParsing="false" onAction="#sup_offers_close" prefHeight="41.0" prefWidth="52.0" stylesheets="@test1.css">
                <graphic>
                   <FontAwesomeIconView glyphName="CLOSE" />
                </graphic>
@@ -352,7 +414,6 @@
                   <FontAwesomeIconView glyphName="BOOK" layoutX="85.0" layoutY="443.0" size="20" text="" />
                </children>
             </Pane>
-         </children>
-      </Pane>
+         </children></Pane>
    </children>
 </AnchorPane>

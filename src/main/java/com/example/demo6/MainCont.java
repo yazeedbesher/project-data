@@ -61,6 +61,12 @@ public class MainCont {
         Parent root= FXMLLoader.load(getClass().getResource("Health.fxml"));
         mainpage.getChildren().setAll(root);
     }
+
+
+
+
+
+
     @FXML
     private Pane signinpanel;
 
@@ -194,25 +200,32 @@ public class MainCont {
     @FXML
     public Button sup_comp_button;
     @FXML
-    public TextField sup_comp_textfield;
+    public TextField sup_comp_title;
     @FXML
     public TextArea sup_comp_textarea;
     @FXML
-    public Label sup_comp_disc;
+    public TextField sup_comp_name;
     @FXML
-    public Label sup_comp_title;
+    public TextField sup_comp_SSN;
     @FXML
-    public Label sup_comp_thanks;
+    public TextField sup_comp_email;
 
+    @FXML
+    String compSSN;
 
+    public void Comppage(){
+        Complaints_pane.setVisible(true);
+    }
 
     @FXML
     public void sup_comp_click(){
     String comp_title,comp_disc;
 
-
-        comp_title = sup_comp_textfield.getText();
+        //بنستخدمهم عشان نبعتهم لداتاونربط ال
+        comp_title = sup_comp_title.getText();
         comp_disc = sup_comp_textarea.getText();
+        compSSN=sup_comp_SSN.getText();
+
         recordid1++;
         SUPPORT_Type ="Complaints";
         status ="Pending";
@@ -225,19 +238,35 @@ public class MainCont {
 
 
         sup_comp_textarea.clear();
-        sup_comp_textfield.clear();
-        sup_comp_textarea.setVisible(false);
-        sup_comp_textfield.setVisible(false);
-        sup_comp_disc.setVisible(false);
-        sup_comp_title.setVisible(false);
-        sup_comp_thanks.setVisible(true);
-        sup_comp_button.setVisible(false);
+        sup_comp_title.clear();
+        sup_comp_name.clear();
+        sup_comp_email.clear();
+        sup_comp_SSN.clear();
 
+        Complaints_pane.setVisible(false);
     }
     public void sup_comp_close(){
         sup_comp_textarea.clear();
-        sup_comp_textfield.clear();
+        sup_comp_title.clear();
+        sup_comp_name.clear();
+        sup_comp_email.clear();
+        sup_comp_SSN.clear();
         Complaints_pane.setVisible(false);
     }
+    //    ____________________________
+    //            offers pane
+    //    ____________________________
+    @FXML
+    public Pane sup_offers_pane;
+
+    public void Sup_Offer_click(){
+        sup_offers_pane.setVisible(true);
+    }
+    public void sup_offers_close(){
+
+        sup_offers_pane.setVisible(false);
+    }
+
+
 
 }
