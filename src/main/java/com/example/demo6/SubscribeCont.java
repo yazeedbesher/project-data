@@ -100,33 +100,55 @@ public class SubscribeCont {
         pinT.setText("6 Months");
         String text = Parea.getText().trim();
         int value = Integer.parseInt(text);
-        if(value>20&value<40) {
-            Pprice.setText(String.valueOf(("         "+150 +"$")));
+
+        if (value >= 20 && value < 40) {
+            Pprice.setText("         " + 150 + "$");
+        } else if (value >= 40 && value < 100) {
+            Pprice.setText("         " + 250 + "$");
+        } else if (value >= 100 && value < 140) {
+            Pprice.setText("         " + 350 + "$");
+        } else if (value >= 140 && value <= 200) {
+            Pprice.setText("         " + 450 + "$");
+        } else {
+            Pprice.setText("Invalid Area");
         }
-        if(value>40&value<100) {
-            Pprice.setText(String.valueOf(("         "+150 +"$")));
-        }
-        if(value>100&value<140) {
-            Pprice.setText(String.valueOf(("         "+150 +"$")));
-        }
-        if(value>140&value<200) {
-            Pprice.setText(String.valueOf(("         "+150 +"$")));
-        }
-        if(value>200|value<20){
-            Pprice.setText(String.valueOf(("Invalid Area")));
-        }
+
     }
     public void  pyear(){
         Pprice.setEditable(false);
         pinT.setText("1 Year");
         String text = Parea.getText().trim();
         int value = Integer.parseInt(text);
+        if (value >= 20 && value < 40) {
+            Pprice.setText("         " + 280 + "$");
+        } else if (value >= 40 && value < 100) {
+            Pprice.setText("         " + 450 + "$");
+        } else if (value >= 100 && value < 140) {
+            Pprice.setText("         " + 650 + "$");
+        } else if (value >= 140 && value <= 200) {
+            Pprice.setText("         " + 800 + "$");
+        } else {
+            Pprice.setText("Invalid Area");
+        }
+
     }
     public void  pmyears(){
         Pprice.setEditable(false);
         pinT.setText("3 Years");
         String text = Parea.getText().trim();
         int value = Integer.parseInt(text);
+        if (value >= 20 && value < 40) {
+            Pprice.setText("         " + 800 + "$");
+        } else if (value >= 40 && value < 100) {
+            Pprice.setText("         " + 1200 + "$");
+        } else if (value >= 100 && value < 140) {
+            Pprice.setText("         " + 1900 + "$");
+        } else if (value >= 140 && value <= 200) {
+            Pprice.setText("         " + 2200 + "$");
+        } else {
+            Pprice.setText("Invalid Area");
+        }
+
     }
 
     @FXML
