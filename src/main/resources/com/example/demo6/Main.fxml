@@ -2,7 +2,6 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -394,7 +393,7 @@
                </graphic>
             </Button>
          </children></Pane>
-      <Pane fx:id="signuppane" layoutX="200.0" layoutY="45.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;" visible="false">
+      <Pane fx:id="signuppane" layoutX="200.0" layoutY="45.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;">
          <children>
             <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
                <font>
@@ -447,7 +446,6 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <DatePicker fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
             <TextArea fx:id="AdressSignUp" layoutX="521.0" layoutY="345.0" prefHeight="44.0" prefWidth="300.0" stylesheets="@test1.css" />
             <Label layoutX="256.0" layoutY="419.0" text="Birth Date" textFill="#3c717f">
                <font>
@@ -486,6 +484,7 @@
             <FontAwesomeIconView glyphName="HOME" layoutX="529.0" layoutY="324.0" size="20" text="" />
             <FontAwesomeIconView glyphName="INFO" layoutX="381.0" layoutY="201.0" size="20" />
             <FontAwesomeIconView glyphName="BOOK" layoutX="85.0" layoutY="443.0" size="20" text="" />
+            <TextArea fx:id="BDateSignUp" layoutX="256.0" layoutY="459.0" prefHeight="44.0" prefWidth="150.0" stylesheets="@test1.css" />
          </children>
       </Pane>
       <Pane fx:id="sup_investment_pane" layoutX="140.0" layoutY="109.0" prefHeight="520.0" prefWidth="1000.0" style="-fx-background-color: #d3d3d3;" visible="false">

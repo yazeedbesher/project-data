@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -98,7 +99,7 @@ public class MainCont {
             Parent root= FXMLLoader.load(getClass().getResource("manager.fxml"));
             mainpage.getChildren().setAll(root);
         }
-        if (text.startsWith("7")) {
+        else if (text.startsWith("7")) {
             signinpanel.setVisible(false);
 
             LoginButton.setVisible(false);
@@ -107,7 +108,7 @@ public class MainCont {
             Parent root= FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
             mainpage.getChildren().setAll(root);
         }
-        if (text.startsWith("8")) {
+       else if (text.startsWith("8")) {
             signinpanel.setVisible(false);
 
             LoginButton.setVisible(false);
@@ -133,9 +134,6 @@ public class MainCont {
     private TextArea AgeSignUp;
 
     @FXML
-    private DatePicker BDateSignUp;
-
-    @FXML
     private PasswordField ConfirmPassSignUp;
 
     @FXML
@@ -150,9 +148,10 @@ public class MainCont {
 
     @FXML
     private PasswordField PasswordSignUp;
-
     @FXML
     private TextArea PhoneSignUp;
+    @FXML
+    private TextArea BDateSignUp;
     @FXML
     private TextArea ssnSignup;
 
@@ -174,9 +173,10 @@ public class MainCont {
        FnameSignUp.setText("");
        LnameSignUp.setText("");
        MNameSignUp.setText("");
-        BDateSignUp.setValue(null);
+        BDateSignUp.setText("");
     }
-    public void confirmpainSIGNUP(){
+
+    public void confirmpainSIGNUP() {
         signuppane.setVisible(false);
 
         PasswordSignUp.setText("");
@@ -189,7 +189,7 @@ public class MainCont {
         FnameSignUp.setText("");
         LnameSignUp.setText("");
         MNameSignUp.setText("");
-        BDateSignUp.setValue(null);
+        BDateSignUp.setText("");
     }
 
 
