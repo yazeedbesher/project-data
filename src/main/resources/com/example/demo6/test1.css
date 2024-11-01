@@ -238,3 +238,20 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
 }
 .button:hover{-fx-background-color: #8ac4d3
 }
+#depmain{-fx-background-color: #ffffff;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+#depmain.menu-button:hover{-fx-background-color: #ffffff;}
+#closedep{-fx-background-color:  #65929e;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
+}
+#closedep:hover{-fx-background-color: #e65746}
+#senddep{-fx-background-color:  #65929e;
+
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;;
+}
+#senddep:hover{-fx-background-color: #8fec75
+}

@@ -91,7 +91,29 @@ public class MainCont {
         String text = SSNLogIn.getText();
         if (text.startsWith("9")) {
             signinpanel.setVisible(false);
+
+            LoginButton.setVisible(false);
+            SignUpButton.setVisible(false);
+
             Parent root= FXMLLoader.load(getClass().getResource("manager.fxml"));
+            mainpage.getChildren().setAll(root);
+        }
+        if (text.startsWith("7")) {
+            signinpanel.setVisible(false);
+
+            LoginButton.setVisible(false);
+            SignUpButton.setVisible(false);
+
+            Parent root= FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
+            mainpage.getChildren().setAll(root);
+        }
+        if (text.startsWith("8")) {
+            signinpanel.setVisible(false);
+
+            LoginButton.setVisible(false);
+            SignUpButton.setVisible(false);
+
+            Parent root= FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
             mainpage.getChildren().setAll(root);
         }
 }
@@ -292,5 +314,38 @@ public class MainCont {
         Parent root= FXMLLoader.load(getClass().getResource("H_care_Employee.fxml"));
         mainpage.getChildren().setAll(root);
     }
+    @FXML
+    private Pane reqpane;
+ public void req(){
+     reqpane.setVisible(true);
 
+ }
+    @FXML
+    private Pane carpane;
+    public void carreq(){
+        healthpane.setVisible(false);
+        carpane.setVisible(true);
+        proppane.setVisible(false);
+    }
+    @FXML
+    private Pane healthpane;
+    public void healthreq(){
+        carpane.setVisible(false);
+        healthpane.setVisible(true);
+        proppane.setVisible(false);
+    }
+    @FXML
+    private Pane proppane;
+    public void propreq(){
+        carpane.setVisible(false);
+        healthpane.setVisible(false);
+        proppane.setVisible(true);
+    }
+    @FXML
+    private Button closedep;
+    @FXML
+    private Button senddep;
+    public void closepropreq(){
+        reqpane.setVisible(false);
+    }
 }

@@ -137,6 +137,78 @@
                            </effect>
                         </Label>
                         <FontAwesomeIconView fill="#4a6385" glyphName="AMBULANCE" layoutX="63.0" layoutY="3199.0" size="30" text="" />
+                        <Pane fx:id="reqpane" layoutX="744.0" layoutY="39.0" prefHeight="628.0" prefWidth="492.0" style="-fx-background-color: gray;" visible="false">
+                           <children>
+                              <MenuButton fx:id="depmain" layoutX="294.0" layoutY="45.0" mnemonicParsing="false" stylesheets="@test1.css" text="Choose">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#healthreq" text="Health" />
+                                  <MenuItem mnemonicParsing="false" onAction="#carreq" text="Vehicle" />
+                                    <MenuItem mnemonicParsing="false" onAction="#propreq" text="Propaty" />
+                                </items>
+                              </MenuButton>
+                              <Label layoutX="71.0" layoutY="43.0" text="Witch Department">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Pane fx:id="carpane" layoutX="67.0" layoutY="99.0" prefHeight="457.0" prefWidth="361.0" style="-fx-background-color: #65929e;" visible="false">
+                                 <children>
+                                    <Label layoutX="77.0" layoutY="41.0" text="Phone Number :">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView glyphName="PHONE" layoutX="45.0" layoutY="67.0" size="20" />
+                                    <TextField layoutX="106.0" layoutY="99.0" />
+                                    <Label layoutX="75.0" layoutY="186.0" text="Employee Name :">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="104.0" layoutY="257.0" />
+                                    <FontAwesomeIconView glyphName="USER" layoutX="45.0" layoutY="214.0" size="20" text="" />
+                                    <FontAwesomeIconView glyphName="CAR" layoutX="157.0" layoutY="407.0" size="50" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="healthpane" layoutX="67.0" layoutY="99.0" prefHeight="457.0" prefWidth="361.0" style="-fx-background-color: #65929e;" visible="false">
+                                 <children>
+                                    <Label layoutX="77.0" layoutY="41.0" text="Phone Number :">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView glyphName="PHONE" layoutX="45.0" layoutY="67.0" size="20" />
+                                    <TextField layoutX="106.0" layoutY="99.0" />
+                                    <Label layoutX="75.0" layoutY="186.0" text="Hospital Name :">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="104.0" layoutY="257.0" />
+                                    <FontAwesomeIconView glyphName="AMBULANCE" layoutX="157.0" layoutY="407.0" size="50" />
+                                    <FontAwesomeIconView glyphName="HEART" layoutX="43.0" layoutY="212.0" size="20" />
+                                 </children>
+                              </Pane>
+                              <Pane fx:id="proppane" layoutX="67.0" layoutY="99.0" prefHeight="457.0" prefWidth="361.0" style="-fx-background-color: #65929e;" visible="false">
+                                 <children>
+                                    <Label layoutX="80.0" layoutY="124.0" text="Phone Number :">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView glyphName="PHONE" layoutX="51.0" layoutY="152.0" size="20" text="" />
+                                    <TextField layoutX="106.0" layoutY="184.0" />
+                                    <FontAwesomeIconView glyphName="HOME" layoutX="157.0" layoutY="398.0" size="55" />
+                                 </children>
+                              </Pane>
+                              <Button fx:id="closedep" layoutX="411.0" layoutY="20.0" mnemonicParsing="false" onAction="#closepropreq" prefHeight="25.0" prefWidth="52.0" stylesheets="@test1.css">
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="CLOSE" size="15" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="senddep" layoutX="201.0" layoutY="579.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" stylesheets="@test1.css" text="SEND" />
+                           </children>
+                        </Pane>
                      </children>
                   </AnchorPane>
                </content>
@@ -180,6 +252,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#Comppage" text="Complaints" />
                   <MenuItem mnemonicParsing="false" onAction="#Sup_invest_click" text="Investment &amp; Accession" />
                   <MenuItem mnemonicParsing="false" onAction="#Sup_Offer_click" text="Offers" />
+                  <MenuItem mnemonicParsing="false" onAction="#req" text="Submit a request" />
                </items>
                <font>
                   <Font name="System Bold" size="15.0" />
