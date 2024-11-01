@@ -1,15 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1280.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.EmployeeCont">
    <children>
-      <Label layoutX="469.0" layoutY="14.0" text="Health Care Employee">
+      <Label layoutX="498.0" layoutY="14.0" text="Health Care Employee">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Label>
+      <CubicCurve controlX1="19.0" controlX2="109.0" controlY1="-329.0" controlY2="379.0" endX="269.0" fill="#8cab70" layoutX="235.0" layoutY="146.0" startX="-150.0" stroke="BLACK" />
+      <CubicCurve controlX1="-40.0" controlX2="115.0" controlY1="416.0" controlY2="-321.0" endX="269.0" fill="#8cab70" layoutX="236.0" layoutY="465.0" startX="-150.0" stroke="BLACK" />
+      <CubicCurve controlX1="19.0" controlX2="109.0" controlY1="-329.0" controlY2="379.0" endX="269.0" fill="#8cab70" layoutX="987.0" layoutY="154.0" nodeOrientation="RIGHT_TO_LEFT" startX="-150.0" stroke="BLACK" />
+      <CubicCurve controlX1="-40.0" controlX2="115.0" controlY1="416.0" controlY2="-321.0" endX="269.0" fill="#8cab70" layoutX="986.0" layoutY="465.0" nodeOrientation="RIGHT_TO_LEFT" startX="-150.0" stroke="BLACK" />
+      <Pane layoutX="85.0" layoutY="211.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <Pane layoutX="1046.0" layoutY="225.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" />
+      <Label layoutX="124.0" layoutY="101.0" text="Al-Najah">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="139.0" layoutY="73.0" text="Hospital">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="380.0" layoutY="390.0" text="Hospital">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="1121.0" layoutY="79.0" text="Hospital">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="890.0" layoutY="390.0" text="Hospital">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="358.0" layoutY="418.0" text="Palestine">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="1112.0" layoutY="107.0" text="Al-Razi">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="872.0" layoutY="418.0" text="Al-Arabi">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="389.0" layoutY="147.0" text="1019">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PHONE" layoutX="350.0" layoutY="180.0" size="28" text="" />
+      <Label layoutX="350.0" layoutY="190.0" text="Ambulance">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="AMBULANCE" layoutX="393.0" layoutY="255.0" size="24" />
+      <Label layoutX="918.0" layoutY="149.0" text="1015">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PHONE" layoutX="879.0" layoutY="182.0" size="28" text="" />
+      <Label layoutX="879.0" layoutY="192.0" text="Ambulance">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="AMBULANCE" layoutX="922.0" layoutY="257.0" size="24" />
+      <Label layoutX="166.0" layoutY="468.0" text="1014">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PHONE" layoutX="127.0" layoutY="501.0" size="28" text="" />
+      <Label layoutX="127.0" layoutY="511.0" text="Ambulance">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="AMBULANCE" layoutX="170.0" layoutY="576.0" size="24" />
+      <Label layoutX="1142.0" layoutY="470.0" text="1016">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="PHONE" layoutX="1103.0" layoutY="503.0" size="28" text="" />
+      <Label layoutX="1103.0" layoutY="513.0" text="Ambulance">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="AMBULANCE" layoutX="1146.0" layoutY="578.0" size="24" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcd1e4" height="200.0" layoutX="569.0" layoutY="84.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Label layoutX="619.0" layoutY="101.0" text="Jerusalem">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="646.0" layoutY="134.0" text="Clinic">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="592.0" layoutY="194.0" text="6 Am - 12 Pm">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="CALENDAR" layoutX="655.0" layoutY="243.0" size="20" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcd1e4" height="200.0" layoutX="574.0" layoutY="344.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Label layoutX="620.0" layoutY="363.0" text="Ramallah">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="650.0" layoutY="398.0" text="Clinic">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="598.0" layoutY="451.0" text="6 Am - 12 Pm">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="CALENDAR" layoutX="660.0" layoutY="500.0" size="20" />
    </children>
 </AnchorPane>

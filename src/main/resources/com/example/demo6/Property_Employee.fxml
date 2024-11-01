@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="650.0" prefWidth="1280.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.EmployeeCont">
    <children>
-      <Label layoutX="70.0" layoutY="42.0" text="Property Employee :">
+      <Label layoutX="487.0" layoutY="14.0" text="Property Employee ">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Label>
+      <Pane layoutX="58.0" layoutY="80.0" prefHeight="538.0" prefWidth="516.0" style="-fx-background-color: white;" />
+      <Pane layoutX="707.0" layoutY="80.0" prefHeight="538.0" prefWidth="516.0" style="-fx-background-color: #65929e;">
+         <children>
+            <Label layoutX="88.0" layoutY="24.0" text="Contact maintenance workers">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="TRUCK" layoutX="26.0" layoutY="57.0" size="40" text="" />
+            <Label layoutX="94.0" layoutY="95.0" text="0595614599">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="166.0" layoutY="206.0" text="0544397722">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="94.0" layoutY="326.0" text="0566973364">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="PHONE" layoutX="46.0" layoutY="131.0" size="35" />
+            <FontAwesomeIconView glyphName="PHONE" layoutX="123.0" layoutY="243.0" size="35" text="" />
+            <FontAwesomeIconView glyphName="PHONE" layoutX="60.0" layoutY="363.0" size="35" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
