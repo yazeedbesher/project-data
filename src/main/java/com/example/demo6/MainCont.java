@@ -266,6 +266,18 @@ public class MainCont {
 
         sup_offers_pane.setVisible(false);
     }
+    @FXML
+    public Pane sup_investment_pane;
+    @FXML
+    public void Sup_invest_click(){
+        sup_investment_pane.setVisible(true);
+    }
+    public void sup_invest_close(){
+
+        sup_investment_pane.setVisible(false);
+    }
+
+
 
     public void opencarinv() throws IOException {
         Parent root= FXMLLoader.load(getClass().getResource("V_invest_Employee.fxml"));
