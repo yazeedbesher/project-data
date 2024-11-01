@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="650.0" prefWidth="1280.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.EmployeeCont">
    <children>
@@ -13,10 +18,49 @@
             <Font name="System Bold" size="37.0" />
          </font>
       </Label>
-      <Pane layoutX="408.0" layoutY="98.0" prefHeight="520.0" prefWidth="465.0" style="-fx-background-color: white;">
+      <Pane layoutX="83.0" layoutY="97.0" prefHeight="418.0" prefWidth="466.0" style="-fx-background-color: white;">
          <children>
             <Label layoutX="157.0" layoutY="14.0" text="pepole who Complaints" />
          </children>
       </Pane>
+      <Pane layoutX="743.0" layoutY="97.0" prefHeight="498.0" prefWidth="484.0" style="-fx-background-color: #65929e;">
+         <children>
+            <Label layoutX="22.0" layoutY="76.0" text="Complaints Number">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Complaints_num" layoutX="22.0" layoutY="123.0" stylesheets="@test1.css" />
+            <Button layoutX="293.0" layoutY="90.0" mnemonicParsing="false" onAction="#get_Complaints_click" prefHeight="54.0" prefWidth="170.0" stylesheets="@test1.css" text="Get Complaints ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <RadioButton fx:id="completed_butt" layoutX="293.0" layoutY="367.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" style="-fx-border-radius: 12px;" text="Completed          ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </RadioButton>
+            <MenuButton fx:id="yes_no_button" layoutX="293.0" layoutY="255.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="170.0" stylesheets="@test1.css" text="response required ">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#Yes_click" text="Yes" />
+                <MenuItem mnemonicParsing="false" onAction="#No_click" text="No" />
+              </items>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </MenuButton>
+            <Button fx:id="update_button" layoutX="293.0" layoutY="407.0" mnemonicParsing="false" onAction="#Update_Complaints_click" prefHeight="54.0" prefWidth="170.0" stylesheets="@test1.css" text="Update Complaints ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="Complaints_lable" layoutX="22.0" layoutY="199.0" prefHeight="260.0" prefWidth="200.0" stylesheets="@test1.css" />
+         </children></Pane>
+      <Button layoutX="205.0" layoutY="535.0" mnemonicParsing="false" onAction="#Update_list_click" prefHeight="54.0" prefWidth="222.0" stylesheets="@test1.css" text="Complaints update">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

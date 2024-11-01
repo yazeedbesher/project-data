@@ -256,7 +256,7 @@ public class MainCont {
         formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         current_datetime = currentDateTime.format(formatter);//date and time is in current_datetime
         ManagerNO=5;
-        res_req ="yes";
+        res_req ="No";
 
 
         sup_comp_textarea.clear();
