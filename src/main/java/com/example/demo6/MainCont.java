@@ -118,6 +118,15 @@ public class MainCont {
             Parent root= FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
             mainpage.getChildren().setAll(root);
         }
+        else if (text.startsWith("6")) {
+
+            signinpanel.setVisible(false);
+            LoginButton.setVisible(false);
+            SignUpButton.setVisible(false);
+
+            Parent root= FXMLLoader.load(getClass().getResource("insurance.fxml"));
+            mainpage.getChildren().setAll(root);
+        }
 }
 
 

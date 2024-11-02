@@ -30,7 +30,13 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <MenuButton fx:id="yes_no_button" layoutX="293.0" layoutY="255.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="170.0" stylesheets="@test1.css" text="response required ">
+            <Button fx:id="update_button" layoutX="279.0" layoutY="344.0" mnemonicParsing="false" onAction="#Update_Complaints_click" prefHeight="54.0" prefWidth="170.0" stylesheets="@test1.css" text="Update Complaints ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="Complaints_lable" layoutX="22.0" layoutY="199.0" prefHeight="93.0" prefWidth="444.0" stylesheets="@test1.css" />
+            <MenuButton fx:id="yes_no_button" layoutX="59.0" layoutY="334.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="170.0" stylesheets="@test1.css" text="response required ">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#Yes_click" text="Yes" />
                 <MenuItem mnemonicParsing="false" onAction="#No_click" text="No" />
@@ -39,12 +45,6 @@
                   <Font size="14.0" />
                </font>
             </MenuButton>
-            <Button fx:id="update_button" layoutX="279.0" layoutY="354.0" mnemonicParsing="false" onAction="#Update_Complaints_click" prefHeight="54.0" prefWidth="170.0" stylesheets="@test1.css" text="Update Complaints ">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <TextArea fx:id="Complaints_lable" layoutX="22.0" layoutY="199.0" prefHeight="260.0" prefWidth="200.0" stylesheets="@test1.css" />
          </children></Pane>
       <Button layoutX="224.0" layoutY="568.0" mnemonicParsing="false" onAction="#Update_list_click" prefHeight="54.0" prefWidth="222.0" stylesheets="@test1.css" text="Complaints update">
          <font>

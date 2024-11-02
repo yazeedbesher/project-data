@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,5 +13,23 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
+      <Label layoutX="134.0" layoutY="100.0" text="VEHICLES">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="550.0" layoutY="100.0" text="PROPARTY">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="1028.0" layoutY="100.0" text="HEALTH ">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="40.0" layoutY="150.0" prefHeight="473.0" prefWidth="320.0" />
+      <TextArea layoutX="480.0" layoutY="150.0" prefHeight="473.0" prefWidth="320.0" />
+      <TextArea layoutX="926.0" layoutY="150.0" prefHeight="473.0" prefWidth="326.0" />
    </children>
 </AnchorPane>

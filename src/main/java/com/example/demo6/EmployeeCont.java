@@ -15,7 +15,6 @@ public class EmployeeCont {
 
     public String status ="Pending";
     public String res_req ="No";
-    public String Complaints_Disc  ="ahmad  is the boss \n and yazeed";
     //public String res_req ="No";
 
     @FXML
@@ -29,30 +28,93 @@ public class EmployeeCont {
 
 
     @FXML
-    public void get_Complaints_click(){
+    public void get_Complaints_click() {
+        try {
+            // Get the complaint ID from the input field
+            String ids = Complaints_num.getText();
+            int id = Integer.parseInt(ids);
 
-        Complaints_lable.setText(Complaints_Disc);
+            // Database connection details
+            String url = "jdbc:postgresql://localhost:5432/postgres";
+            String user = "postgres";
+            String password = "1221";
 
+            // Establishing connection
+            Connection conn = DriverManager.getConnection(url, user, password);
 
+            // Using PreparedStatement for parameterized query
+            String sql = "SELECT massage_content FROM communication WHERE recordid = ?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id); // Set the recordid parameter
+
+            // Execute the query
+            ResultSet rs = pstmt.executeQuery();
+
+            // Check if there's data and fetch the message content
+            if (rs.next()) {
+                String msg = rs.getString("massage_content");
+                // Append the message content to the label
+                this.Complaints_lable.appendText(msg);
+            } else {
+                // No record found
+                this.Complaints_lable.appendText("No complaint found with this ID.");
+            }
+
+            // Set the label as non-editable
+            Complaints_lable.setEditable(false);
+
+            // Close resources
+            rs.close();
+            pstmt.close();
+            conn.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
     }
+    @FXML
+    private MenuButton yes_no_button;
+
     @FXML
     public void Yes_click(){
         res_req ="Yes";
-
+        yes_no_button.setText("YES");
     }
     @FXML
     public void No_click(){
         res_req ="No";
+        yes_no_button.setText("NO");
 
     }
 
 
 @FXML
 public void Update_Complaints_click(){
-  if(completed_butt.isSelected()){
-      status = "Completed";
-  }
-  /////// بنعمل تحديث للداتا
+    try {
+        // Get the complaint ID from the input field
+        String ids = Complaints_num.getText();
+        int id = Integer.parseInt(ids);
+
+        // Database connection details
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String user = "postgres";
+        String password = "1221";
+
+        // Establishing connection
+        Connection conn = DriverManager.getConnection(url, user, password);
+
+        // Using PreparedStatement for parameterized query
+        String sql = "update communication SET response_requird = 'yes' WHERE recordid = ?";
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, id);
+
+        ResultSet rs = pstmt.executeQuery();
+
+        rs.close();
+        pstmt.close();
+        conn.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e.toString());
+    }
 
   }
 
