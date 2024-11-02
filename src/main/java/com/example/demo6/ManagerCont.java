@@ -24,21 +24,20 @@ public class ManagerCont {
             ResultSet rs = stmt.executeQuery(sql);
 
             // Setting up header in the TextArea
-            this.invest.setText("Dep No\tDep Name\t\t\tManager Name\tEmployees\tProfit\t\tLoss\n");
+            this.invest.setText("Dep No\tDep Name\t\tEmployees\tProfit\t\tLoss\n");
             this.invest.appendText("---------------------------------------------------------------------------------------------------------\n");
 
             // Fetching data and displaying all columns
             while (rs.next()) {
                 int deptNo = rs.getInt("departmentno");
                 String deptName = rs.getString("departmentname");
-                String managerName = rs.getString("managername");
                 int numOfEmp = rs.getInt("numberofemp");
                 double profit = rs.getDouble("profit");
                 double loss = rs.getDouble("loss");
 
 
                 // Append row data to TextArea
-                this.invest.appendText(deptNo + "\t\t" + deptName + "\t\t" + managerName + "\t\t" +
+                this.invest.appendText(deptNo + "\t\t" + deptName  + "\t\t" +
                         numOfEmp + "\t\t" + profit + "\t\t" + loss + "\t\t" +  "\n");
             }
             invest.setStyle("-fx-control-inner-background: #65929e;");
