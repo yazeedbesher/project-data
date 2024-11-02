@@ -360,11 +360,6 @@ public class MainCont {
     @FXML
     public void sup_comp_click() throws SQLException {
 
-        
-
-        
-
-
         try {
 
             //بنستخدمهم عشان نبعتهم لداتاونربط ال
@@ -557,5 +552,45 @@ public class MainCont {
     private Button senddep;
     public void closepropreq(){
         reqpane.setVisible(false);
+    }
+
+    @FXML
+    private TextField ssnv;
+    @FXML
+    private TextField phonev;
+    @FXML
+    private TextField empv;
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "1221";
+
+    private Connection connect() throws SQLException {
+        return DriverManager.getConnection(DB_URL, USER, PASSWORD);
+    }
+
+    // Method to handle button click and insert data
+    @FXML
+    private void handleSubmit() {
+        String ssn = ssnv.getText();
+        String phone = phonev.getText();
+        int ph=Integer.parseInt(phone);
+        String employeeName = empv.getText();
+
+        // Insert data into the table
+        String insertSQL = "INSERT INTO vrequest (ssn, phone, employeename) VALUES (?, ?, ?)";
+
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
+            pstmt.setString(1, ssn);
+            pstmt.setInt(2, ph);
+            pstmt.setString(3, employeeName);
+
+            int affectedRows = pstmt.executeUpdate();
+
+            if (affectedRows > 0) {
+                System.out.println("Data inserted successfully!");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error inserting data: " + e.getMessage());
+        }
     }
 }
