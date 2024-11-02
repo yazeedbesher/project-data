@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-
+import javafx.scene.control.Alert;
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.*;
@@ -97,28 +97,27 @@ public class MainCont {
             LoginButton.setVisible(false);
             SignUpButton.setVisible(false);
 
-            Parent root= FXMLLoader.load(getClass().getResource("manager.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("manager.fxml"));
             mainpage.getChildren().setAll(root);
-        }
-        else if (text.startsWith("7")) {
+        } else if (text.startsWith("7")) {
             signinpanel.setVisible(false);
 
             LoginButton.setVisible(false);
             SignUpButton.setVisible(false);
 
-            Parent root= FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
             mainpage.getChildren().setAll(root);
-        }
-       else if (text.startsWith("8")) {
+        } else if (text.startsWith("8")) {
             signinpanel.setVisible(false);
 
             LoginButton.setVisible(false);
             SignUpButton.setVisible(false);
 
-            Parent root= FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
             mainpage.getChildren().setAll(root);
         }
-}
+    }
+
 
 
     @FXML
@@ -179,9 +178,6 @@ public class MainCont {
 
     public void confirmpainSIGNUP() {
 
-
-
-
         if((Objects.equals(PasswordSignUp.getText(), ConfirmPassSignUp.getText()))){
             try {
 
@@ -196,7 +192,6 @@ public class MainCont {
                 String Phone = PhoneSignUp.getText();
                 String ppassword = PasswordSignUp.getText();
 
-
 //                String ssn = "AAA111";
 //                String firstname = "ahmadddd";
 //                String midname = "khaleeeed";
@@ -207,9 +202,6 @@ public class MainCont {
 //                String email = "asdfghjk";
 //                String Phone = "23456789";
 //                String ppassword = "ahmadbro";
-
-
-
 
                 DriverManager.registerDriver(new org.postgresql.Driver());
                 String custr = "jdbc:postgresql://localhost:5432/postgres";
@@ -238,9 +230,6 @@ public class MainCont {
                 conn.commit();
                 conn.close();
 
-
-
-
                 signuppane.setVisible(false);
 
         PasswordSignUp.setText("");
@@ -255,7 +244,6 @@ public class MainCont {
         MNameSignUp.setText("");
         BDateSignUp.setText("");
 
-
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.toString());
                 JOptionPane.showMessageDialog(null, "enter correct values \n or enter other SSN");
@@ -268,16 +256,7 @@ public class MainCont {
             ConfirmPassSignUp.setText("");
             }
 
-
-
-
-
-
-
-
-
     }
-
 
     /*_______________________
        comunication

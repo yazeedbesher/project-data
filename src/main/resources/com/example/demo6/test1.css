@@ -263,3 +263,11 @@ menu-item.menu-item:hover{-fx-background-color: #8ac4d3}
     -fx-border-radius: 12px;
     -fx-background-radius: 12px;}
 .menu-button:hover{-fx-background-color: #8ac4d3}
+.showinves{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+.showinves:hover{-fx-background-color: #8ac4d3}
+.showsub{-fx-background-color: #65929e;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;}
+.showsub:hover{-fx-background-color: #8ac4d3}
