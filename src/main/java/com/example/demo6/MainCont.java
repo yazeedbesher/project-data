@@ -243,17 +243,17 @@ public class MainCont {
 
                 signuppane.setVisible(false);
 
-//        PasswordSignUp.setText("");
-//        ssnSignup.setText("");
-//        PhoneSignUp.setText("");
-//        AdressSignUp.setText("");
-//        EmailSignUp.setText("");
-//        AgeSignUp.setText("");
-//        ConfirmPassSignUp.setText("");
-//        FnameSignUp.setText("");
-//        LnameSignUp.setText("");
-//        MNameSignUp.setText("");
-//        BDateSignUp.setText("");
+        PasswordSignUp.setText("");
+        ssnSignup.setText("");
+        PhoneSignUp.setText("");
+        AdressSignUp.setText("");
+        EmailSignUp.setText("");
+        AgeSignUp.setText("");
+        ConfirmPassSignUp.setText("");
+        FnameSignUp.setText("");
+        LnameSignUp.setText("");
+        MNameSignUp.setText("");
+        BDateSignUp.setText("");
 
 
             } catch (Exception e) {
