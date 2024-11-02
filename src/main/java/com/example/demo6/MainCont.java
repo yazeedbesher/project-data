@@ -257,10 +257,10 @@ public class MainCont {
 
                 String income_cust= income_signup.getText();
                 String employment_cust=employment_signup.getText();
-                JOptionPane.showMessageDialog(null, cust_no);
+                //JOptionPane.showMessageDialog(null, cust_no);
                 cust_no++;
                 //String cutomer_no=cust_no+"";
-                JOptionPane.showMessageDialog(null, cust_no);
+                //JOptionPane.showMessageDialog(null, cust_no);
 //                JOptionPane.showMessageDialog(null, income_cust+"\n"+employment_cust+"\n"+cutomer_no);
 
 

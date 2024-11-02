@@ -19,7 +19,7 @@
 
 <AnchorPane fx:id="Homepage" prefHeight="3860.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.MainCont">
    <children>
-      <AnchorPane fx:id="mainpage" layoutY="90.0" prefHeight="3800.0" prefWidth="1280.0" visible="false">
+      <AnchorPane fx:id="mainpage" layoutY="90.0" prefHeight="3800.0" prefWidth="1280.0">
          <children>
             <ScrollPane prefHeight="3779.0" prefWidth="1280.0">
                <content>
@@ -296,7 +296,7 @@
             </Text>
          </children>
       </Pane>
-      <Pane fx:id="Complaints_pane" layoutX="133.0" layoutY="192.0" prefHeight="494.0" prefWidth="946.0" style="-fx-background-color: #d3d3d3;">
+      <Pane fx:id="Complaints_pane" layoutX="133.0" layoutY="192.0" prefHeight="494.0" prefWidth="946.0" style="-fx-background-color: #d3d3d3;" visible="false">
          <children>
             <TextField fx:id="sup_comp_title" layoutX="622.0" layoutY="121.0" prefHeight="25.0" prefWidth="200.0" stylesheets="@test1.css" />
             <TextArea fx:id="sup_comp_textarea" layoutX="622.0" layoutY="205.0" prefHeight="119.0" prefWidth="300.0" stylesheets="@test1.css" />
@@ -393,7 +393,7 @@
                </graphic>
             </Button>
          </children></Pane>
-      <Pane fx:id="signuppane" layoutX="200.0" layoutY="14.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;">
+      <Pane fx:id="signuppane" layoutX="200.0" layoutY="14.0" prefHeight="738.0" prefWidth="880.0" style="-fx-background-color: gray;" visible="false">
          <children>
             <Text fill="#3c717f" layoutX="347.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
                <font>
