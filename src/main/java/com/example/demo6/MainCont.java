@@ -331,8 +331,6 @@ public class MainCont {
 
 
 
-
-
 //    ____________________________
 //            Complaints pane
 //    ____________________________
@@ -352,7 +350,6 @@ public class MainCont {
     public TextField sup_comp_email;
 
 
-
     public void Comppage(){
         Complaints_pane.setVisible(true);
     }
@@ -360,9 +357,6 @@ public class MainCont {
     @FXML
     public void sup_comp_click() throws SQLException {
 
-        
-
-        
 
 
         try {
@@ -455,24 +449,11 @@ public class MainCont {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        sup_comp_textarea.clear();
-//        sup_comp_title.clear();
-//        sup_comp_name.clear();
-//        sup_comp_email.clear();
-//        sup_comp_SSN.clear();
+        sup_comp_textarea.clear();
+        sup_comp_title.clear();
+        sup_comp_name.clear();
+        sup_comp_email.clear();
+        sup_comp_SSN.clear();
 
         Complaints_pane.setVisible(false);
 
