@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import org.postgresql.Driver;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -228,7 +229,7 @@ public class MainCont {
 
 
 
-                DriverManager.registerDriver(new org.postgresql.Driver());
+                DriverManager.registerDriver(new Driver());
                 String custr = "jdbc:postgresql://localhost:5432/postgres";
                 String un = "postgres";
                 String up = "1221";
@@ -321,12 +322,6 @@ public class MainCont {
 
 
 
-
-
-
-
-
-
     }
 
 
@@ -334,23 +329,10 @@ public class MainCont {
        comunication
     __________________________ */
 
-    @FXML
-    int recordid1=0;
-    @FXML
-    String SUPPORT_Type;
-    @FXML
-    String status ;
-    //for date
-    @FXML
-    LocalDateTime currentDateTime;
-    @FXML
-    DateTimeFormatter formatter ;
-    @FXML
-    String current_datetime;
-    @FXML
-    String res_req;
-    @FXML
-    int ManagerNO=5;
+
+
+
+
 //    ____________________________
 //            Complaints pane
 //    ____________________________
@@ -369,40 +351,131 @@ public class MainCont {
     @FXML
     public TextField sup_comp_email;
 
-    @FXML
-    String compSSN;
+
 
     public void Comppage(){
         Complaints_pane.setVisible(true);
     }
 
     @FXML
-    public void sup_comp_click(){
-    String comp_title,comp_disc;
+    public void sup_comp_click() throws SQLException {
 
-        //بنستخدمهم عشان نبعتهم لداتاونربط ال
-        comp_title = sup_comp_title.getText();
-        comp_disc = sup_comp_textarea.getText();
-        compSSN=sup_comp_SSN.getText();
+        
 
-        recordid1++;
-        SUPPORT_Type ="Complaints";
-        status ="Pending";
-        //date and time
-        currentDateTime = LocalDateTime.now();
-        formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        current_datetime = currentDateTime.format(formatter);//date and time is in current_datetime
-        ManagerNO=5;
-        res_req ="No";
+        
 
 
-        sup_comp_textarea.clear();
-        sup_comp_title.clear();
-        sup_comp_name.clear();
-        sup_comp_email.clear();
-        sup_comp_SSN.clear();
+        try {
+
+            //بنستخدمهم عشان نبعتهم لداتاونربط ال
+            String comp_title = sup_comp_title.getText();
+            String comp_disc = sup_comp_textarea.getText();
+            String compSSN=sup_comp_SSN.getText();
+
+            int  recordid1 = -5; //بدي اوخدو من الداتا
+            int cust_no=-5;
+            String SUPPORT_Type ="Complaints";
+            String status ="Pending";
+            //date and time
+            String current_datetime;
+            LocalDateTime currentDateTime = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            current_datetime = currentDateTime.format(formatter);//date and time is in current_datetime
+            String ManagerNO="5";
+            String res_req ="No";
+
+
+
+
+            DriverManager.registerDriver(new Driver());
+            String custr = "jdbc:postgresql://localhost:5432/postgres";
+            String un = "postgres";
+            String up = "1221";
+            Connection conn = DriverManager.getConnection(custr, un, up);
+            String strStmt;
+            PreparedStatement pstmt;
+            conn.setAutoCommit(false);
+
+
+
+            strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+compSSN+"'";
+
+            pstmt = conn.prepareStatement(strStmt);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                cust_no  = rs.getInt("customerNo");
+            }
+
+            if(cust_no!=-5) {
+
+                strStmt = "SELECT MAX(recordid) AS max_recordid FROM communication";
+
+                pstmt = conn.prepareStatement(strStmt);
+                rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    recordid1 = rs.getInt("max_recordid");
+                }
+                recordid1++;
+
+
+
+                 strStmt = "INSERT INTO communication (recordid, recordtype, title, massage_content, date_and_time, status, response_requird, managerno) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                 pstmt = conn.prepareStatement(strStmt);
+
+                 pstmt.setInt(1, recordid1);
+                 pstmt.setString(2, SUPPORT_Type);
+                 pstmt.setString(3, comp_title);
+                 pstmt.setString(4, comp_disc);
+                 pstmt.setTimestamp(5, Timestamp.valueOf(current_datetime));
+                 pstmt.setString(6, status);
+                 pstmt.setString(7, res_req);
+                 pstmt.setInt(8, Integer.parseInt(ManagerNO));
+
+
+                 pstmt.executeUpdate();
+                 conn.commit();
+
+
+                strStmt = "INSERT INTO submit (customerno,recordid) " +
+                        "VALUES (?, ?)";
+                pstmt = conn.prepareStatement(strStmt);
+                pstmt.setInt(1, cust_no);
+                pstmt.setInt(2, recordid1);
+
+                pstmt.executeUpdate();
+                conn.commit();
+                 conn.close();
+
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        sup_comp_textarea.clear();
+//        sup_comp_title.clear();
+//        sup_comp_name.clear();
+//        sup_comp_email.clear();
+//        sup_comp_SSN.clear();
 
         Complaints_pane.setVisible(false);
+
     }
     public void sup_comp_close(){
         sup_comp_textarea.clear();
