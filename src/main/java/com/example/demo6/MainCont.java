@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.control.Alert;
+
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.*;
@@ -97,27 +97,28 @@ public class MainCont {
             LoginButton.setVisible(false);
             SignUpButton.setVisible(false);
 
-            Parent root = FXMLLoader.load(getClass().getResource("manager.fxml"));
-            mainpage.getChildren().setAll(root);
-        } else if (text.startsWith("7")) {
-            signinpanel.setVisible(false);
-
-            LoginButton.setVisible(false);
-            SignUpButton.setVisible(false);
-
-            Parent root = FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
-            mainpage.getChildren().setAll(root);
-        } else if (text.startsWith("8")) {
-            signinpanel.setVisible(false);
-
-            LoginButton.setVisible(false);
-            SignUpButton.setVisible(false);
-
-            Parent root = FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("manager.fxml"));
             mainpage.getChildren().setAll(root);
         }
-    }
+        else if (text.startsWith("7")) {
+            signinpanel.setVisible(false);
 
+            LoginButton.setVisible(false);
+            SignUpButton.setVisible(false);
+
+            Parent root= FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
+            mainpage.getChildren().setAll(root);
+        }
+       else if (text.startsWith("8")) {
+            signinpanel.setVisible(false);
+
+            LoginButton.setVisible(false);
+            SignUpButton.setVisible(false);
+
+            Parent root= FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
+            mainpage.getChildren().setAll(root);
+        }
+}
 
 
     @FXML
@@ -154,6 +155,12 @@ public class MainCont {
     private TextArea BDateSignUp;
     @FXML
     private TextArea ssnSignup;
+    @FXML
+    private TextField income_signup ;
+    @FXML
+    private TextField employment_signup;
+    @FXML
+    private int cust_no=100;
 
 
     public void checksignup() {
@@ -178,6 +185,9 @@ public class MainCont {
 
     public void confirmpainSIGNUP() {
 
+
+
+
         if((Objects.equals(PasswordSignUp.getText(), ConfirmPassSignUp.getText()))){
             try {
 
@@ -192,6 +202,9 @@ public class MainCont {
                 String Phone = PhoneSignUp.getText();
                 String ppassword = PasswordSignUp.getText();
 
+
+
+
 //                String ssn = "AAA111";
 //                String firstname = "ahmadddd";
 //                String midname = "khaleeeed";
@@ -202,6 +215,9 @@ public class MainCont {
 //                String email = "asdfghjk";
 //                String Phone = "23456789";
 //                String ppassword = "ahmadbro";
+
+
+
 
                 DriverManager.registerDriver(new org.postgresql.Driver());
                 String custr = "jdbc:postgresql://localhost:5432/postgres";
@@ -228,25 +244,63 @@ public class MainCont {
                 pstmt.executeUpdate();
 
                 conn.commit();
+
+                conn.setAutoCommit(false);
+
+                strStmt = "SELECT MAX(customerno) AS max_customerno FROM customer";
+                pstmt = conn.prepareStatement(strStmt);
+                ResultSet rs = pstmt.executeQuery();
+                if(rs.next()){
+                    cust_no = rs.getInt("max_customerno");
+
+                }
+
+                String income_cust= income_signup.getText();
+                String employment_cust=employment_signup.getText();
+                JOptionPane.showMessageDialog(null, cust_no);
+                cust_no++;
+                //String cutomer_no=cust_no+"";
+                JOptionPane.showMessageDialog(null, cust_no);
+//                JOptionPane.showMessageDialog(null, income_cust+"\n"+employment_cust+"\n"+cutomer_no);
+
+
+//                JOptionPane.showMessageDialog(null, income_cust+"\n"+employment_cust+"\n"+cutomer_no);
+//                conn.close();
+                conn.setAutoCommit(false);
+                strStmt = "INSERT INTO customer (customerno, ssn, employment, income) " +
+                        "VALUES (?, ?, ?, ?)";
+                pstmt = conn.prepareStatement(strStmt);
+                pstmt.setInt(1, cust_no);
+                pstmt.setString(2, ssn);
+                pstmt.setString(3, employment_cust);
+                pstmt.setInt(4, Integer.parseInt(income_cust));
+
+
+
+                pstmt.executeUpdate();
+
+                conn.commit();
                 conn.close();
 
                 signuppane.setVisible(false);
+//        PasswordSignUp.setText("");
+//        ssnSignup.setText("");
+//        PhoneSignUp.setText("");
+//        AdressSignUp.setText("");
+//        EmailSignUp.setText("");
+//        AgeSignUp.setText("");
+//        ConfirmPassSignUp.setText("");
+//        FnameSignUp.setText("");
+//        LnameSignUp.setText("");
+//        MNameSignUp.setText("");
+//        BDateSignUp.setText("");
+//        income_signup.setText("");
+//        employment_signup.setText("");
 
-        PasswordSignUp.setText("");
-        ssnSignup.setText("");
-        PhoneSignUp.setText("");
-        AdressSignUp.setText("");
-        EmailSignUp.setText("");
-        AgeSignUp.setText("");
-        ConfirmPassSignUp.setText("");
-        FnameSignUp.setText("");
-        LnameSignUp.setText("");
-        MNameSignUp.setText("");
-        BDateSignUp.setText("");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.toString());
-                JOptionPane.showMessageDialog(null, "enter correct values \n or enter other SSN");
+                JOptionPane.showMessageDialog(null, "enter correct values \n or enter other SSN\nor enter the date as year-month-day");
 
             }
         }
@@ -256,7 +310,16 @@ public class MainCont {
             ConfirmPassSignUp.setText("");
             }
 
+
+
+
+
+
+
+
+
     }
+
 
     /*_______________________
        comunication
