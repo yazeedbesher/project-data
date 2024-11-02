@@ -594,4 +594,83 @@ public class MainCont {
         }
     }
 
+    @FXML
+    private TextField ssnp;
+    @FXML
+    private TextField php;
+    @FXML
+    private Button senddep13;
+    @FXML
+    private Button senddep1;
+    private static final String B_URL = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String USER1 = "postgres";
+    private static final String PASSWORD1 = "1221";
+
+    private Connection pconnect() throws SQLException {
+        return DriverManager.getConnection(B_URL, USER1, PASSWORD1);
+    }
+
+    // Method to handle button click and insert data
+    @FXML
+    private void phandleSubmit() {
+        String ssn = ssnp.getText();
+        String phone = php.getText();
+        int ph=Integer.parseInt(phone);
+
+        // Insert data into the table
+        String insertSQL = "INSERT INTO prequest (ssn, phone) VALUES (?, ?)";
+
+        try (Connection conn = pconnect(); PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
+            pstmt.setString(1, ssn);
+            pstmt.setInt(2, ph);
+
+            int affectedRows = pstmt.executeUpdate();
+
+            if (affectedRows > 0) {
+                System.out.println("Data inserted successfully!");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error inserting data: " + e.getMessage());
+        }
+    }
+    @FXML
+    private TextField ssnh;
+    @FXML
+    private TextField phh;
+    @FXML
+    private TextField hnh;
+    private static final String DB_URL2 = "jdbc:postgresql://localhost:5432/postgres";
+    private static final String USER2 = "postgres";
+    private static final String PASSWORD2 = "1221";
+
+    private Connection hconnect() throws SQLException {
+        return DriverManager.getConnection(DB_URL2, USER2, PASSWORD2);
+    }
+
+    // Method to handle button click and insert data
+    @FXML
+    private void hhandleSubmit() {
+        String ssn = ssnh.getText();
+        String phone = phh.getText();
+        int ph=Integer.parseInt(phone);
+        String hospitalname = hnh.getText();
+
+        // Insert data into the table
+        String insertSQL = "INSERT INTO hrequest (ssn, phone, hospitalname) VALUES (?, ?, ?)";
+
+        try (Connection conn = hconnect(); PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
+            pstmt.setString(1, ssn);
+            pstmt.setInt(2, ph);
+            pstmt.setString(3, hospitalname);
+
+            int affectedRows = pstmt.executeUpdate();
+
+            if (affectedRows > 0) {
+                System.out.println("Data inserted successfully!");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error inserting data: " + e.getMessage());
+        }
+    }
+
 }
