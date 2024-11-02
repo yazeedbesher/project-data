@@ -41,6 +41,8 @@ public class ManagerCont {
                 this.invest.appendText(deptNo + "\t\t" + deptName + "\t\t" + managerName + "\t\t" +
                         numOfEmp + "\t\t" + profit + "\t\t" + loss + "\t\t" +  "\n");
             }
+            invest.setStyle("-fx-control-inner-background: #65929e;");
+            invest.setEditable(false);
 
             // Close resources
             rs.close();
@@ -52,6 +54,7 @@ public class ManagerCont {
     }
     @FXML
     private TextArea subsshow;
+
     public void showsub() {
         try {
             // Database connection details
@@ -60,22 +63,24 @@ public class ManagerCont {
             String password = "1221";
 
             Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM investment";
+            String sql = "SELECT * FROM customer";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
-            this.subsshow.setText("CUS No\t\tSSN\t\t\tEmployment\tIncome\n");
-            this.subsshow.appendText("--------------------------------------------------------------------------\n");
+            this.subsshow.setText("CUSNo\tSSN\t\t\tEmployment\tIncome\n");
+            this.subsshow.appendText("----------------------------------------------------------------\n");
 
-//            while (rs.next()) {
-//                int cusno= rs.getInt("customerno");
-//                String ssn = rs.getString("ssn");
-//                String employment = rs.getString("employment");
-//                int income = rs.getInt("income");
-//
-//                this.subsshow.appendText(cusno + "\t\t" + ssn + "\t\t" + employment + "\t\t" +
-//                        income +"\n");
-//            }
+            while (rs.next()) {
+                int cusno= rs.getInt("customerno");
+                String ssn = rs.getString("ssn");
+                String employment = rs.getString("employment");
+                int income = rs.getInt("income");
+
+                this.subsshow.appendText(cusno + "\t\t" + ssn + "\t\t" + employment + "\t\t" +
+                        income +"\n");
+            }
+            subsshow.setStyle("-fx-control-inner-background: #65929e;");
+            subsshow.setEditable(false);
 
 
 

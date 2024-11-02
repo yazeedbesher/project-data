@@ -13,19 +13,19 @@
             <Font name="System Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="135.0" text="New subscribers :">
+      <Label layoutX="126.0" layoutY="135.0" text="New subscribers :">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="714.0" layoutY="135.0" text="Investment Requests :">
+      <Label layoutX="665.0" layoutY="135.0" text="Investment Requests :">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <TextArea fx:id="invest" layoutX="714.0" layoutY="169.0" prefHeight="411.0" prefWidth="540.0" style="-fx-background-color: #93bcc6;" />
-      <Button fx:id="showinves" layoutX="958.0" layoutY="601.0" mnemonicParsing="false" onAction="#showinvestment" stylesheets="@test1.css" text="SHOW" />
-      <Button fx:id="showsub" layoutX="293.0" layoutY="601.0" mnemonicParsing="false" onAction="#showsub" stylesheets="@test1.css" text="Show" />
-      <TextArea fx:id="subsshow" layoutX="68.0" layoutY="169.0" prefHeight="411.0" prefWidth="540.0" />
+      <TextArea fx:id="invest" layoutX="656.0" layoutY="169.0" prefHeight="411.0" prefWidth="540.0" style="-fx-border-color: #65929e; -fx-background-color: #65929e;" />
+      <Button fx:id="showinves" layoutX="876.0" layoutY="591.0" mnemonicParsing="false" onAction="#showinvestment" prefHeight="46.0" prefWidth="101.0" stylesheets="@test1.css" text="SHOW" />
+      <Button fx:id="showsub" layoutX="244.0" layoutY="591.0" mnemonicParsing="false" onAction="#showsub" prefHeight="46.0" prefWidth="87.0" stylesheets="@test1.css" text="Show" />
+      <TextArea fx:id="subsshow" layoutX="126.0" layoutY="169.0" prefHeight="411.0" prefWidth="323.0" style="-fx-background-color: #65929e;" />
    </children>
 </AnchorPane>
