@@ -258,8 +258,8 @@ public class MainCont {
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.toString());
-                JOptionPane.showMessageDialog(null, "Write other SSN ");
-                ssnSignup.setText("");
+                JOptionPane.showMessageDialog(null, "enter correct values \n or enter other SSN");
+
             }
         }
             else {
