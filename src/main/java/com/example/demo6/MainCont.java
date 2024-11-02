@@ -13,6 +13,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class MainCont {
 
@@ -177,19 +178,104 @@ public class MainCont {
     }
 
     public void confirmpainSIGNUP() {
-        signuppane.setVisible(false);
 
-        PasswordSignUp.setText("");
-        ssnSignup.setText("");
-        PhoneSignUp.setText("");
-        AdressSignUp.setText("");
-        EmailSignUp.setText("");
-        AgeSignUp.setText("");
-        ConfirmPassSignUp.setText("");
-        FnameSignUp.setText("");
-        LnameSignUp.setText("");
-        MNameSignUp.setText("");
-        BDateSignUp.setText("");
+
+
+
+        if((Objects.equals(PasswordSignUp.getText(), ConfirmPassSignUp.getText()))){
+            try {
+
+                String ssn = ssnSignup.getText();
+                String firstname = FnameSignUp.getText();
+                String midname = MNameSignUp.getText();
+                String lastname = LnameSignUp.getText();
+                String Date = BDateSignUp.getText();  // Use yyyy-MM-dd format
+                String address = AdressSignUp.getText();
+                String age = AgeSignUp.getText();
+                String email = EmailSignUp.getText();
+                String Phone = PhoneSignUp.getText();
+                String ppassword = PasswordSignUp.getText();
+
+
+//                String ssn = "AAA111";
+//                String firstname = "ahmadddd";
+//                String midname = "khaleeeed";
+//                String lastname = "mayyalehhhhh";
+//                String Date = "2004-09-30";  // Use yyyy-MM-dd format
+//                String address = "nablus";
+//                String age = "20";
+//                String email = "asdfghjk";
+//                String Phone = "23456789";
+//                String ppassword = "ahmadbro";
+
+
+
+
+                DriverManager.registerDriver(new org.postgresql.Driver());
+                String custr = "jdbc:postgresql://localhost:5432/postgres";
+                String un = "postgres";
+                String up = "1221";
+                Connection conn = DriverManager.getConnection(custr, un, up);
+                conn.setAutoCommit(false);
+
+                String strStmt = "INSERT INTO person (ssn, firstname, midname, lastname, birthdate, address, age, email, phone, ppassword) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                PreparedStatement pstmt = conn.prepareStatement(strStmt);
+
+                pstmt.setString(1, ssn);
+                pstmt.setString(2, firstname);
+                pstmt.setString(3, midname);
+                pstmt.setString(4, lastname);
+                pstmt.setDate(5, java.sql.Date.valueOf(Date));
+                pstmt.setString(6, address);
+                pstmt.setInt(7, Integer.parseInt(age));
+                pstmt.setString(8, email);
+                pstmt.setInt(9, Integer.parseInt(Phone));
+                pstmt.setString(10, ppassword);
+
+                pstmt.executeUpdate();
+
+                conn.commit();
+                conn.close();
+
+
+
+
+                signuppane.setVisible(false);
+
+//        PasswordSignUp.setText("");
+//        ssnSignup.setText("");
+//        PhoneSignUp.setText("");
+//        AdressSignUp.setText("");
+//        EmailSignUp.setText("");
+//        AgeSignUp.setText("");
+//        ConfirmPassSignUp.setText("");
+//        FnameSignUp.setText("");
+//        LnameSignUp.setText("");
+//        MNameSignUp.setText("");
+//        BDateSignUp.setText("");
+
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.toString());
+                JOptionPane.showMessageDialog(null, "Write other SSN ");
+                ssnSignup.setText("");
+            }
+        }
+            else {
+                JOptionPane.showMessageDialog(null, "Retype password");
+            PasswordSignUp.setText("");
+            ConfirmPassSignUp.setText("");
+            }
+
+
+
+
+
+
+
+
+
     }
 
 
