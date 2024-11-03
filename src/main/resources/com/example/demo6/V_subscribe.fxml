@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -13,7 +14,7 @@
 <AnchorPane onDragDetected="#typemonths" prefHeight="650.0" prefWidth="1249.0" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.SubscribeCont">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bfd6eb" height="525.0" layoutX="274.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="363.0" />
-      <Label layoutX="317.0" layoutY="85.0" text="Your Car Id :" textFill="#1f515e">
+      <Label layoutX="317.0" layoutY="85.0" text="Your SSN :" textFill="#1f515e">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
@@ -36,8 +37,8 @@
          <font>
             <Font name="System Bold" size="19.0" />
          </font></Label>
-      <TextField layoutX="452.0" layoutY="87.0" />
-      <TextField layoutX="452.0" layoutY="145.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="V_Subs_SSN" layoutX="452.0" layoutY="87.0" />
+      <TextField fx:id="V_Subs_holdername" layoutX="452.0" layoutY="145.0" prefHeight="25.0" prefWidth="149.0" />
       <MenuButton fx:id="Vtype" layoutX="452.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" stylesheets="@test1.css" text="Choose The Type">
         <items>
           <MenuItem fx:id="cartype" mnemonicParsing="false" onAction="#typeCAR" text="Car" />
@@ -62,5 +63,6 @@
         </items>
       </MenuButton>
       <Pane layoutX="727.0" layoutY="64.0" prefHeight="525.0" prefWidth="390.0" style="-fx-background-color: blue;" />
+      <Button fx:id="V_SUB_Submit_Button" layoutX="411.0" layoutY="460.0" mnemonicParsing="false" onAction="#V_SUB_CLick" prefHeight="43.0" prefWidth="81.0" stylesheets="@test1.css" text="Submit" visible="false" />
    </children>
 </AnchorPane>

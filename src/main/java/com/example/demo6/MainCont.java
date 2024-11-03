@@ -592,6 +592,9 @@ public class MainCont {
         } catch (SQLException e) {
             System.out.println("Error inserting data: " + e.getMessage());
         }
+        ssnv.clear();
+        phonev.clear();
+        empv.clear();
     }
 
     @FXML
@@ -632,6 +635,8 @@ public class MainCont {
         } catch (SQLException e) {
             System.out.println("Error inserting data: " + e.getMessage());
         }
+        php.clear();
+                ssnp.clear();
     }
     @FXML
     private TextField ssnh;
@@ -671,6 +676,9 @@ public class MainCont {
         } catch (SQLException e) {
             System.out.println("Error inserting data: " + e.getMessage());
         }
+        ssnh.clear();
+        phh.clear();
+        hnh.clear();
     }
 
 }
