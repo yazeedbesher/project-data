@@ -445,26 +445,46 @@ public class SubscribeCont {
 
     }
 
-        @FXML
+
+    //@FXML
+    //private MenuItem JerCi;
+
+//    @FXML
+//    private MenuItem NajahH;
+//
+//    @FXML
+//    private MenuItem Ramci;
+//
+//    @FXML
+//    private MenuItem RaziH;
+//
+//    @FXML
+//    private MenuItem arabiH;
+
+
+
+    // policyid=0;// من الداتا تبعت المركبات
+
+    //int ssn=-5;//عشان اشيك اذا موجود بالداتا تبعت الكستمر
+    // cust_no=-5;//برضو للتشييك اذا كستمر ونربطو بال policy id بجدول العلاقة
+    // policyholdername;//من الواجهة
+    String H_Type;
+    String Provider;//Hospital name
+    String H_Prise;
+
+    @FXML
     private TextField Hprice;
 
     @FXML
     private MenuButton Htype;
+    @FXML
+    private Button H_SUB_BUTTON;
 
     @FXML
-    private MenuItem JerCi;
+    private TextField H_SUB_NAME;
 
     @FXML
-    private MenuItem NajahH;
-
-    @FXML
-    private MenuItem Ramci;
-
-    @FXML
-    private MenuItem RaziH;
-
-    @FXML
-    private MenuItem arabiH;
+    private TextField H_SUB_SSN;
 
     @FXML
     private MenuButton inT;
@@ -473,66 +493,172 @@ public class SubscribeCont {
     private MenuItem palestineH;
     public void arabi(){
         Htype.setText("Al Arabi Hospital");
+        Provider="Al Arabi Hospital";
         Hprice.setEditable(false);
     }
     public void pal(){
         Htype.setText("Palestine Hospital");
+        Provider="Palestine Hospital";
         Hprice.setEditable(false);
     }
     public void naj(){
         Htype.setText("Al Najah Hospital");
+        Provider="Al Najah Hospital";
         Hprice.setEditable(false);
     }
     public void razi(){
         Htype.setText("Al Razi Hospital");
+        Provider="Al Razi Hospital";
         Hprice.setEditable(false);
     }
     public void jer(){
         Htype.setText("Jerusalem Clinic");
+        Provider="Jerusalem Clinic";
         Hprice.setEditable(false);
     }
     public void ram(){
         Htype.setText("Ramallah Clinic");
+        Provider="Ramallah Clinic";
         Hprice.setEditable(false);
     }
     public void hmonth(){
         inT.setText("6 months");
+        H_Type="6 months";
         if(Htype.getText().equals("Al Arabi Hospital")|| Htype.getText().equals("Palestine Hospital" )|| Htype.getText().equals("Al Razi Hospital" )|| Htype.getText().equals("Al Najah Hospital" )){
             Hprice.setText("              180 $");
+            H_Prise="180";
+            H_SUB_BUTTON.setVisible(true);
         }
         if(Htype.getText().equals("Jerusalem Clinic")|| Htype.getText().equals("Ramallah Clinic" )){
             Hprice.setText("              120 $");
+            H_Prise="120";
+            H_SUB_BUTTON.setVisible(true);
         }
     }
     public void hyear(){
         inT.setText("1 Year");
+        H_Type="1 Year";
         if(Htype.getText().equals("Al Arabi Hospital")|| Htype.getText().equals("Palestine Hospital" )|| Htype.getText().equals("Al Razi Hospital" )|| Htype.getText().equals("Al Najah Hospital" )){
             Hprice.setText("              250 $");
+            H_Prise="250";
+            H_SUB_BUTTON.setVisible(true);
         }
         if(Htype.getText().equals("Jerusalem Clinic")|| Htype.getText().equals("Ramallah Clinic" )){
             Hprice.setText("              130 $");
+            H_Prise="130";
+            H_SUB_BUTTON.setVisible(true);
         }
 
     }
     public void hyears(){
         inT.setText("3 Years");
+        H_Type="3 Years";
         if(Htype.getText().equals("Al Arabi Hospital")|| Htype.getText().equals("Palestine Hospital" )|| Htype.getText().equals("Al Razi Hospital" )|| Htype.getText().equals("Al Najah Hospital" )){
             Hprice.setText("              700 $");
+            H_Prise="700";
+            H_SUB_BUTTON.setVisible(true);
         }
         if(Htype.getText().equals("Jerusalem Clinic")|| Htype.getText().equals("Ramallah Clinic" )){
             Hprice.setText("              360 $");
+            H_Prise="360";
+            H_SUB_BUTTON.setVisible(true);
         }
 
     }
 
 
 
+    public void H_SUB_SUBMIT_Button() throws SQLException {
+
+try{
+        DriverManager.registerDriver(new Driver());
+        String custr = "jdbc:postgresql://localhost:5432/postgres";
+        String un = "postgres";
+        String up = "1221";
+        Connection conn = DriverManager.getConnection(custr, un, up);
+        String strStmt;
+        PreparedStatement pstmt;
+        conn.setAutoCommit(false);
+
+
+        cust_no=-5;
+        strStmt = "SELECT customerno AS customerNo FROM customer where ssn='" + H_SUB_SSN.getText() + "'";
+
+        pstmt = conn.prepareStatement(strStmt);
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            cust_no = rs.getInt("customerNo");
+        }
+
+        if (cust_no != -5) {
+
+
+
+                strStmt = "SELECT MAX(policyid) AS max_policeid FROM health";
+
+                pstmt = conn.prepareStatement(strStmt);
+                rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    policyid = rs.getInt("max_policeid");
+                }
+                policyid++;
+
+
+                policyholdername = H_SUB_NAME.getText();
 
 
 
 
+            strStmt = "INSERT INTO health (policyid, policyholdername, price,  \"Coverage_Type\", provider) " +
+                    "VALUES (?, ?, ?, ?, ?)";
+            pstmt = conn.prepareStatement(strStmt);
+
+            pstmt.setInt(1, policyid);
+            pstmt.setString(2, policyholdername);
+            pstmt.setInt(3, Integer.parseInt(H_Prise));
+            pstmt.setString(4,H_Type );
+            pstmt.setString(5,Provider);
 
 
+
+
+            pstmt.executeUpdate();
+            conn.commit();
+
+
+
+            strStmt = "INSERT INTO participates (customerno,policyid) " +
+                    "VALUES (?, ?)";
+            pstmt = conn.prepareStatement(strStmt);
+
+            pstmt.setInt(1, cust_no);
+            pstmt.setInt(2, policyid);
+
+
+            pstmt.executeUpdate();
+            conn.commit();
+            conn.close();
+
+
+        }
+
+
+        else {
+            JOptionPane.showMessageDialog(null,"the ssn not found enter correct one \n or you must sign up first ");
+        }
+    } catch (Exception e) {
+    JOptionPane.showMessageDialog(null, e.toString());
+}
+
+        JOptionPane.showMessageDialog(null,"Thank you for choosing our company.");
+        H_SUB_NAME.setText("");
+        H_SUB_SSN.setText("");
+        inT.setText("Choose the Type");
+        Hprice.setText("");
+        Htype.setText("Select Entity");
+
+        H_SUB_BUTTON.setVisible(false);
+    }
 
 
 
