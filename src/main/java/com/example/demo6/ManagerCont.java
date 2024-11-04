@@ -155,27 +155,97 @@ public class ManagerCont {
 //    }
 @FXML
 private TextField cusNumtodel;
-    public void deletecus(){
+
+    public void deletecus() {
+        // Retrieve customer number from text field and convert to int
         String cusNo = cusNumtodel.getText();
-        int cusNum = Integer.parseInt(cusNo);
+        int cusNum;
         try {
-            // Database connection details
-            String url = "jdbc:postgresql://localhost:5432/postgres";
-            String user = "postgres";
-            String password = "1221";
+            cusNum = Integer.parseInt(cusNo);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Please enter a valid integer for customer number.");
+            return;
+        }
 
-            Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "DELETE FROM customer WHERE customerno = '" + cusNo + "'";
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+        // Database connection details
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String user = "postgres";
+        String password = "1221";
 
-            rs.close();
-            stmt.close();
-            conn.close();
+        // SQL statements for deletion and retrieving policy IDs
+        String deleteCustomerSQL = "DELETE FROM customer WHERE customerno = ?";
+        String selectPolicyIdSQL = "SELECT policyid FROM participates WHERE customerno = ?";
+        String deletePolicyInHealthSQL = "DELETE FROM health WHERE policyid = ?";
+        String deletePolicyInVehicleSQL = "DELETE FROM vehicle WHERE policyid = ?";
+        String deletePolicyInPropartySQL = "DELETE FROM proparty WHERE policyid = ?";
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            // Disable auto-commit for transaction management
+            conn.setAutoCommit(false);
+
+            // Step 1: Delete from the customer table
+            try (PreparedStatement deleteStmt = conn.prepareStatement(deleteCustomerSQL)) {
+                deleteStmt.setInt(1, cusNum);
+                int rowsDeleted = deleteStmt.executeUpdate();
+
+                if (rowsDeleted == 0) {
+                    conn.rollback();
+                    JOptionPane.showMessageDialog(null, "No customer found with the provided number.");
+                    return;
+                }
+            }
+
+            // Step 2: Retrieve policy IDs from the participates table
+            StringBuilder policies = new StringBuilder();
+            try (PreparedStatement selectStmt = conn.prepareStatement(selectPolicyIdSQL)) {
+                selectStmt.setInt(1, cusNum);
+                ResultSet rs = selectStmt.executeQuery();
+
+                while (rs.next()) {
+                    int policyId = rs.getInt("policyid");
+                    policies.append("Policy ID: ").append(policyId).append("\n");
+
+                    // Step 3: Delete corresponding policy rows in each table if they exist
+
+                    // Delete from health table
+                    try (PreparedStatement deleteHealthStmt = conn.prepareStatement(deletePolicyInHealthSQL)) {
+                        deleteHealthStmt.setInt(1, policyId);
+                        deleteHealthStmt.executeUpdate();
+                    }
+
+                    // Delete from vehicle table
+                    try (PreparedStatement deleteVehicleStmt = conn.prepareStatement(deletePolicyInVehicleSQL)) {
+                        deleteVehicleStmt.setInt(1, policyId);
+                        deleteVehicleStmt.executeUpdate();
+                    }
+
+                    // Delete from proparty table
+                    try (PreparedStatement deletePropartyStmt = conn.prepareStatement(deletePolicyInPropartySQL)) {
+                        deletePropartyStmt.setInt(1, policyId);
+                        deletePropartyStmt.executeUpdate();
+                    }
+                }
+            }
+
+            // Commit transaction
+            conn.commit();
+
+            // Display results
+            if (policies.length() > 0) {
+                JOptionPane.showMessageDialog(null, "Customer deleted successfully.\nAssociated Policies deleted:\n" + policies.toString());
+            } else {
+                JOptionPane.showMessageDialog(null, "Customer deleted successfully.\nNo associated policies found.");
+            }
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.toString());
+            JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
+            e.printStackTrace();
         }
     }
+
+
+
+
     @FXML
     private TextField cusNumtodel2;
     @FXML
