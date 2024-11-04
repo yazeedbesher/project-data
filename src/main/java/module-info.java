@@ -4,6 +4,7 @@ module com.example.demo6 {
     requires java.desktop;
     requires java.sql;
     requires org.postgresql.jdbc;
+    requires jasperreports;
 
 
     opens com.example.demo6 to javafx.fxml;

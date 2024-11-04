@@ -2,9 +2,14 @@ package com.example.demo6;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 import javax.swing.*;
+import java.io.*;
 import java.sql.*;
+import java.util.HashMap;
 
 public class ManagerCont {
     @FXML
@@ -90,5 +95,62 @@ public class ManagerCont {
             JOptionPane.showMessageDialog(null, e.toString());
         }
     }
+
+
+
+    @FXML
+    public void invest_report_Button() {
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String user = "postgres";
+        String password = "1221";
+
+        try (
+                Connection conn = DriverManager.getConnection(url, user, password);
+                InputStream inp = new FileInputStream("C:\\Users\\ahmad\\IdeaProjects\\project-data\\src\\main\\resources\\com\\example\\demo6\\Invest_rep.jrxml");
+                OutputStream os = new FileOutputStream("report.pdf")
+        ) {
+            JasperDesign jd = JRXmlLoader.load(inp);
+            JasperReport jr = JasperCompileManager.compileReport(jd);
+
+            // Use a HashMap to pass parameters if needed
+            HashMap<String, Object> parameters = new HashMap<>();
+            // parameters.put("paramName", paramValue); // Add any required parameters here
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parameters, conn);
+            JasperExportManager.exportReportToPdfStream(jp, os);
+
+            JOptionPane.showMessageDialog(null, "Report generated successfully!");
+        } catch (Exception e) {
+            e.printStackTrace(); // For logging
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        }
+    }
+//    @FXML
+//    public void invest_report_Button(){
+//    try {
+//
+//        DriverManager.registerDriver(new org.postgresql.Driver());
+//        String url = "jdbc:postgresql://localhost:5432/postgres";
+//        String user = "postgres";
+//        String password = "1221";
+//        Connection conn = DriverManager.getConnection(url, user, password);
+//        InputStream inp =new FileInputStream(new File("C:\\Users\\ahmad\\IdeaProjects\\project-data\\src\\main\\resources\\com\\example"));
+//        JasperDesign jd= JRXmlLoader.load(inp);
+//        JasperReport jr= JasperCompileManager.compileReport(jd);
+//        JasperPrint jp= JasperFillManager.fillReport(jr,null,conn);
+//        OutputStream os =new FileOutputStream(new File("report.pdf"));
+//        JasperExportManager.exportReportToPdfStream(jp,os);
+//        os.close();
+//        conn.close();
+//        inp.close();
+//
+//
+//
+//    }
+//    catch (Exception e) {
+//        JOptionPane.showMessageDialog(null, e.toString());
+//    }
+//
+//    }
 
 }
