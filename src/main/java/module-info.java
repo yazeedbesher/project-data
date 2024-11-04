@@ -1,9 +1,10 @@
 module com.example.demo6 {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.desktop;
     requires java.sql;
     requires org.postgresql.jdbc;
+    requires javafx.graphics;
+    requires java.desktop;
     requires jasperreports;
 
 

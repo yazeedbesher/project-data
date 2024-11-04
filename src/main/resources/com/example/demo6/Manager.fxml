@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,7 +14,7 @@
             <Font name="System Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="126.0" layoutY="135.0" text="New subscribers :">
+      <Label layoutX="31.0" layoutY="135.0" text="New subscribers :">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -25,12 +26,48 @@
       </Label>
       <TextArea fx:id="invest" layoutX="640.0" layoutY="169.0" prefHeight="411.0" prefWidth="540.0" style="-fx-border-color: #65929e; -fx-background-color: #65929e;" />
       <Button fx:id="showinves" layoutX="860.0" layoutY="591.0" mnemonicParsing="false" onAction="#showinvestment" prefHeight="46.0" prefWidth="101.0" stylesheets="@test1.css" text="SHOW" />
-      <Button fx:id="showsub" layoutX="244.0" layoutY="591.0" mnemonicParsing="false" onAction="#showsub" prefHeight="46.0" prefWidth="87.0" stylesheets="@test1.css" text="Show" />
-      <TextArea fx:id="subsshow" layoutX="126.0" layoutY="169.0" prefHeight="411.0" prefWidth="323.0" style="-fx-background-color: #65929e;" />
+      <Button fx:id="showsub" layoutX="142.0" layoutY="591.0" mnemonicParsing="false" onAction="#showsub" prefHeight="46.0" prefWidth="87.0" stylesheets="@test1.css" text="Show" />
+      <TextArea fx:id="subsshow" layoutX="24.0" layoutY="169.0" prefHeight="411.0" prefWidth="323.0" style="-fx-background-color: #65929e;" />
       <Button alignment="CENTER" layoutX="815.0" layoutY="53.0" mnemonicParsing="false" onAction="#invest_report_Button" prefHeight="46.0" prefWidth="190.0" stylesheets="@test1.css" text="Investment Report">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Button layoutX="451.0" layoutY="248.0" mnemonicParsing="false" onAction="#deletecus" prefHeight="46.0" prefWidth="78.0" stylesheets="@test1.css" text="delete" />
+      <TextField fx:id="cusNumtodel" layoutX="401.0" layoutY="197.0" stylesheets="@test1.css" />
+      <Label layoutX="373.0" layoutY="138.0" text="Enter Customer Number ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="447.0" layoutY="162.0" text="To Delete">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="311.0" text="Enter Customer Number ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="458.0" layoutY="339.0" text="To Edit">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cusNumtodel2" layoutX="401.0" layoutY="374.0" prefHeight="16.0" prefWidth="190.0" stylesheets="@test1.css" />
+      <Label layoutX="401.0" layoutY="428.0" text="Employment :">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="empedit" layoutX="401.0" layoutY="456.0" prefHeight="41.0" prefWidth="190.0" stylesheets="@test1.css" />
+      <TextField fx:id="incomeedit" layoutX="400.0" layoutY="538.0" prefHeight="41.0" prefWidth="190.0" stylesheets="@test1.css" />
+      <Label layoutX="406.0" layoutY="507.0" text="Income :">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="458.0" layoutY="591.0" mnemonicParsing="false" onAction="#editcus" prefHeight="46.0" prefWidth="63.0" stylesheets="@test1.css" text="Edit" />
    </children>
 </AnchorPane>

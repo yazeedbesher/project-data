@@ -2,6 +2,7 @@ package com.example.demo6;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -152,5 +153,71 @@ public class ManagerCont {
 //    }
 //
 //    }
+@FXML
+private TextField cusNumtodel;
+    public void deletecus(){
+        String cusNo = cusNumtodel.getText();
+        int cusNum = Integer.parseInt(cusNo);
+        try {
+            // Database connection details
+            String url = "jdbc:postgresql://localhost:5432/postgres";
+            String user = "postgres";
+            String password = "1221";
 
+            Connection conn = DriverManager.getConnection(url, user, password);
+            String sql = "DELETE FROM customer WHERE customerno = '" + cusNo + "'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }
+    @FXML
+    private TextField cusNumtodel2;
+    @FXML
+    private TextField empedit;
+
+    @FXML
+    private TextField incomeedit;
+    public void editcus() {
+
+        try {
+            String url = "jdbc:postgresql://localhost:5432/postgres";
+            String user = "postgres";
+            String password = "1221";
+
+            String cusNo2 = cusNumtodel2.getText();
+            String emp = empedit.getText();
+            String inc = incomeedit.getText();
+
+            int incom = Integer.parseInt(inc);
+            int cusNum = Integer.parseInt(cusNo2);
+
+            try (Connection connection = DriverManager.getConnection(url, user, password)) {
+                String updateSQL = "UPDATE customer SET income = ?, employment = ? WHERE customerno = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(updateSQL)) {
+                    preparedStatement.setDouble(1, incom);
+                    preparedStatement.setString(2, emp);
+                    preparedStatement.setInt(3, cusNum);
+                    cusNumtodel2.setText("");
+                    empedit.setText("");
+                    incomeedit.setText("");
+                    int rowsAffected = preparedStatement.executeUpdate();
+                    if (rowsAffected > 0) {
+                        System.out.println("Customer updated successfully.");
+                    } else {
+                        System.out.println("Customer not found.");
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input format for customer number or income.");
+        }
+    }
 }
