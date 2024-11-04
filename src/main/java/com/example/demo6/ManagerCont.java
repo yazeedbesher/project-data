@@ -68,7 +68,7 @@ public class ManagerCont {
             String password = "1221";
 
             Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM customer";
+            String sql = "SELECT * FROM customer order by customerno";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -120,12 +120,43 @@ public class ManagerCont {
             JasperPrint jp = JasperFillManager.fillReport(jr, parameters, conn);
             JasperExportManager.exportReportToPdfStream(jp, os);
 
-            JOptionPane.showMessageDialog(null, "Report generated successfully!");
+            JOptionPane.showMessageDialog(null, "Report 1 generated successfully!");
         } catch (Exception e) {
             e.printStackTrace(); // For logging
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
         }
     }
+    public void insu_report_Button() {
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String user = "postgres";
+        String password = "1221";
+        try (
+                Connection conn = DriverManager.getConnection(url, user, password);
+                InputStream inp = new FileInputStream("C:\\Users\\ahmad\\IdeaProjects\\project-data\\src\\main\\resources\\com\\example\\demo6\\insu_num.jrxml");
+                OutputStream os = new FileOutputStream("report2.pdf")
+        ) {
+            JasperDesign jd = JRXmlLoader.load(inp);
+            JasperReport jr = JasperCompileManager.compileReport(jd);
+
+            // Use a HashMap to pass parameters if needed
+            HashMap<String, Object> parameters = new HashMap<>();
+            // parameters.put("paramName", paramValue); // Add any required parameters here
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, parameters, conn);
+            JasperExportManager.exportReportToPdfStream(jp, os);
+
+            JOptionPane.showMessageDialog(null, "Report 2 generated successfully!");
+        } catch (Exception e) {
+            e.printStackTrace(); // For logging
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+        }
+
+
+
+    }
+
+
+
 //    @FXML
 //    public void invest_report_Button(){
 //    try {

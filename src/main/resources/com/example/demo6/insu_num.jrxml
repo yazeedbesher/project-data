@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="insu_num" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a389eb3-669e-4def-8cd2-e353fe6bb6e3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter1.jrdax"/>
+	<queryString language="SQL">
+		<![CDATA[select distinct person.firstname || ' ' || person.lastname as "Customer Name", person.ssn, count(policyid) as "Number of Insurances"
+from person
+join customer as c on person.ssn = c.ssn
+join participates on c.customerno = participates.customerno
+group by person.ssn, person.firstname, person.lastname;]]>
+	</queryString>
+	<field name="Customer Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Customer Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Customer Name"/>
+	</field>
+	<field name="ssn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ssn"/>
+		<property name="com.jaspersoft.studio.field.label" value="ssn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="person"/>
+	</field>
+	<field name="Number of Insurances" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="Number of Insurances"/>
+		<property name="com.jaspersoft.studio.field.label" value="Number of Insurances"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{Customer Name}]]></groupExpression>
+		<groupHeader>
+			<band height="34">
+				<staticText>
+					<reportElement mode="Opaque" x="-11" y="0" width="270" height="32" forecolor="#000203" backcolor="#16687D" uuid="752f990e-3290-4cd1-bd42-fb14dcd26a6d"/>
+					<textElement textAlignment="Center" verticalAlignment="Justified" rotation="None">
+						<font size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Customer Name]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="259" y="0" width="290" height="32" forecolor="#000203" backcolor="#16687D" uuid="c25a1681-72cd-4682-a999-f7f5cc38d296"/>
+					<textElement textAlignment="Center">
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Customer Name}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="82dc9d20-6cdb-4a42-ab18-fb4b54836d2b"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{ssn}]]></groupExpression>
+		<groupHeader>
+			<band height="34">
+				<textField>
+					<reportElement x="259" y="0" width="290" height="32" forecolor="#000203" backcolor="#37A6C4" uuid="a8d5f723-d26e-4c73-967e-b895824327af"/>
+					<textElement textAlignment="Center">
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ssn}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="-11" y="0" width="270" height="32" forecolor="#000203" backcolor="#37A6C4" uuid="cc6471a7-75cb-4b2c-944e-18b2baf16db9"/>
+					<textElement textAlignment="Center" verticalAlignment="Justified" rotation="None">
+						<font size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ssn]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupExpression><![CDATA[$F{Number of Insurances}]]></groupExpression>
+		<groupHeader>
+			<band height="34">
+				<textField>
+					<reportElement x="259" y="0" width="290" height="32" forecolor="#000203" backcolor="#37A6C4" uuid="af17a269-e1c0-411a-bffd-68cebf24cba0"/>
+					<textElement textAlignment="Center">
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Number of Insurances}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="-11" y="0" width="270" height="32" forecolor="#000203" backcolor="#37A6C4" uuid="7c87c4d3-64ec-4980-b465-0b2216ef938e"/>
+					<textElement textAlignment="Center" verticalAlignment="Justified" rotation="None">
+						<font size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Number of Insurances]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#16687D" uuid="9df833dc-dda5-4565-bb49-4b1ee29c8e03"/>
+				<staticText>
+					<reportElement x="160" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="9a2d47ce-1825-4f0c-820d-8583889d2144"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[insurances]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="f7d66e70-4541-4ce6-ab09-dd454bbf1a26"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="e2de063f-c8ef-4e1d-b57a-2eb0c3920afd"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="f63caef9-013d-4042-86fe-7f88ac379ef7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="666d417c-ea94-4c0b-94be-250a932d6e6e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="61c2057d-a9ff-4764-a843-7de3661ccae1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

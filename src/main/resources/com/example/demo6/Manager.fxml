@@ -28,7 +28,7 @@
       <Button fx:id="showinves" layoutX="860.0" layoutY="591.0" mnemonicParsing="false" onAction="#showinvestment" prefHeight="46.0" prefWidth="101.0" stylesheets="@test1.css" text="SHOW" />
       <Button fx:id="showsub" layoutX="142.0" layoutY="591.0" mnemonicParsing="false" onAction="#showsub" prefHeight="46.0" prefWidth="87.0" stylesheets="@test1.css" text="Show" />
       <TextArea fx:id="subsshow" layoutX="24.0" layoutY="169.0" prefHeight="411.0" prefWidth="323.0" style="-fx-background-color: #65929e;" />
-      <Button alignment="CENTER" layoutX="815.0" layoutY="53.0" mnemonicParsing="false" onAction="#invest_report_Button" prefHeight="46.0" prefWidth="190.0" stylesheets="@test1.css" text="Investment Report">
+      <Button alignment="CENTER" layoutX="1049.0" layoutY="30.0" mnemonicParsing="false" onAction="#invest_report_Button" prefHeight="46.0" prefWidth="190.0" stylesheets="@test1.css" text="Investment Report">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -69,5 +69,15 @@
          </font>
       </Label>
       <Button layoutX="458.0" layoutY="591.0" mnemonicParsing="false" onAction="#editcus" prefHeight="46.0" prefWidth="63.0" stylesheets="@test1.css" text="Edit" />
+      <Button layoutX="845.0" layoutY="30.0" mnemonicParsing="false" onAction="#insu_report_Button" prefHeight="46.0" prefWidth="190.0" stylesheets="@test1.css" text="Insurances Report">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="709.0" layoutY="38.0" text="Reports :" textFill="#000000e6">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
