@@ -103,15 +103,30 @@ public void Update_Complaints_click(){
         Connection conn = DriverManager.getConnection(url, user, password);
 
         // Using PreparedStatement for parameterized query
-        String sql = "update communication SET response_requird = 'yes' WHERE recordid = ?";
+        String sql = "UPDATE communication SET response_requird = ? WHERE recordid = ?";
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, id);
 
-        ResultSet rs = pstmt.executeQuery();
+        // Set the parameters for the query
+        pstmt.setString(1, res_req); // Assuming res_req is defined somewhere in your code
+        pstmt.setInt(2, id);
 
-        rs.close();
+        // Execute the update
+        int rowsAffected = pstmt.executeUpdate();
+
+        // Check if the update was successful
+        if (rowsAffected > 0) {
+            res_req = "No";
+            yes_no_button.setText("response required ");
+            Complaints_lable.setText("");
+            Complaints_num.setText("");
+        } else {
+            JOptionPane.showMessageDialog(null, "No record found with the specified ID.");
+        }
+
+        // Close resources
         pstmt.close();
         conn.close();
+
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null, e.toString());
     }
@@ -129,7 +144,7 @@ public void Update_Complaints_click(){
 
             // Establishing connection
             Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM communication";
+            String sql = "SELECT * FROM communication order by recordid";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 

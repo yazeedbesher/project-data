@@ -486,7 +486,7 @@
       </Pane>
       <Pane fx:id="reqpane" layoutX="360.0" layoutY="126.0" prefHeight="628.0" prefWidth="492.0" style="-fx-background-color: gray;" visible="false">
          <children>
-            <MenuButton fx:id="depmain" layoutX="294.0" layoutY="45.0" mnemonicParsing="false" stylesheets="@test1.css" text="Choose">
+            <MenuButton fx:id="depmain" layoutX="294.0" layoutY="45.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #65929e;" stylesheets="@test1.css" text="Choose">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#healthreq" text="Health" />
                 <MenuItem mnemonicParsing="false" onAction="#carreq" text="Vehicle" />
@@ -506,22 +506,22 @@
                      </font>
                   </Label>
                   <FontAwesomeIconView glyphName="PHONE" layoutX="44.0" layoutY="170.0" size="20" />
-                  <TextField fx:id="ssnv" layoutX="106.0" layoutY="99.0" />
+                  <TextField fx:id="ssnv" layoutX="96.0" layoutY="102.0" stylesheets="@test1.css" />
                   <Label layoutX="75.0" layoutY="263.0" text="Employee Name :">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="empv" layoutX="106.0" layoutY="311.0" />
+                  <TextField fx:id="empv" layoutX="96.0" layoutY="314.0" stylesheets="@test1.css" />
                   <FontAwesomeIconView glyphName="USER" layoutX="45.0" layoutY="289.0" size="20" text="" />
                   <FontAwesomeIconView glyphName="CAR" layoutX="44.0" layoutY="406.0" size="50" />
-                  <TextField fx:id="phonev" layoutX="106.0" layoutY="191.0" />
+                  <TextField fx:id="phonev" layoutX="96.0" layoutY="194.0" stylesheets="@test1.css" />
                   <Label layoutX="147.0" layoutY="47.0" text="SSN :">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Button fx:id="senddep13" layoutX="185.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="35.0" prefWidth="92.0" text="SEND" />
+                  <Button fx:id="senddep13" layoutX="185.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleSubmit" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: gray;" stylesheets="@test1.css" text="SEND" />
                </children>
             </Pane>
             <Pane fx:id="healthpane" layoutX="67.0" layoutY="99.0" prefHeight="457.0" prefWidth="361.0" style="-fx-background-color: #65929e;" visible="false">
@@ -532,22 +532,22 @@
                      </font>
                   </Label>
                   <FontAwesomeIconView glyphName="PHONE" layoutX="45.0" layoutY="188.0" size="20" text="" />
-                  <TextField fx:id="ssnh" layoutX="106.0" layoutY="99.0" />
+                  <TextField fx:id="ssnh" layoutX="106.0" layoutY="99.0" stylesheets="@test1.css" />
                   <Label layoutX="74.0" layoutY="263.0" text="Hospital Name :">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="hnh" layoutX="102.0" layoutY="313.0" />
+                  <TextField fx:id="hnh" layoutX="102.0" layoutY="313.0" stylesheets="@test1.css" />
                   <FontAwesomeIconView glyphName="AMBULANCE" layoutX="63.0" layoutY="416.0" size="50" />
                   <FontAwesomeIconView glyphName="HEART" layoutX="43.0" layoutY="291.0" size="20" text="" />
-                  <TextField fx:id="phh" layoutX="106.0" layoutY="205.0" />
+                  <TextField fx:id="phh" layoutX="106.0" layoutY="205.0" stylesheets="@test1.css" />
                   <Label layoutX="150.0" layoutY="51.0" text="SSN :">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Button fx:id="senddep" layoutX="205.0" layoutY="381.0" mnemonicParsing="false" onAction="#hhandleSubmit" prefHeight="35.0" prefWidth="92.0" text="SEND" />
+                  <Button fx:id="senddep" layoutX="205.0" layoutY="381.0" mnemonicParsing="false" onAction="#hhandleSubmit" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: gray;" stylesheets="@test1.css" text="SEND" />
                </children>
             </Pane>
             <Pane fx:id="proppane" layoutX="67.0" layoutY="99.0" prefHeight="457.0" prefWidth="361.0" style="-fx-background-color: #65929e;" visible="false">
@@ -558,15 +558,15 @@
                      </font>
                   </Label>
                   <FontAwesomeIconView glyphName="PHONE" layoutX="52.0" layoutY="237.0" size="20" text="" />
-                  <TextField fx:id="php" layoutX="108.0" layoutY="270.0" />
+                  <TextField fx:id="php" layoutX="108.0" layoutY="270.0" stylesheets="@test1.css" />
                   <FontAwesomeIconView glyphName="HOME" layoutX="42.0" layoutY="399.0" size="55" />
-                  <TextField fx:id="ssnp" layoutX="108.0" layoutY="144.0" />
+                  <TextField fx:id="ssnp" layoutX="108.0" layoutY="144.0" stylesheets="@test1.css" />
                   <Label layoutX="149.0" layoutY="94.0" text="SSN :">
                      <font>
                         <Font name="System Bold" size="27.0" />
                      </font>
                   </Label>
-                  <Button fx:id="senddep1" layoutX="207.0" layoutY="359.0" mnemonicParsing="false" onAction="#phandleSubmit" prefHeight="35.0" prefWidth="92.0" text="SEND" />
+                  <Button fx:id="senddep1" layoutX="207.0" layoutY="359.0" mnemonicParsing="false" onAction="#phandleSubmit" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: gray;" stylesheets="@test1.css" text="SEND" />
                </children>
             </Pane>
             <Button fx:id="closedep" layoutX="411.0" layoutY="20.0" mnemonicParsing="false" onAction="#closepropreq" prefHeight="25.0" prefWidth="52.0" stylesheets="@test1.css">

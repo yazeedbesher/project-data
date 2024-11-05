@@ -453,21 +453,11 @@ public class MainCont {
 
 
 
-
-
-
-
-
-
-
-
-
-
-//        sup_comp_textarea.clear();
-//        sup_comp_title.clear();
-//        sup_comp_name.clear();
-//        sup_comp_email.clear();
-//        sup_comp_SSN.clear();
+        sup_comp_textarea.clear();
+        sup_comp_title.clear();
+        sup_comp_name.clear();
+        sup_comp_email.clear();
+        sup_comp_SSN.clear();
 
         Complaints_pane.setVisible(false);
 
@@ -571,30 +561,69 @@ public class MainCont {
     // Method to handle button click and insert data
     @FXML
     private void handleSubmit() {
-        String ssn = ssnv.getText();
-        String phone = phonev.getText();
-        int ph=Integer.parseInt(phone);
-        String employeeName = empv.getText();
 
-        // Insert data into the table
-        String insertSQL = "INSERT INTO vrequest (ssn, phone, employeename) VALUES (?, ?, ?)";
 
-        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
-            pstmt.setString(1, ssn);
-            pstmt.setInt(2, ph);
-            pstmt.setString(3, employeeName);
+        try {
+            String ssn = ssnv.getText();
+            String phone = phonev.getText();
+            int ph=Integer.parseInt(phone);
+            String employeeName = empv.getText();
 
-            int affectedRows = pstmt.executeUpdate();
 
-            if (affectedRows > 0) {
-                System.out.println("Data inserted successfully!");
+            DriverManager.registerDriver(new Driver());
+            String custr = "jdbc:postgresql://localhost:5432/postgres";
+            String un = "postgres";
+            String up = "1221";
+            Connection conn;
+             conn = DriverManager.getConnection(custr, un, up);
+            String strStmt;
+            PreparedStatement pstmt;
+            conn.setAutoCommit(false);
+
+            cust_no=-5;
+
+            strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+ssnv.getText()+"'";
+
+            pstmt = conn.prepareStatement(strStmt);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                cust_no  = rs.getInt("customerNo");
             }
-        } catch (SQLException e) {
-            System.out.println("Error inserting data: " + e.getMessage());
+
+            if(cust_no!=-5) {
+//                JOptionPane.showMessageDialog(null,"ahmad is the boss");
+                // Insert data into the table
+                String insertSQL = "INSERT INTO vrequest (ssn, phone, employeename) VALUES (?, ?, ?)";
+
+                conn = connect();
+                pstmt = conn.prepareStatement(insertSQL) ;
+                pstmt.setString(1, ssn);
+                pstmt.setInt(2, ph);
+                pstmt.setString(3, employeeName);
+
+                int affectedRows = pstmt.executeUpdate();
+
+                if (affectedRows > 0) {
+                    System.out.println("Data inserted successfully!");
+                }
+
+                ssnv.clear();
+                phonev.clear();
+                empv.clear();
+
+
+
+            }else {
+                JOptionPane.showMessageDialog(null, "user is not found try again");
+                ssnv.clear();
+                phonev.clear();
+                empv.clear();
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
         }
-        ssnv.clear();
-        phonev.clear();
-        empv.clear();
+
     }
 
     @FXML
@@ -616,27 +645,63 @@ public class MainCont {
     // Method to handle button click and insert data
     @FXML
     private void phandleSubmit() {
-        String ssn = ssnp.getText();
-        String phone = php.getText();
-        int ph=Integer.parseInt(phone);
+        try {
+            String ssn = ssnp.getText();
+            String phone = php.getText();
+            int ph = Integer.parseInt(phone);
 
-        // Insert data into the table
-        String insertSQL = "INSERT INTO prequest (ssn, phone) VALUES (?, ?)";
 
-        try (Connection conn = pconnect(); PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
-            pstmt.setString(1, ssn);
-            pstmt.setInt(2, ph);
+            DriverManager.registerDriver(new Driver());
+            String custr = "jdbc:postgresql://localhost:5432/postgres";
+            String un = "postgres";
+            String up = "1221";
+            Connection conn;
+            conn = DriverManager.getConnection(custr, un, up);
+            String strStmt;
+            PreparedStatement pstmt;
+            conn.setAutoCommit(false);
 
-            int affectedRows = pstmt.executeUpdate();
+            cust_no=-5;
 
-            if (affectedRows > 0) {
-                System.out.println("Data inserted successfully!");
+            strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+ssnp.getText()+"'";
+
+            pstmt = conn.prepareStatement(strStmt);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                cust_no  = rs.getInt("customerNo");
             }
-        } catch (SQLException e) {
-            System.out.println("Error inserting data: " + e.getMessage());
-        }
-        php.clear();
+
+            if(cust_no!=-5) {
+
+
+            // Insert data into the table
+            String insertSQL = "INSERT INTO prequest (ssn, phone) VALUES (?, ?)";
+
+             conn = pconnect();
+             pstmt = conn.prepareStatement(insertSQL) ;
+                pstmt.setString(1, ssn);
+                pstmt.setInt(2, ph);
+
+                int affectedRows = pstmt.executeUpdate();
+
+                if (affectedRows > 0) {
+                    System.out.println("Data inserted successfully!");
+                }
+
+
+
+            php.clear();
+            ssnp.clear();}
+            else {
+                JOptionPane.showMessageDialog(null, "user is not found try again");
+                php.clear();
                 ssnp.clear();
+
+            }
+
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
     }
     @FXML
     private TextField ssnh;
@@ -655,30 +720,64 @@ public class MainCont {
     // Method to handle button click and insert data
     @FXML
     private void hhandleSubmit() {
-        String ssn = ssnh.getText();
-        String phone = phh.getText();
-        int ph=Integer.parseInt(phone);
-        String hospitalname = hnh.getText();
+        try {
+            String ssn = ssnh.getText();
+            String phone = phh.getText();
+            int ph = Integer.parseInt(phone);
+            String hospitalname = hnh.getText();
 
-        // Insert data into the table
-        String insertSQL = "INSERT INTO hrequest (ssn, phone, hospitalname) VALUES (?, ?, ?)";
+            DriverManager.registerDriver(new Driver());
+            String custr = "jdbc:postgresql://localhost:5432/postgres";
+            String un = "postgres";
+            String up = "1221";
+            Connection conn;
+            conn = DriverManager.getConnection(custr, un, up);
+            String strStmt;
+            PreparedStatement pstmt;
+            conn.setAutoCommit(false);
 
-        try (Connection conn = hconnect(); PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
-            pstmt.setString(1, ssn);
-            pstmt.setInt(2, ph);
-            pstmt.setString(3, hospitalname);
+            cust_no=-5;
 
-            int affectedRows = pstmt.executeUpdate();
+            strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+ssnp.getText()+"'";
 
-            if (affectedRows > 0) {
-                System.out.println("Data inserted successfully!");
+            pstmt = conn.prepareStatement(strStmt);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                cust_no  = rs.getInt("customerNo");
             }
-        } catch (SQLException e) {
-            System.out.println("Error inserting data: " + e.getMessage());
+
+            if(cust_no!=-5) {
+
+
+
+                // Insert data into the table
+                String insertSQL = "INSERT INTO hrequest (ssn, phone, hospitalname) VALUES (?, ?, ?)";
+
+                 conn = hconnect();
+                 pstmt = conn.prepareStatement(insertSQL);
+                pstmt.setString(1, ssn);
+                pstmt.setInt(2, ph);
+                pstmt.setString(3, hospitalname);
+
+                int affectedRows = pstmt.executeUpdate();
+
+                if (affectedRows > 0) {
+                    System.out.println("Data inserted successfully!");
+                }
+
+                ssnh.clear();
+                phh.clear();
+                hnh.clear();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "user is not found try again");
+                ssnh.clear();
+                phh.clear();
+                hnh.clear();
+            }
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString());
         }
-        ssnh.clear();
-        phh.clear();
-        hnh.clear();
     }
 
 }
