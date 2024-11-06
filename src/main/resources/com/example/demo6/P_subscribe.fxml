@@ -6,13 +6,15 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="650.0" prefWidth="1280.0" style="-fx-background-color: #d3d3d3;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo6.SubscribeCont">
    <children>
-      <Pane layoutX="395.0" layoutY="72.0" prefHeight="518.0" prefWidth="387.0" style="-fx-background-color: gray; -fx-border-color: black;">
+      <Pane layoutX="161.0" layoutY="66.0" prefHeight="518.0" prefWidth="387.0" style="-fx-background-color: gray; -fx-border-color: black;">
          <children>
             <Label layoutX="41.0" layoutY="35.0" text="SSN :" textFill="#724b86">
                <font>
@@ -71,5 +73,10 @@
             <Button fx:id="P_SUB_Button11" layoutX="143.0" layoutY="455.0" mnemonicParsing="false" onAction="#P_SUB_Submit_Button" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #724b86;" stylesheets="@test1.css" text="Button" textFill="#000000e6" visible="false" />
          </children>
       </Pane>
+      <ImageView fitHeight="466.0" fitWidth="520.0" layoutX="668.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Pinsu.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

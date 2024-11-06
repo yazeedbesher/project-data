@@ -98,13 +98,23 @@
                                     <Font name="System Bold" size="30.0" />
                                  </font>
                               </Label>
+                              <ImageView fitHeight="164.0" fitWidth="222.0" layoutX="575.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/social%20media.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="266.0" fitWidth="287.0" layoutX="922.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/social%20media2.png" />
+                                 </image>
+                              </ImageView>
                            </children></Pane>
-                        <ImageView fitHeight="458.0" fitWidth="491.0" layoutX="158.0" layoutY="1445.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="458.0" fitWidth="491.0" layoutX="361.0" layoutY="1378.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/burnedhouse.jpg.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="432.0" fitWidth="885.0" layoutX="440.0" layoutY="2159.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="432.0" fitWidth="885.0" layoutX="210.0" layoutY="2141.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/caraccsedent.jpg.png" />
                            </image>
@@ -136,6 +146,21 @@
                            </effect>
                         </Label>
                         <FontAwesomeIconView fill="#4a6385" glyphName="AMBULANCE" layoutX="63.0" layoutY="3199.0" size="30" text="" />
+                        <Label layoutX="232.0" layoutY="1854.0" text="Your First Line of Defense Against Disasters and Theft!" textAlignment="CENTER" textFill="#4a6385">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="677.0" layoutY="2419.0" text="Vehicle Insurance is Your Best Choice!" textFill="#4a6385">
+                           <font>
+                              <Font name="System Bold" size="29.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="714.0" layoutY="2141.0" text="-Stay Confident on the Road-" textFill="#4a6385">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </content>

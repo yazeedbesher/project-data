@@ -2,6 +2,8 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -13,7 +15,6 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Label>
-      <Pane layoutX="58.0" layoutY="80.0" prefHeight="538.0" prefWidth="516.0" style="-fx-background-color: white;" />
       <Pane layoutX="707.0" layoutY="80.0" prefHeight="538.0" prefWidth="516.0" style="-fx-background-color: #65929e;">
          <children>
             <Label layoutX="88.0" layoutY="24.0" text="Contact maintenance workers">
@@ -42,5 +43,10 @@
             <FontAwesomeIconView glyphName="PHONE" layoutX="60.0" layoutY="363.0" size="35" />
          </children>
       </Pane>
+      <ImageView fitHeight="516.0" fitWidth="566.0" layoutX="98.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/numbers%20for%20property.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
