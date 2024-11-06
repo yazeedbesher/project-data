@@ -296,7 +296,7 @@ public void Update_Complaints_click(){
             String password = "1221";
 
             Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM vehicle";
+            String sql = "SELECT DISTINCT  * FROM vehicle Order By policyid";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -331,7 +331,7 @@ public void Update_Complaints_click(){
             String password = "1221";
 
             Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM proparty";
+            String sql = "SELECT DISTINCT  * FROM proparty Order By policyid";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 
@@ -366,7 +366,7 @@ public void Update_Complaints_click(){
             String password = "1221";
 
             Connection conn = DriverManager.getConnection(url, user, password);
-            String sql = "SELECT * FROM health";
+            String sql = "SELECT DISTINCT  * FROM health Order By policyid";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
 

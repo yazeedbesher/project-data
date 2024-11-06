@@ -70,7 +70,7 @@
                </font>
             </Label>
             <TextField fx:id="P_SUB_PROP_TYPE" layoutX="187.0" layoutY="153.0" stylesheets="@test1.css" />
-            <Button fx:id="P_SUB_Button11" layoutX="143.0" layoutY="455.0" mnemonicParsing="false" onAction="#P_SUB_Submit_Button" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #724b86;" stylesheets="@test1.css" text="Button" textFill="#000000e6" visible="false" />
+            <Button fx:id="P_SUB_Button11" layoutX="143.0" layoutY="455.0" mnemonicParsing="false" onAction="#P_SUB_Submit_Button" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #724b86;" stylesheets="@test1.css" text="Submit" textFill="#000000e6" visible="false" />
          </children>
       </Pane>
       <ImageView fitHeight="466.0" fitWidth="520.0" layoutX="668.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">

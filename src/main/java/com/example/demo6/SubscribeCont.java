@@ -128,6 +128,8 @@ public class SubscribeCont {
     //_______________________
 
     public void V_SUB_CLick() throws SQLException {
+
+
         try {
 
             DriverManager.registerDriver(new Driver());
@@ -152,7 +154,7 @@ public class SubscribeCont {
 
 
 
-                strStmt = "SELECT MAX(policyid) AS max_policeid FROM vehicle";
+                strStmt = "SELECT MAX(policyid) AS max_policeid FROM  (SELECT policyid FROM vehicle    UNION    SELECT policyid FROM health     UNION     SELECT policyid FROM Proparty )";
 
                 pstmt = conn.prepareStatement(strStmt);
                 rs = pstmt.executeQuery();
@@ -213,7 +215,6 @@ public class SubscribeCont {
         V_Subs_SSN.clear();
         JOptionPane.showMessageDialog(null,"Thank you for choosing our company.");
 
-        V_SUB_Submit_Button.setVisible(false);
     }
 
 
@@ -369,7 +370,7 @@ public class SubscribeCont {
 
             if (cust_no != -5) {
 
-                strStmt = "SELECT MAX(policyid) AS max_policeid FROM proparty";
+                strStmt = "SELECT MAX(policyid) AS max_policeid FROM (SELECT policyid FROM vehicle    UNION    SELECT policyid FROM health     UNION     SELECT policyid FROM Proparty )";
 
                 pstmt = conn.prepareStatement(strStmt);
                 rs = pstmt.executeQuery();
@@ -594,7 +595,7 @@ try{
 
 
 
-                strStmt = "SELECT MAX(policyid) AS max_policeid FROM health";
+                strStmt = "SELECT MAX(policyid) AS max_policeid FROM (SELECT policyid FROM vehicle    UNION    SELECT policyid FROM health     UNION     SELECT policyid FROM Proparty )";
 
                 pstmt = conn.prepareStatement(strStmt);
                 rs = pstmt.executeQuery();
