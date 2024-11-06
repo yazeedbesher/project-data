@@ -344,7 +344,7 @@ public void Update_Complaints_click(){
                 int reqid = rs.getInt("policyid");
                 String name = rs.getString("policyholdername");
                 int area = rs.getInt("coverageamount");
-                String vt = rs.getString("coverage_Type");//propartytype:)    //coverage_Type:(
+                String vt = rs.getString("propartytype");//propartytype:)    //coverage_Type:(
                 int pc = rs.getInt("price");
 
 
@@ -378,7 +378,7 @@ public void Update_Complaints_click(){
             while (rs.next()) {
                 int reqid = rs.getInt("policyid");
                 String name = rs.getString("policyholdername");
-                String type = rs.getString("propartytype");//coverage_Type:)   //propartytype:(
+                String type = rs.getString("coverage_Type");//coverage_Type:)   //propartytype:(
                 String pr = rs.getString("provider");
                 int pc = rs.getInt("price");
 

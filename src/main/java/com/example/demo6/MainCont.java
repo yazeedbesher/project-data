@@ -84,6 +84,14 @@ public class MainCont {
     private Button exitlogin;
     @FXML
     private Button confirmsignin;
+
+    @FXML
+    private String Password="-9";
+    @FXML
+    private String SSNChick="-9";
+
+
+
     @FXML
     public void CLOSEpainLOGIN(){
         signinpanel.setVisible(false);
@@ -93,41 +101,326 @@ public class MainCont {
     public void confirmpainLOGIN()throws IOException {
         String text = SSNLogIn.getText();
         if (text.startsWith("9")) {
-            signinpanel.setVisible(false);
+        try {
 
-            LoginButton.setVisible(false);
-            SignUpButton.setVisible(false);
 
-            Parent root= FXMLLoader.load(getClass().getResource("manager.fxml"));
-            mainpage.getChildren().setAll(root);
+            DriverManager.registerDriver(new Driver());
+            String custr = "jdbc:postgresql://localhost:5432/postgres";
+            String un = "postgres";
+            String up = "1221";
+            Connection conn = DriverManager.getConnection(custr, un, up);
+
+
+            String strStmt ="SELECT ssn AS  chickssn FROM person WHERE ssn='"+SSNLogIn.getText()+"' ";
+            PreparedStatement pstmt =conn.prepareStatement(strStmt);
+            ResultSet rs = pstmt.executeQuery();
+            //SSNChick="-55";
+            if (rs.next()) {
+                SSNChick  = String.valueOf(rs.getInt("chickssn"));
+            }
+
+            if(Objects.equals(SSNChick, SSNLogIn.getText())){
+
+                strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
+
+                pstmt = conn.prepareStatement(strStmt);
+                rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    Password  = String.valueOf(rs.getInt("chickpass"));
+                }
+
+                if(Objects.equals(Password, passlogin.getText())) {
+
+
+                    signinpanel.setVisible(false);
+
+                    LoginButton.setVisible(false);
+                    SignUpButton.setVisible(false);
+
+                    Parent root = FXMLLoader.load(getClass().getResource("manager.fxml"));
+                    mainpage.getChildren().setAll(root);
+                    signinpanel.setVisible(false);
+                    SSNLogIn.setText("");
+                    passlogin.setText("");
+
+                }   else {
+                    JOptionPane.showMessageDialog(null,"The Password is wrong");
+
+                    passlogin.setText("");
+                }
+
+
+
+            }else {
+                JOptionPane.showMessageDialog(null,"SSN IS NOT FOUND TRY AGAIN PLEASE");
+                SSNLogIn.setText("");
+                passlogin.setText("");
+            }
+
+
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e.toString());
+            SSNLogIn.setText("");
+            passlogin.setText("");
+        }
+
+
+
+
+
+
         }
         else if (text.startsWith("7")) {
-            signinpanel.setVisible(false);
+
+                try {
+
+
+                DriverManager.registerDriver(new Driver());
+                String custr = "jdbc:postgresql://localhost:5432/postgres";
+                String un = "postgres";
+                String up = "1221";
+                Connection conn = DriverManager.getConnection(custr, un, up);
+
+
+                String strStmt ="SELECT ssn AS  chickssn FROM person WHERE ssn='"+SSNLogIn.getText()+"' ";
+                PreparedStatement pstmt =conn.prepareStatement(strStmt);
+                ResultSet rs = pstmt.executeQuery();
+                //SSNChick="-55";
+                if (rs.next()) {
+                SSNChick  = String.valueOf(rs.getInt("chickssn"));
+                }
+
+                if(Objects.equals(SSNChick, SSNLogIn.getText())){
+
+                strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
+
+                pstmt = conn.prepareStatement(strStmt);
+                rs = pstmt.executeQuery();
+                if (rs.next()) {
+                Password  = String.valueOf(rs.getInt("chickpass"));
+                }
+
+                if(Objects.equals(Password, passlogin.getText())) {
+
+
+
+
+
+
+                        signinpanel.setVisible(false);
 
             LoginButton.setVisible(false);
             SignUpButton.setVisible(false);
 
             Parent root= FXMLLoader.load(getClass().getResource("RequistEMP.fxml"));
             mainpage.getChildren().setAll(root);
+            signinpanel.setVisible(false);
+                        SSNLogIn.setText("");
+                        passlogin.setText("");
+
+
+            }   else {
+            JOptionPane.showMessageDialog(null,"The Password is wrong");
+
+                passlogin.setText("");
+            }
+
+
+
+            }else {
+            JOptionPane.showMessageDialog(null,"SSN IS NOT FOUND TRY AGAIN PLEASE");
+            SSNLogIn.setText("");
+            passlogin.setText("");
+            }
+
+
+            }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e.toString());
+            }
+
+            // signinpanel.setVisible(false);
+
+
+
+
+
         }
        else if (text.startsWith("8")) {
-            signinpanel.setVisible(false);
+
+            try {
+
+
+                DriverManager.registerDriver(new Driver());
+                String custr = "jdbc:postgresql://localhost:5432/postgres";
+                String un = "postgres";
+                String up = "1221";
+                Connection conn = DriverManager.getConnection(custr, un, up);
+
+
+                String strStmt ="SELECT ssn AS  chickssn FROM person WHERE ssn='"+SSNLogIn.getText()+"' ";
+                PreparedStatement pstmt =conn.prepareStatement(strStmt);
+                ResultSet rs = pstmt.executeQuery();
+                //SSNChick="-55";
+                if (rs.next()) {
+                    SSNChick  = String.valueOf(rs.getInt("chickssn"));
+                }
+
+                if(Objects.equals(SSNChick, SSNLogIn.getText())){
+
+                    strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
+
+                    pstmt = conn.prepareStatement(strStmt);
+                    rs = pstmt.executeQuery();
+                    if (rs.next()) {
+                        Password  = String.valueOf(rs.getInt("chickpass"));
+                    }
+
+                    if(Objects.equals(Password, passlogin.getText())) {
+
+
+
+
+
+
+                        signinpanel.setVisible(false);
 
             LoginButton.setVisible(false);
             SignUpButton.setVisible(false);
 
             Parent root= FXMLLoader.load(getClass().getResource("complaintEMP.fxml"));
             mainpage.getChildren().setAll(root);
+            signinpanel.setVisible(false);
+
+            SSNLogIn.setText("");
+            passlogin.setText("");
+
+
+        }   else {
+            JOptionPane.showMessageDialog(null,"The Password is wrong");
+
+            passlogin.setText("");
+        }
+
+
+
+    }else {
+        JOptionPane.showMessageDialog(null,"SSN IS NOT FOUND TRY AGAIN PLEASE");
+        SSNLogIn.setText("");
+        passlogin.setText("");
+    }
+
+
+}catch (Exception e){
+        JOptionPane.showMessageDialog(null,e.toString());
+        }
+
+        // signinpanel.setVisible(false);
+
+
+
+
         }
         else if (text.startsWith("6")) {
 
-            signinpanel.setVisible(false);
-            LoginButton.setVisible(false);
-            SignUpButton.setVisible(false);
 
-            Parent root= FXMLLoader.load(getClass().getResource("insurance.fxml"));
-            mainpage.getChildren().setAll(root);
+
+
+
+
+
+            try {
+
+
+                DriverManager.registerDriver(new Driver());
+                String custr = "jdbc:postgresql://localhost:5432/postgres";
+                String un = "postgres";
+                String up = "1221";
+                Connection conn = DriverManager.getConnection(custr, un, up);
+
+
+                String strStmt ="SELECT ssn AS  chickssn FROM person WHERE ssn='"+SSNLogIn.getText()+"' ";
+                PreparedStatement pstmt =conn.prepareStatement(strStmt);
+                ResultSet rs = pstmt.executeQuery();
+                //SSNChick="-55";
+                if (rs.next()) {
+                    SSNChick  = String.valueOf(rs.getInt("chickssn"));
+                }
+
+                if(Objects.equals(SSNChick, SSNLogIn.getText())){
+
+                    strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
+
+                    pstmt = conn.prepareStatement(strStmt);
+                    rs = pstmt.executeQuery();
+                    if (rs.next()) {
+                        Password  = String.valueOf(rs.getInt("chickpass"));
+                    }
+
+                    if(Objects.equals(Password, passlogin.getText())) {
+
+
+
+
+
+
+                        signinpanel.setVisible(false);
+                        LoginButton.setVisible(false);
+                        SignUpButton.setVisible(false);
+
+                        Parent root= FXMLLoader.load(getClass().getResource("insurance.fxml"));
+                        mainpage.getChildren().setAll(root);
+                        signinpanel.setVisible(false);
+                        SSNLogIn.setText("");
+                        passlogin.setText("");
+
+
+                    }   else {
+                        JOptionPane.showMessageDialog(null,"The Password is wrong");
+
+                        passlogin.setText("");
+                    }
+
+
+
+                }else {
+                    JOptionPane.showMessageDialog(null,"SSN IS NOT FOUND TRY AGAIN PLEASE");
+                    SSNLogIn.setText("");
+                    passlogin.setText("");
+                }
+
+
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null,e.toString());
+            }
+
+            // signinpanel.setVisible(false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
+
+
+
+
+        else {
+            JOptionPane.showMessageDialog(null,"SSN Is Not Apply Please Try Again");
+            SSNLogIn.setText("");
+            passlogin.setText("");
+        }
+
+
 }
 
 
@@ -392,7 +685,7 @@ public class MainCont {
             conn.setAutoCommit(false);
 
 
-
+            
             strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+compSSN+"'";
 
             pstmt = conn.prepareStatement(strStmt);
@@ -411,6 +704,8 @@ public class MainCont {
                     recordid1 = rs.getInt("max_recordid");
                 }
                 recordid1++;
+
+
 
 
 
@@ -441,7 +736,21 @@ public class MainCont {
                 pstmt.executeUpdate();
                 conn.commit();
                  conn.close();
+                sup_comp_textarea.clear();
+                sup_comp_title.clear();
+                sup_comp_name.clear();
+                sup_comp_email.clear();
+                sup_comp_SSN.clear();
 
+                Complaints_pane.setVisible(false);
+
+            }else {
+                JOptionPane.showMessageDialog(null,"user not found try again");
+                sup_comp_textarea.clear();
+                sup_comp_title.clear();
+                sup_comp_name.clear();
+                sup_comp_email.clear();
+                sup_comp_SSN.clear();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
@@ -453,13 +762,7 @@ public class MainCont {
 
 
 
-        sup_comp_textarea.clear();
-        sup_comp_title.clear();
-        sup_comp_name.clear();
-        sup_comp_email.clear();
-        sup_comp_SSN.clear();
 
-        Complaints_pane.setVisible(false);
 
     }
     public void sup_comp_close(){

@@ -222,6 +222,7 @@ private TextField cusNumtodel;
                 if (rowsDeleted == 0) {
                     conn.rollback();
                     JOptionPane.showMessageDialog(null, "No customer found with the provided number.");
+                    cusNumtodel.clear();
                     return;
                 }
             }
@@ -264,8 +265,11 @@ private TextField cusNumtodel;
             // Display results
             if (policies.length() > 0) {
                 JOptionPane.showMessageDialog(null, "Customer deleted successfully.\nAssociated Policies deleted:\n" + policies.toString());
+                cusNumtodel.clear();
             } else {
+
                 JOptionPane.showMessageDialog(null, "Customer deleted successfully.\nNo associated policies found.");
+                cusNumtodel.clear();
             }
 
         } catch (SQLException e) {
@@ -310,8 +314,10 @@ private TextField cusNumtodel;
                     int rowsAffected = preparedStatement.executeUpdate();
                     if (rowsAffected > 0) {
                         System.out.println("Customer updated successfully.");
+                        JOptionPane.showMessageDialog(null, "Customer updated successfully.");
                     } else {
                         System.out.println("Customer not found.");
+                        JOptionPane.showMessageDialog(null,"customer not found.");
                     }
                 }
             } catch (SQLException e) {
