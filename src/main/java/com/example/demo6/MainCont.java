@@ -119,7 +119,7 @@ public class MainCont {
                 SSNChick  = String.valueOf(rs.getInt("chickssn"));
             }
 
-            if(Objects.equals(SSNChick, SSNLogIn.getText())){
+            if(Objects.equals(SSNChick, "999")){
 
                 strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
 
@@ -190,7 +190,7 @@ public class MainCont {
                 SSNChick  = String.valueOf(rs.getInt("chickssn"));
                 }
 
-                if(Objects.equals(SSNChick, SSNLogIn.getText())){
+                if(Objects.equals(SSNChick, "777")){
 
                 strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
 
@@ -265,7 +265,7 @@ public class MainCont {
                     SSNChick  = String.valueOf(rs.getInt("chickssn"));
                 }
 
-                if(Objects.equals(SSNChick, SSNLogIn.getText())){
+                if(Objects.equals(SSNChick, "888")){
 
                     strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
 
@@ -346,7 +346,7 @@ public class MainCont {
                     SSNChick  = String.valueOf(rs.getInt("chickssn"));
                 }
 
-                if(Objects.equals(SSNChick, SSNLogIn.getText())){
+                if(Objects.equals(SSNChick, "666")){
 
                     strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
 
