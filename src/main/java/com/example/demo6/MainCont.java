@@ -121,6 +121,8 @@ public class MainCont {
 
             if(Objects.equals(SSNChick, "999")){
 
+
+
                 strStmt = "SELECT ppassword AS chickpass FROM person where ssn='"+SSNLogIn.getText()+"'";
 
                 pstmt = conn.prepareStatement(strStmt);
