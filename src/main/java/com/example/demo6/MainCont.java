@@ -1043,7 +1043,7 @@ public class MainCont {
 
             cust_no=-5;
 
-            strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+ssnp.getText()+"'";
+            strStmt = "SELECT customerno AS customerNo FROM customer where ssn='"+ssnh.getText()+"'";
 
             pstmt = conn.prepareStatement(strStmt);
             ResultSet rs = pstmt.executeQuery();
